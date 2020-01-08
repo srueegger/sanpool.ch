@@ -1,10 +1,9 @@
-
 <?php
 get_header();
 if ( have_posts() ) : while ( have_posts() ) : the_post();
 ?>
 <main id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<div class="container">
+	<div class="">
 		<div class="row">
 			<div class="col-12">
 				<div class="headerSlider owl-carousel owl-theme">
@@ -17,6 +16,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 							<div class="inner">
 								<h2>Der Titel</h2>
 								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
+								<a href="#" class="btn btn-primary mt-3">Mehr<i class="far fa-chevron-right ml-3"></i></a>
 							</div>
 						</div>
 					</div>
@@ -31,6 +31,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 							<div class="inner">
 								<h2>Der Titel</h2>
 								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
+								<a href="#" class="btn btn-primary mt-3">Mehr<i class="far fa-chevron-right ml-3"></i></a>
 							</div>
 						</div>
 					</div>
@@ -43,6 +44,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 							<div class="inner">
 								<h2>Der Titel</h2>
 								<p>Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et</p>
+								<a href="#" class="btn btn-primary mt-3">Mehr<i class="far fa-chevron-right ml-3"></i></a>
 							</div>
 						</div>
 					</div>
@@ -51,10 +53,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 		</div>
 	</div>
 	<div class="container">
-		<div class="smallSpacer mt-5">
+		<div class="mt-5">
 			<div class="row justify-content-center">
-				<div class="col-12 col-lg-4">
-					<div class="card layout1">
+				<div class="col-12 col-lg-3">
+					<div class="card">
 						<div class="image-container"><img src="https://picsum.photos/1110/655" class="card-img-top" alt="..."></div>
 						<div class="card-body">
 							<h5 class="card-title">Ein Titel</h5>
@@ -63,8 +65,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-12 col-lg-4">
-					<div class="card layout2">
+				<div class="col-12 col-lg-3">
+					<div class="card">
 						<div class="image-container"><img src="https://picsum.photos/1110/655" class="card-img-top" alt="..."></div>
 						<div class="card-body">
 							<h5 class="card-title">Ein Titel</h5>
@@ -73,8 +75,18 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 						</div>
 					</div>
 				</div>
-				<div class="col-12 col-lg-4">
-					<div class="card layout3">
+				<div class="col-12 col-lg-3">
+					<div class="card">
+						<div class="image-container"><img src="https://picsum.photos/1110/655" class="card-img-top" alt="..."></div>
+						<div class="card-body">
+							<h5 class="card-title">Ein Titel</h5>
+							<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+							<a href="#" class="btn btn-primary">Go somewhere</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-12 col-lg-3">
+					<div class="card">
 						<div class="image-container"><img src="https://picsum.photos/1110/655" class="card-img-top" alt="..."></div>
 						<div class="card-body">
 							<h5 class="card-title">Ein Titel</h5>

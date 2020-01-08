@@ -8,13 +8,7 @@
 	</head>
 	<body <?php body_class(); ?>>
 		<header>
-			<?php
-			$addClass = '';
-			if(is_front_page()) {
-				$addClass = 'container ';
-			}
-			?>
-			<div class="<?php echo $addClass; ?>fixed-top">
+			<div class="fixed-top">
 				<nav class="navbar navbar-expand-lg">
 					<a class="navbar-brand" href="<?php echo HOME_URI; ?>">
 						<picture>
@@ -43,17 +37,6 @@
 				</nav>
 			</div>
 		</header>
-		<div class="waveWrapper waveAnimation">
-			<div class="waveWrapperInner bgTop">
-				<div class="wave waveTop" style="background-image: url('<?php echo THEME_IMAGES; ?>/helpers/wave-top.png')"></div>
-			</div>
-			<div class="waveWrapperInner bgMiddle">
-				<div class="wave waveMiddle" style="background-image: url('<?php echo THEME_IMAGES; ?>/helpers/wave-mid.png')"></div>
-			</div>
-			<div class="waveWrapperInner bgBottom">
-				<div class="wave waveBottom" style="background-image: url('<?php echo THEME_IMAGES; ?>/helpers/wave-bot.png')"></div>
-			</div>
-		</div>
 		<div class="container">
 			<div class="row">
 				<div class="col-12">

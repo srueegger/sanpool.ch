@@ -8,7 +8,7 @@ header {
 		@include font-size(1.7rem);
 		height: 80px;
 		overflow-x: hidden;
-		background-color: $white;
+		background-color: $primary;
 		.navbar-nav {
 			.nav-item {
 				.nav-link {
@@ -29,18 +29,10 @@ header {
 						transition: border-bottom .5s ease-out;
 					}
 				}
+				&:not(:last-of-type) {
+					margin-right: 15px;
+				}
 			}
-		}
-		&:before {
-			content: '';
-			width: 60%;
-			height: 120px;
-			position: absolute;
-			background-color: $blue;
-			right: -20%;
-			top: 0;
-			-webkit-transform: skewX(45deg);
-					transform: skewX(45deg);
 		}
 	}
 	@include media-breakpoint-up(sm) {
@@ -51,104 +43,8 @@ header {
 		}
 		.navbar {
 			height: 120px;
-			&:before {
-				width: 90%;
-			}
 		}
 	}
-}
-
-/* Background Animation */
-@-webkit-keyframes move_wave {
-	0% {
-		-webkit-transform: translateX(0) translateZ(0) scaleY(1);
-		        transform: translateX(0) translateZ(0) scaleY(1)
-	}
-	50% {
-		-webkit-transform: translateX(-25%) translateZ(0) scaleY(0.55);
-		        transform: translateX(-25%) translateZ(0) scaleY(0.55)
-	}
-	100% {
-		-webkit-transform: translateX(-50%) translateZ(0) scaleY(1);
-		        transform: translateX(-50%) translateZ(0) scaleY(1)
-	}
-}
-
-@keyframes move_wave {
-	0% {
-		-webkit-transform: translateX(0) translateZ(0) scaleY(1);
-		        transform: translateX(0) translateZ(0) scaleY(1)
-	}
-	50% {
-		-webkit-transform: translateX(-25%) translateZ(0) scaleY(0.55);
-		        transform: translateX(-25%) translateZ(0) scaleY(0.55)
-	}
-	100% {
-		-webkit-transform: translateX(-50%) translateZ(0) scaleY(1);
-		        transform: translateX(-50%) translateZ(0) scaleY(1)
-	}
-}
-.waveWrapper {
-	overflow: hidden;
-	position: fixed;
-	left: 0;
-	right: 0;
-	bottom: 0;
-	top: -5px;
-	margin: auto;
-}
-.waveWrapperInner {
-	position: absolute;
-	width: 100%;
-	overflow: hidden;
-	height: 100%;
-	bottom: -1px;
-	background-image: -webkit-gradient(linear, left bottom, left top, color-stop(20%, $blue), color-stop(80%, #45a1ed));
-	background-image: linear-gradient(to top, $blue 20%, #45a1ed 80%);
-}
-.bgTop {
-	z-index: 15;
-	opacity: 0.5;
-}
-.bgMiddle {
-	z-index: 10;
-	opacity: 0.75;
-}
-.bgBottom {
-	z-index: 5;
-}
-.wave {
-	position: absolute;
-	left: 0;
-	width: 200%;
-	height: 100%;
-	background-repeat: repeat no-repeat;
-	background-position: 0 bottom;
-	-webkit-transform-origin: center bottom;
-	        transform-origin: center bottom;
-}
-.waveTop {
-	background-size: 50% 100px;
-}
-.waveAnimation .waveTop {
-  animation: move-wave 3s;
-   -webkit-animation: move-wave 3s;
-   -webkit-animation-delay: 1s;
-   animation-delay: 1s;
-}
-.waveMiddle {
-	background-size: 50% 120px;
-}
-.waveAnimation .waveMiddle {
-	-webkit-animation: move_wave 10s linear infinite;
-	        animation: move_wave 10s linear infinite;
-}
-.waveBottom {
-	background-size: 50% 100px;
-}
-.waveAnimation .waveBottom {
-	-webkit-animation: move_wave 15s linear infinite;
-	        animation: move_wave 15s linear infinite;
 }
 
 #infoButtons {
@@ -167,7 +63,7 @@ header {
 		transition: all .2s ease-in;
 		cursor: pointer;
 		.inner {
-			background-color: $white;
+			background-color: $primary;
 			width: 45px;
 			height: 45px;
 			text-align: center;
@@ -175,13 +71,14 @@ header {
 			right: calc(-200px + 45px);
 			svg {
 				margin-top: 7px;
+				color: $white;
 			}
 		}
 		&:not(:last-of-type) {
 			margin-bottom: 15px;
 		}
 		&.active {
-			background-color: $white;
+			background-color: $primary;
 			-webkit-transition: all .2s ease-out;
 			transition: all .2s ease-out;
 			.inner {
