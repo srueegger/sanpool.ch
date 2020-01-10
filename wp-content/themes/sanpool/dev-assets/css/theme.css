@@ -5589,7 +5589,7 @@ button.bg-dark:focus {
 .shadow {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
 
-.shadow-lg, .card, .blockquote {
+.shadow-lg, .card {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; }
 
 .shadow-none {
@@ -7979,16 +7979,51 @@ button:focus {
 
 .card {
   border: none; }
-  .card .image-container {
-    overflow: hidden; }
-    .card .image-container .card-img-top {
-      -webkit-transition: all 1s linear;
-      transition: all 1s linear; }
-      .card .image-container .card-img-top:hover {
-        -webkit-transform: scale(1.15);
-        transform: scale(1.15);
-        -webkit-filter: brightness(20%);
-        filter: brightness(20%); }
+  .card .overlay-seen-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: visible;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear; }
+    .card .overlay-seen-container .inner {
+      padding: 1rem;
+      position: absolute;
+      bottom: 50%;
+      text-align: center;
+      width: 100%;
+      right: 50%;
+      -webkit-transform: translate(50%, 50%);
+      transform: translate(50%, 50%); }
+  .card .overlay-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 0%;
+    overflow: hidden;
+    background-color: #0090cc;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear; }
+    .card .overlay-container .inner {
+      padding: 1rem;
+      position: absolute;
+      bottom: 50%;
+      right: 50%;
+      width: 100%;
+      -webkit-transform: translate(50%, 50%);
+      transform: translate(50%, 50%); }
+      .card .overlay-container .inner p {
+        margin-bottom: 0;
+        color: #fff; }
+  .card:hover .overlay-seen-container {
+    overflow: hidden;
+    height: 0; }
+  .card:hover .overlay-container {
+    overflow: visible;
+    height: 100%; }
 
 /* Responsive Video Embed 16:9 */
 .video-container {
@@ -8043,19 +8078,6 @@ button:focus {
   .headerSlider .owl-dots .owl-dot.active span, .headerSlider .owl-dots .owl-dot:hover span {
     border: 1px solid #fff; }
 
-.blockquote {
-  padding: 2rem;
-  background-color: rgba(255, 255, 255, 0.8); }
-  .blockquote .character {
-    font-size: 6rem;
-    color: #0090cc;
-    position: absolute;
-    line-height: 1rem;
-    left: 2rem; }
-    @media (max-width: 1200px) {
-      .blockquote .character {
-        font-size: calc(1.725rem + 5.7vw) ; } }
-
 .owl-nav {
   margin: 0;
   position: absolute;
@@ -8077,5 +8099,8 @@ button:focus {
     left: -60px; }
   .owl-nav .owl-next {
     right: -60px; }
+
+.shortlink-item h5 {
+  color: #fff; }
 
 /*# sourceMappingURL=theme.css.map */
