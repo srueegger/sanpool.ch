@@ -177,3 +177,24 @@ button {
 		color: $white;
 	}
 }
+
+.courseSlider {
+	.owl-dots {
+		.owl-dot {
+			span {
+				border: 1px solid $primary;
+			}
+		}
+	}
+}
+
+.iconbox {
+	&:hover {
+		.fa-stack {
+			-webkit-transition: 0.9s;
+			transition: 0.9s;
+			-webkit-transform: rotateY(180deg);
+			        transform: rotateY(180deg);
+		}
+	}
+}

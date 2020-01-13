@@ -185,7 +185,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 	<div class="container-fluid py-5 mt-5 bg-primary">
 		<div class="row">
 			<div class="col-12 my-4 text-center">
-				<h2 class="h1 text-white">Titel? Ich würde hier nicht das selbe wie bei der Rega nehmen</h2>
+				<h2 class="h1 text-white">Hallo, wie können wir weiterhelfen?</h2>
 			</div>
 		</div>
 		<div class="row mt-3">
@@ -269,10 +269,10 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 			</div>
 		</div>
 	</div>
-	<div class="container mt-5">
+	<div class="container-fluid mt-5">
 		<div class="row">
 			<div class="col-12 my-4">
-				<h2 class="h1">Nächste Kurse</h2>
+				<h2 class="h1 text-primary">Unsere nächste Kurse</h2>
 			</div>
 			<div class="col-12">
 				<div class="courseSlider owl-carousel owl-theme">
@@ -281,6 +281,46 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 							<div class="image-container"><img src="https://picsum.photos/1110/655" class="card-img-top" alt="..."></div>
 							<div class="card-body">
 								<h5 class="card-title">Nothilfekurse</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<hr>
+								<div class="row">
+									<div class="col-6">
+										<i class="far fa-clock"></i> 10 Stunden
+									</div>
+									<div class="col-6 text-right">
+										<i class="far fa-user fa-lg"></i> / <i class="far fa-users fa-lg"></i>
+									</div>
+								</div>
+								<hr>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="card">
+							<div class="image-container"><img src="https://picsum.photos/1110/655" class="card-img-top" alt="..."></div>
+							<div class="card-body">
+								<h5 class="card-title">Reanimatonskurse</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+								<hr>
+								<div class="row">
+									<div class="col-6">
+										<i class="far fa-clock"></i> 10 Stunden
+									</div>
+									<div class="col-6 text-right">
+										<i class="far fa-user fa-lg"></i> / <i class="far fa-users fa-lg"></i>
+									</div>
+								</div>
+								<hr>
+								<a href="#" class="btn btn-primary">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="card">
+							<div class="image-container"><img src="https://picsum.photos/1110/655" class="card-img-top" alt="..."></div>
+							<div class="card-body">
+								<h5 class="card-title">Reanimatonskurse</h5>
 								<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 								<hr>
 								<div class="row">
