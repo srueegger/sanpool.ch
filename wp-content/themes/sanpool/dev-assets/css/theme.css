@@ -8103,13 +8103,16 @@ button:focus {
 .shortlink-item h5 {
   color: #fff; }
 
-.courseSlider .owl-dots .owl-dot span {
-  border: 1px solid #0090cc; }
-
 .iconbox:hover .fa-stack {
   -webkit-transition: 0.9s;
   transition: 0.9s;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg); }
+
+.course-container {
+  max-width: 100%; }
+  @media (min-width: 1200px) {
+    .course-container {
+      max-width: 1400px; } }
 
 /*# sourceMappingURL=theme.css.map */

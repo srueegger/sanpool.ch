@@ -17,18 +17,20 @@
 	/* Kurs Cards Slider */
 	$('.courseSlider').owlCarousel({
 		loop: true,
-		dots: true,
-		nav: false,
 		autplay: false,
-		navText: ['<i class="fas fa-angle-left text-white fa-4x"></i>', '<i class="fas fa-angle-right text-white fa-4x"></i>'],
+		navText: ['<i class="fas fa-angle-left text-primary fa-4x"></i>', '<i class="fas fa-angle-right text-primary fa-4x"></i>'],
 		responsive: {
 			0 : {
 				items: 1,
-				margin: 0
+				margin: 0,
+				nav: false,
+				dots: true
 			},
 			768 : {
-				items: 4,
-				margin: 25
+				items: 3,
+				margin: 25,
+				dots: false,
+				nav: true
 			}
 		}
 	});

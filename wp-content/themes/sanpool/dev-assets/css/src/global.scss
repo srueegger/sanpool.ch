@@ -178,16 +178,6 @@ button {
 	}
 }
 
-.courseSlider {
-	.owl-dots {
-		.owl-dot {
-			span {
-				border: 1px solid $primary;
-			}
-		}
-	}
-}
-
 .iconbox {
 	&:hover {
 		.fa-stack {
@@ -196,5 +186,12 @@ button {
 			-webkit-transform: rotateY(180deg);
 			        transform: rotateY(180deg);
 		}
+	}
+}
+
+.course-container {
+	max-width: 100%;
+	@include media-breakpoint-up(xl) {
+		max-width: 1400px;
 	}
 }
