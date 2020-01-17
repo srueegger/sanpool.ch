@@ -1,6 +1,11 @@
 (function($) {
 	'use strict';
 
+	/* Bilder per mit der Klasse ".lazy" per LazyLoad laden */
+	var lazyLoadInstance = new LazyLoad({
+		elements_selector: '.lazy'
+	});
+
 	/* Slider vom Header Slider Blocks */
 	$('.headerSlider').owlCarousel({
 		loop: true,

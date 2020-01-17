@@ -19,6 +19,7 @@
     "grunt-contrib-watch": "^1.1.0",
     "matchdep": "^2.0.0",
     "owl.carousel": "^2.3.4",
-    "animate-sass": "^0.8.2"
+    "animate-sass": "^0.8.2",
+    "vanilla-lazyload": "^12.4.0"
   }
 }
