@@ -47,10 +47,17 @@ function _toConsumableArray(t){return _arrayWithoutHoles(t)||_iterableToArray(t)
 				dots: true
 			},
 			768 : {
+				items: 2,
+				margin: 15
+			},
+			992 : {
 				items: 3,
 				margin: 25,
+			},
+			1200 : {
 				dots: false,
-				nav: true
+				nav: true,
+				margin: 25
 			}
 		}
 	});
@@ -58,6 +65,11 @@ function _toConsumableArray(t){return _arrayWithoutHoles(t)||_iterableToArray(t)
 	/* InfoButtons ein und ausfahren */
 	$('#infoButtons li').on('click', function() {
 		$(this).toggleClass('active');
+	});
+
+	/* Hamburger Button animinieren */
+	$('.hamburger').on('click', function() {
+		$(this).toggleClass('is-active');
 	});
 
 })(jQuery);

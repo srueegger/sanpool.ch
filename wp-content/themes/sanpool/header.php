@@ -9,14 +9,16 @@
 	<body <?php body_class(); ?>>
 		<header>
 			<div class="fixed-top">
-				<nav class="navbar navbar-expand-lg">
+				<nav class="navbar navbar-expand-xl">
 					<a class="navbar-brand" href="<?php echo HOME_URI; ?>">
 						<picture>
 							<img src="<?php echo THEME_IMAGES; ?>/sanpool-logo.png" alt="Logo">
 						</picture>
 					</a>
-					<button class="navbar-toggler position-relative" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Navigation umschalten">
-						<i class="fas fa-bars fa-lg text-white"></i>
+					<button class="navbar-toggler position-relative hamburger hamburger--spin" type="button" data-toggle="collapse" data-target="#mainmenu" aria-controls="mainmenu" aria-expanded="false" aria-label="Navigation umschalten">
+						<span class="hamburger-box">
+							<span class="hamburger-inner"></span>
+						</span>
 					</button>
 					<div class="collapse navbar-collapse" id="mainmenu">
 						<ul class="navbar-nav ml-auto position-relative">

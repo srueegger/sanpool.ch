@@ -9,28 +9,45 @@ header {
 		height: 80px;
 		overflow-x: hidden;
 		background-color: $primary;
-		.navbar-nav {
-			.nav-item {
-				.nav-link {
-					color: $white;
-					border-bottom: 4px solid transparent;
-					-webkit-transition: border-bottom .5s ease-in;
-					transition: border-bottom .5s ease-in;
-					&:hover {
-						border-bottom: 4px solid $white;
-						-webkit-transition: border-bottom .5s ease-out;
-						transition: border-bottom .5s ease-out;
-					}
-				}
-				&.active {
+		.navbar-collapse {
+			.navbar-nav {
+				.nav-item {
 					.nav-link {
-						border-bottom: 4px solid $white;
-						-webkit-transition: border-bottom .5s ease-out;
-						transition: border-bottom .5s ease-out;
+						color: $white;
+						border-bottom: 4px solid transparent;
+						-webkit-transition: border-bottom .5s ease-in;
+						transition: border-bottom .5s ease-in;
+						&:hover {
+							border-bottom: 4px solid $white;
+							-webkit-transition: border-bottom .5s ease-out;
+							transition: border-bottom .5s ease-out;
+						}
+					}
+					&.active {
+						.nav-link {
+							border-bottom: 4px solid $white;
+							-webkit-transition: border-bottom .5s ease-out;
+							transition: border-bottom .5s ease-out;
+						}
+					}
+					&:not(:last-of-type) {
+						margin-right: 15px;
 					}
 				}
-				&:not(:last-of-type) {
-					margin-right: 15px;
+			}
+			&.show {
+				position: fixed;
+				background-color: $white;
+				width: 100%;
+				left: 0;
+				top: 80px;
+				.navbar-nav {
+					.nav-item {
+						.nav-link {
+							color: $primary;
+							text-align: center;
+						}
+					}
 				}
 			}
 		}
@@ -43,6 +60,11 @@ header {
 		}
 		.navbar {
 			height: 120px;
+			.navbar-collapse {
+				&.show {
+					top: 120px;
+				}
+			}
 		}
 	}
 }

@@ -7896,6 +7896,86 @@ body {
   -webkit-animation-name: slideOutDown;
   animation-name: slideOutDown; }
 
+/*!
+ * Hamburgers
+ * @description Tasty CSS-animated hamburgers
+ * @author Jonathan Suh @jonsuh
+ * @site https://jonsuh.com/hamburgers
+ * @link https://github.com/jonsuh/hamburgers
+ */
+.hamburger {
+  padding: 15px 15px;
+  display: inline-block;
+  cursor: pointer;
+  transition-property: opacity, filter;
+  transition-duration: 0.15s;
+  transition-timing-function: linear;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  background-color: transparent;
+  border: 0;
+  margin: 0;
+  overflow: visible; }
+  .hamburger:hover {
+    opacity: 1; }
+  .hamburger.is-active:hover {
+    opacity: 1; }
+  .hamburger.is-active .hamburger-inner,
+  .hamburger.is-active .hamburger-inner::before,
+  .hamburger.is-active .hamburger-inner::after {
+    background-color: #fff; }
+
+.hamburger-box {
+  width: 40px;
+  height: 24px;
+  display: inline-block;
+  position: relative; }
+
+.hamburger-inner {
+  display: block;
+  top: 50%;
+  margin-top: -2px; }
+  .hamburger-inner, .hamburger-inner::before, .hamburger-inner::after {
+    width: 40px;
+    height: 4px;
+    background-color: #fff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease; }
+  .hamburger-inner::before, .hamburger-inner::after {
+    content: "";
+    display: block; }
+  .hamburger-inner::before {
+    top: -10px; }
+  .hamburger-inner::after {
+    bottom: -10px; }
+
+/*
+ * Spin
+ */
+.hamburger--spin .hamburger-inner {
+  transition-duration: 0.22s;
+  transition-timing-function: cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+  .hamburger--spin .hamburger-inner::before {
+    transition: top 0.1s 0.25s ease-in, opacity 0.1s ease-in; }
+  .hamburger--spin .hamburger-inner::after {
+    transition: bottom 0.1s 0.25s ease-in, transform 0.22s cubic-bezier(0.55, 0.055, 0.675, 0.19); }
+.hamburger--spin.is-active .hamburger-inner {
+  transform: rotate(225deg);
+  transition-delay: 0.12s;
+  transition-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1); }
+  .hamburger--spin.is-active .hamburger-inner::before {
+    top: 0;
+    opacity: 0;
+    transition: top 0.1s ease-out, opacity 0.1s 0.12s ease-out; }
+  .hamburger--spin.is-active .hamburger-inner::after {
+    bottom: 0;
+    transform: rotate(-90deg);
+    transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1); }
+
 header .navbar-brand img {
   width: 120px; }
 header .navbar {
@@ -7906,26 +7986,37 @@ header .navbar {
   @media (max-width: 1200px) {
     header .navbar {
       font-size: calc(1.295rem + 0.54vw) ; } }
-  header .navbar .navbar-nav .nav-item .nav-link {
+  header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link {
     color: #fff;
     border-bottom: 4px solid transparent;
     -webkit-transition: border-bottom .5s ease-in;
     transition: border-bottom .5s ease-in; }
-    header .navbar .navbar-nav .nav-item .nav-link:hover {
+    header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link:hover {
       border-bottom: 4px solid #fff;
       -webkit-transition: border-bottom .5s ease-out;
       transition: border-bottom .5s ease-out; }
-  header .navbar .navbar-nav .nav-item.active .nav-link {
+  header .navbar .navbar-collapse .navbar-nav .nav-item.active .nav-link {
     border-bottom: 4px solid #fff;
     -webkit-transition: border-bottom .5s ease-out;
     transition: border-bottom .5s ease-out; }
-  header .navbar .navbar-nav .nav-item:not(:last-of-type) {
+  header .navbar .navbar-collapse .navbar-nav .nav-item:not(:last-of-type) {
     margin-right: 15px; }
+  header .navbar .navbar-collapse.show {
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    left: 0;
+    top: 80px; }
+    header .navbar .navbar-collapse.show .navbar-nav .nav-item .nav-link {
+      color: #0090cc;
+      text-align: center; }
 @media (min-width: 576px) {
   header .navbar-brand img {
     width: 250px; }
   header .navbar {
-    height: 120px; } }
+    height: 120px; }
+    header .navbar .navbar-collapse.show {
+      top: 120px; } }
 
 #infoButtons {
   list-style: none;
@@ -8024,6 +8115,8 @@ button:focus {
       .card .overlay-container .inner p {
         margin-bottom: 0;
         color: #fff; }
+  .card .col:not(:last-of-type) {
+    border-right: 1px solid #e9ecef; }
   .card:hover .overlay-seen-container {
     overflow: hidden;
     height: 0; }
@@ -8048,7 +8141,7 @@ button:focus {
     height: 100%; }
 
 .headerSlider .item {
-  height: 655px;
+  height: 510px;
   overflow: hidden;
   position: relative; }
   .headerSlider .item img {
@@ -8059,7 +8152,7 @@ button:focus {
     object-position: center center; }
   .headerSlider .item .text-container {
     position: absolute;
-    width: 40%;
+    width: 60%;
     height: auto;
     bottom: 15%;
     padding: 2rem;
@@ -8074,7 +8167,7 @@ button:focus {
         margin-bottom: 0; }
 .headerSlider .owl-dots {
   position: absolute;
-  left: 33.5%;
+  left: 48%;
   bottom: 15%;
   background-color: transparent; }
   .headerSlider .owl-dots .owl-dot span {
@@ -8083,6 +8176,13 @@ button:focus {
     border: 1px solid #0090cc; }
   .headerSlider .owl-dots .owl-dot.active span, .headerSlider .owl-dots .owl-dot:hover span {
     border: 1px solid #fff; }
+@media (min-width: 1200px) {
+  .headerSlider .item {
+    height: 655px; }
+    .headerSlider .item .text-container {
+      width: 40%; }
+  .headerSlider .owl-dots {
+    left: 33.5%; } }
 
 .owl-nav {
   margin: 0;
@@ -8120,5 +8220,8 @@ button:focus {
   @media (min-width: 1200px) {
     .course-container {
       max-width: 1400px; } }
+
+.courseSlider .owl-dots .owl-dot span {
+  border: 1px solid #0090cc; }
 
 /*# sourceMappingURL=theme.css.map */

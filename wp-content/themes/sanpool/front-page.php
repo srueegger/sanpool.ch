@@ -103,7 +103,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 			</div>
 		</div>
 		<div class="row mt-3">
-			<div class="col-6 col-md-4 col-lg-2">
+			<div class="col-6 col-md-4 col-xl-2 mb-3 mb-xl-0">
 				<div class="shortlink-item text-center">
 					<div class="iconbox">
 						<span class="fa-stack fa-4x">
@@ -116,7 +116,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 					</div>
 				</div>
 			</div>
-			<div class="col-6 col-md-4 col-lg-2">
+			<div class="col-6 col-md-4 col-xl-2 mb-3 mb-xl-0">
 				<div class="shortlink-item text-center">
 					<div class="iconbox">
 						<span class="fa-stack fa-4x">
@@ -129,7 +129,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 					</div>
 				</div>
 			</div>
-			<div class="col-6 col-md-4 col-lg-2">
+			<div class="col-6 col-md-4 col-xl-2 mb-3 mb-xl-0">
 				<div class="shortlink-item text-center">
 					<div class="iconbox">
 						<span class="fa-stack fa-4x">
@@ -142,7 +142,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 					</div>
 				</div>
 			</div>
-			<div class="col-6 col-md-4 col-lg-2">
+			<div class="col-6 col-md-4 col-xl-2 mb-3 mb-xl-0">
 				<div class="shortlink-item text-center">
 					<div class="iconbox">
 						<span class="fa-stack fa-4x">
@@ -155,7 +155,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 					</div>
 				</div>
 			</div>
-			<div class="col-6 col-md-4 col-lg-2">
+			<div class="col-6 col-md-4 col-xl-2 mb-3 mb-xl-0">
 				<div class="shortlink-item text-center">
 					<div class="iconbox">
 						<span class="fa-stack fa-4x">
@@ -168,7 +168,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 					</div>
 				</div>
 			</div>
-			<div class="col-6 col-md-4 col-lg-2">
+			<div class="col-6 col-md-4 col-xl-2 mb-3 mb-xl-0">
 				<div class="shortlink-item text-center">
 					<div class="iconbox">
 						<span class="fa-stack fa-4x">
@@ -200,16 +200,27 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 									<h5 class="card-title">Nothilfekurse</h5>
 									<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
 									<hr>
-									<div class="row">
-										<div class="col-6">
-											<i class="far fa-clock"></i> 10 Stunden
+									<div class="row text-center">
+										<div class="col">
+											<div class="mb-2"><i class="fal fa-calendar-check fa-2x"></i></div>
+											<div>23.08.1988</div>
 										</div>
-										<div class="col-6 text-right">
-											<i class="far fa-user fa-lg"></i> / <i class="far fa-users fa-lg"></i>
+										<div class="col">
+											<div class="mb-2"><i class="fal fa-map fa-2x"></i></div>
+											<div>Basel</div>
 										</div>
+										<div class="col">
+											<div class="mb-2"><i class="fal fa-language fa-2x"></i></div>
+											<div>Deutsch</div>
+										</div>
+										<a href="#" target="_self">
+											<div class="overlay-container">
+												<div class="inner">
+													<h6 class="h3 text-white">Jetzt buchen</h6>
+												</div>
+											</div>
+										</a>
 									</div>
-									<hr>
-									<a href="#" class="btn btn-primary">Go somewhere</a>
 								</div>
 							</div>
 						</div>

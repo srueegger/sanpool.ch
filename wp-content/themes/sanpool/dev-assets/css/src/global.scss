@@ -64,6 +64,11 @@ button {
 			}
 		}
 	}
+	.col {
+		&:not(:last-of-type) {
+			border-right: 1px solid $gray-200;
+		}
+	}
 	&:hover {
 		.overlay-seen-container {
 			overflow: hidden;
@@ -96,7 +101,7 @@ button {
 
 .headerSlider {
 	.item {
-		height: 655px;
+		height: 510px;
 		overflow: hidden;
 		position: relative;
 		img {
@@ -108,7 +113,7 @@ button {
 		}
 		.text-container {
 			position: absolute;
-			width: 40%;
+			width: 60%;
 			height: auto;
 			bottom: 15%;
 			padding: 2rem;
@@ -127,7 +132,7 @@ button {
 	}
 	.owl-dots {
 		position: absolute;
-		left: 33.5%;
+		left: 48%;
 		bottom: 15%;
 		background-color: transparent;
 		.owl-dot {
@@ -142,6 +147,17 @@ button {
 					border: 1px solid $white;
 				}
 			}
+		}
+	}
+	@include media-breakpoint-up(xl) {
+		.item {
+			height: 655px;
+			.text-container {
+				width: 40%;
+			}
+		}
+		.owl-dots {
+			left: 33.5%;
 		}
 	}
 }
@@ -193,5 +209,15 @@ button {
 	max-width: 100%;
 	@include media-breakpoint-up(xl) {
 		max-width: 1400px;
+	}
+}
+
+.courseSlider {
+	.owl-dots {
+		.owl-dot {
+			span {
+				border: 1px solid $primary;
+			}
+		}
 	}
 }
