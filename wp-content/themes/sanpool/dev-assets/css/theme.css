@@ -7941,14 +7941,17 @@ header .navbar {
     background-color: transparent;
     -webkit-transition: all .2s ease-in;
     transition: all .2s ease-in;
-    cursor: pointer; }
+    cursor: pointer;
+    border: 1px solid transparent; }
     #infoButtons li .inner {
       background-color: #0090cc;
       width: 45px;
       height: 45px;
       text-align: center;
       position: relative;
-      right: calc(-200px + 45px); }
+      right: calc(-200px + 45px);
+      border: 1px solid #fff;
+      border-right: none; }
       #infoButtons li .inner svg {
         margin-top: 7px;
         color: #fff; }
@@ -7957,9 +7960,12 @@ header .navbar {
     #infoButtons li.active {
       background-color: #0090cc;
       -webkit-transition: all .2s ease-out;
-      transition: all .2s ease-out; }
+      transition: all .2s ease-out;
+      border: 1px solid #fff;
+      border-right: none; }
       #infoButtons li.active .inner {
-        right: unset; }
+        right: unset;
+        border: none; }
 
 body {
   overflow-x: hidden; }
