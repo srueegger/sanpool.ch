@@ -52,14 +52,15 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 			</div>
 		</div>
 	</div>
-	<div class="container">
-		<div class="mt-5">
+	<div class="container-fluid">
+		<div class="mt-3">
 			<div class="row justify-content-center">
 				<div class="col-12 col-md-6 col-lg-3">
 					<div class="card">
 						<div class="image-container">
 							<picture>
-								<img src="https://picsum.photos/255/353" class="card-img-top" alt="...">
+								<source srcset="https://picsum.photos/894/1238 2x, https://picsum.photos/1110/655 1x" />
+								<img src="https://picsum.photos/447/619" class="card-img-top" alt="...">
 							</picture>
 						</div>
 						<div class="overlay-seen-container">
@@ -90,7 +91,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 					<div class="card">
 						<div class="image-container">
 							<picture>
-								<img src="https://picsum.photos/255/353" class="card-img-top" alt="...">
+								<source srcset="https://picsum.photos/894/1238 2x, https://picsum.photos/1110/655 1x" />
+								<img src="https://picsum.photos/447/619" class="card-img-top" alt="...">
 							</picture>
 						</div>
 						<div class="overlay-seen-container">
@@ -121,7 +123,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 					<div class="card">
 						<div class="image-container">
 							<picture>
-								<img src="https://picsum.photos/255/353" class="card-img-top" alt="...">
+								<source srcset="https://picsum.photos/894/1238 2x, https://picsum.photos/1110/655 1x" />
+								<img src="https://picsum.photos/447/619" class="card-img-top" alt="...">
 							</picture>
 						</div>
 						<div class="overlay-seen-container">
@@ -152,7 +155,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 					<div class="card">
 						<div class="image-container">
 							<picture>
-								<img src="https://picsum.photos/255/353" class="card-img-top" alt="...">
+								<source srcset="https://picsum.photos/894/1238 2x, https://picsum.photos/1110/655 1x" />
+								<img src="https://picsum.photos/447/619" class="card-img-top" alt="...">
 							</picture>
 						</div>
 						<div class="overlay-seen-container">
@@ -182,7 +186,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid py-5 mt-5 bg-primary">
+	<div class="container-fluid py-5 mt-3 bg-primary">
 		<div class="row">
 			<div class="col-12 my-4 text-center">
 				<h2 class="h1 text-white">Hallo, wie können wir weiterhelfen?</h2>
@@ -269,7 +273,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid course-container mt-5">
+	<div class="container-fluid course-container mt-3">
 		<div class="row">
 			<div class="col-12 my-4">
 				<h2 class="h1 text-primary">Unsere nächste Kurse</h2>
