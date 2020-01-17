@@ -48,7 +48,7 @@ function _toConsumableArray(t){return _arrayWithoutHoles(t)||_iterableToArray(t)
 			},
 			768 : {
 				items: 2,
-				margin: 15
+				margin: 10
 			},
 			992 : {
 				items: 3,

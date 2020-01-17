@@ -58,7 +58,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 				<?php
 				for($i = 1; $i <= 4; $i++) {
 					?>
-					<div class="col-12 col-md-6 col-lg-3">
+					<div class="col-12 col-md-6 col-lg-3 mb-3 mb-lg-0">
 						<div class="card">
 							<div class="image-container">
 								<picture>

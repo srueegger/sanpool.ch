@@ -101,7 +101,7 @@ button {
 
 .headerSlider {
 	.item {
-		height: 510px;
+		height: 600px;
 		overflow: hidden;
 		position: relative;
 		img {
@@ -113,16 +113,16 @@ button {
 		}
 		.text-container {
 			position: absolute;
-			width: 60%;
+			width: 100%;
 			height: auto;
-			bottom: 15%;
+			bottom: 0;
 			padding: 2rem;
 			z-index: 100;
 			color: $white;
 			background-color: rgba(0,0,0, .6);
 			.inner {
 				position: relative;
-				width: 70%;
+				width: 90%;
 				z-index: 2;
 				p {
 					margin-bottom: 0;
@@ -132,8 +132,8 @@ button {
 	}
 	.owl-dots {
 		position: absolute;
-		left: 48%;
-		bottom: 15%;
+		right: 15px;
+		bottom: 15px;
 		background-color: transparent;
 		.owl-dot {
 			span {
@@ -147,6 +147,23 @@ button {
 					border: 1px solid $white;
 				}
 			}
+		}
+	}
+	@include media-breakpoint-up(lg) {
+		.item {
+			height: 510px;
+			.text-container {
+				width: 60%;
+				bottom: 15%;
+				.inner {
+					width: 70%;
+				}
+			}
+		}
+		.owl-dots {
+			left: 48%;
+			right: unset;
+			bottom: 15%;
 		}
 	}
 	@include media-breakpoint-up(xl) {

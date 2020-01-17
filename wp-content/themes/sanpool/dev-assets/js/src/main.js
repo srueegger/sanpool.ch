@@ -33,7 +33,7 @@
 			},
 			768 : {
 				items: 2,
-				margin: 15
+				margin: 10
 			},
 			992 : {
 				items: 3,
