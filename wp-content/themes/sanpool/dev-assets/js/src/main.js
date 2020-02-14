@@ -23,7 +23,7 @@
 	$('.courseSlider').owlCarousel({
 		loop: true,
 		autplay: false,
-		navText: ['<i class="fas fa-angle-left text-primary fa-4x"></i>', '<i class="fas fa-angle-right text-primary fa-4x"></i>'],
+		navText: ['<i class="far fa-angle-left text-primary fa-10x"></i>', '<i class="far fa-angle-right text-primary fa-10x"></i>'],
 		responsive: {
 			0 : {
 				items: 1,

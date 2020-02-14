@@ -1,3 +1,10 @@
 .show-admin-bar.user-admin-bar-front-wrap {
 	display: none;
 }
+
+.term-slug-wrap,
+.term-parent-wrap,
+.term-description-wrap,
+.column-description {
+	display: none;
+}

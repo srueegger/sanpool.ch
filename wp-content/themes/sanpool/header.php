@@ -34,6 +34,15 @@
 							<li class="nav-item">
 								<a class="nav-link" href="#">Ersatzausweis</a>
 							</li>
+							<li class="nav-item dropdown">
+								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+								DE
+								</a>
+								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
+									<a class="dropdown-item" href="#">FR</a>
+									<a class="dropdown-item" href="#">IT</a>
+								</div>
+							</li>
 						</ul>
 					</div>
 				</nav>
