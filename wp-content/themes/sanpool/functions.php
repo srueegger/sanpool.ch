@@ -15,6 +15,7 @@ define( 'FILES_DIR', THEME_URI . '/dist-assets/files' );
 /***************************************
  * Include helpers
  ***************************************/
+require_once 'inc/bootstrap-navwalker.php';
 
 /***************************************
  * 		Theme Support and Options
@@ -33,6 +34,8 @@ add_filter('show_admin_bar', '__return_false');
  ***************************************/
 function register_sp_menu() {
 	register_nav_menu( 'mainmenu', 'Hauptmenü' );
+	register_nav_menu( 'footermenu', 'Footermenü' );
+	register_nav_menu( 'iconmenu', 'Iconmenü' );
 }
 add_action( 'after_setup_theme', 'register_sp_menu' );
 

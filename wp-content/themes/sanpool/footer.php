@@ -1,22 +1,19 @@
 		<footer class="mt-3">
 			<div>
 				<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
-					<div class="navbar-collapse" id="navbarText">
-						<ul class="navbar-nav mr-auto">
-							<li class="nav-item active">
-								<a class="nav-link" href="#">Kontakt <span class="sr-only">(current)</span></a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Impressum</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Datenschutzerklärung</a>
-							</li>
-						</ul>
-						<span class="navbar-text">
-							<i class="far fa-copyright"></i> <?php echo date('Y'); ?> SanPool - Schule für Gesundheit
-						</span>
-					</div>
+					<?php
+					$args = array(
+						'theme_location' => 'footermenu',
+						'depth' => 1,
+						'container' => 'div',
+						'container_class' => 'navbar-collapse',
+						'container_id' => 'footermenu',
+						'menu_class' => 'navbar-nav mr-auto',
+						'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+						'walker' => new WP_Bootstrap_Navwalker(),
+					);
+					wp_nav_menu($args);
+					?>
 				</nav>
 			</div>
 		</footer>

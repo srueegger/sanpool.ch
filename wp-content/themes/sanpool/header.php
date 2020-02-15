@@ -20,43 +20,21 @@
 							<span class="hamburger-inner"></span>
 						</span>
 					</button>
-					<div class="collapse navbar-collapse" id="mainmenu">
-						<ul class="navbar-nav ml-auto position-relative">
-							<li class="nav-item active">
-								<a class="nav-link" href="<?php echo HOME_URI; ?>">Kurse <span class="sr-only">(Aktuell)</span></a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Kooperation</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Über SanPool</a>
-							</li>
-							<li class="nav-item">
-								<a class="nav-link" href="#">Ersatzausweis</a>
-							</li>
-							<li class="nav-item dropdown">
-								<a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								DE
-								</a>
-								<div class="dropdown-menu" aria-labelledby="navbarDropdown">
-									<a class="dropdown-item" href="#">FR</a>
-									<a class="dropdown-item" href="#">IT</a>
-								</div>
-							</li>
-						</ul>
-					</div>
+					<?php
+					$args = array(
+						'theme_location' => 'mainmenu',
+						'depth' => 2,
+						'container' => 'div',
+						'container_class' => 'collapse navbar-collapse',
+						'container_id' => 'mainmenu',
+						'menu_class' => 'navbar-nav ml-auto position-relative',
+						'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+						'walker' => new WP_Bootstrap_Navwalker(),
+					);
+					wp_nav_menu($args);
+					?>
 				</nav>
 			</div>
 		</header>
-		<div class="container">
-			<div class="row">
-				<div class="col-12">
-					<ul id="infoButtons">
-						<li><div class="inner"><i class="fas fa-user fa-2x"></i></div></li>
-						<li><div class="inner"><i class="fas fa-globe-europe fa-2x"></i></div></li>
-						<li class="active"><div class="inner"><i class="fas fa-store fa-2x"></i></div></li>
-						<li><div class="inner"><i class="fas fa-envelope fa-2x"></i></div></li>
-					</ul>
-				</div>
-			</div>
-		</div>
+		<?php
+		get_sidebar('infoicons');

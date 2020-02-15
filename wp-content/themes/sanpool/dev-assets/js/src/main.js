@@ -57,4 +57,16 @@
 		$(this).toggleClass('is-active');
 	});
 
+	/* Beim SanPool Accordion die Icons bei Klick auf Header auswechseln */
+	$('.sanpool-accordion').on('hide.bs.collapse', function () {
+		/* Alle Icons als Pfeil darstellen */
+		$('.iconclosed').show();
+		$('.iconopened').hide();
+	});
+	$('.sanpool-accordion').on('shown.bs.collapse', function () {
+		/* Ermitteln welcher Header das offen ist */
+		$('h2[aria-expanded="true"] .iconclosed').hide();
+		$('h2[aria-expanded="true"] .iconopened').show();
+	});
+
 })(jQuery);

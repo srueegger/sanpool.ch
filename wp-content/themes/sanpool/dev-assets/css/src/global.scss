@@ -3,9 +3,10 @@ body {
 }
 
 main {
-	margin-top: 80px; /* Fixed Header Mobile */
+	margin-top: 80px;
 	position: relative;
 	z-index: 1;
+	min-height: calc(100vh - 80px - 56px - 1rem); /* - Header, Footer, and Footer Margin */
 }
 
 button {
@@ -245,6 +246,51 @@ button {
 		.owl-prev,
 		.owl-next {
 			margin: -25px;
+		}
+	}
+}
+
+.kurs-term-image {
+	width: 100%;
+	height: 600px;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	-o-object-position: center center;
+	   object-position: center center;
+	@include media-breakpoint-up(lg) {
+		height: 510px;
+	}
+	@include media-breakpoint-up(xl) {
+		height: 655px;
+	}
+}
+
+.sanpool-accordion {
+	.card {
+		box-shadow: none !important;
+		.card-header {
+			cursor: pointer;
+			background-color: $primary;
+			color: $white;
+			border-bottom: 5px solid $white;
+		}
+		.collapse {
+			margin-top: -5px;
+			border: 1px solid $primary;
+			border-top: none;
+			margin-bottom: 5px;
+			.card-body {
+				p {
+					&:last-of-type {
+						margin-bottom: 0;
+					}
+				}
+			}
+		}
+		&:last-of-type {
+			.card-header {
+				border-bottom: none;
+			}
 		}
 	}
 }

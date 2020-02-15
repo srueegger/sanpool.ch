@@ -3,6 +3,25 @@
     "title": "Kurskategorien",
     "fields": [
         {
+            "key": "field_5e46cde42a91a",
+            "label": "Untertitel",
+            "name": "kurskategorie_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
             "key": "field_5e46c7ccaed18",
             "label": "Bild",
             "name": "kurskategorie_image",
@@ -28,8 +47,27 @@
         },
         {
             "key": "field_5e46c7deaed19",
-            "label": "Beschreibung",
-            "name": "kurskategorie_desc",
+            "label": "Kurzbeschreibung",
+            "name": "kurskategorie_shortdesc",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5e46cd992a919",
+            "label": "Ausführliche Beschreibung",
+            "name": "kurskategorie_longdesc",
             "type": "wysiwyg",
             "instructions": "",
             "required": 1,
@@ -44,6 +82,65 @@
             "toolbar": "full",
             "media_upload": 0,
             "delay": 0
+        },
+        {
+            "key": "field_5e46ce162a91b",
+            "label": "Weitere Informationen",
+            "name": "kurskategorie_infos",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Info hinzfügen",
+            "sub_fields": [
+                {
+                    "key": "field_5e46ce512a91c",
+                    "label": "Titel",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5e46ce5d2a91d",
+                    "label": "Text",
+                    "name": "txt",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
+                }
+            ]
         }
     ],
     "location": [
@@ -63,5 +160,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1581697076
+    "modified": 1581769554
 }

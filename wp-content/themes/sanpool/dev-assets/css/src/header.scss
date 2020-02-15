@@ -23,6 +23,11 @@ header {
 							-webkit-transition: border-bottom .5s ease-out;
 							transition: border-bottom .5s ease-out;
 						}
+						&.dropdown-toggle {
+							&:hover {
+								border-bottom: 4px solid transparent;
+							}
+						}
 					}
 					&.active {
 						.nav-link {
@@ -79,38 +84,69 @@ header {
 	-webkit-transform: translateY(50%);
 			transform: translateY(50%);
 	li {
-		width: 200px;
+		width: 350px;
 		background-color: transparent;
 		-webkit-transition: all .2s ease-in;
 		transition: all .2s ease-in;
 		cursor: pointer;
 		border: 1px solid transparent;
+		position: relative;
 		.inner {
-			background-color: $primary;
-			width: 45px;
-			height: 45px;
+			display: inline-block;
+			background-color: $gray-900;
+			width: 65px;
+			height: 65px;
 			text-align: center;
 			position: relative;
-			right: calc(-200px + 45px);
-			border: 1px solid $white;
+			right: calc(-350px + 65px);
+			border: 1px solid $gray-900;
 			border-right: none;
+			@extend .shadow;
 			svg {
 				margin-top: 7px;
 				color: $white;
 			}
 		}
+		.info-text {
+			a {
+				font-size: 2rem;
+				color: $white;
+			}
+			margin-left: 75px;
+			position: absolute;
+			bottom: 50%;
+			max-width: calc(350px - 65px - 20px);
+			-webkit-transform: translateY(50%);
+					transform: translateY(50%);
+			display: none;
+		}
 		&:not(:last-of-type) {
-			margin-bottom: 15px;
+			margin-bottom: 5px;
 		}
 		&.active {
-			background-color: $primary;
+			background-color: $gray-900;
 			-webkit-transition: all .2s ease-out;
 			transition: all .2s ease-out;
-			border: 1px solid $white;
+			border: 1px solid $gray-900;
 			border-right: none;
+			@extend .shadow;
 			.inner {
 				right: unset;
 				border: none;
+				@extend .shadow-none;
+			}
+			.info-text {
+				display: block;
+			}
+		}
+		&.blue {
+			.inner {
+				background-color: $primary;
+				border: 1px solid $primary;
+			}
+			&.active {
+				background-color: $primary;
+				border: 1px solid $primary;
 			}
 		}
 	}

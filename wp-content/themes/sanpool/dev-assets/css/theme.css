@@ -5586,13 +5586,13 @@ button.bg-dark:focus {
 .shadow-sm {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important; }
 
-.shadow {
+.shadow, #infoButtons li .inner, #infoButtons li.active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important; }
 
 .shadow-lg, .card {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important; }
 
-.shadow-none {
+.shadow-none, #infoButtons li.active .inner {
   box-shadow: none !important; }
 
 .w-25 {
@@ -7995,6 +7995,8 @@ header .navbar {
       border-bottom: 4px solid #fff;
       -webkit-transition: border-bottom .5s ease-out;
       transition: border-bottom .5s ease-out; }
+    header .navbar .navbar-collapse .navbar-nav .nav-item .nav-link.dropdown-toggle:hover {
+      border-bottom: 4px solid transparent; }
   header .navbar .navbar-collapse .navbar-nav .nav-item.active .nav-link {
     border-bottom: 4px solid #fff;
     -webkit-transition: border-bottom .5s ease-out;
@@ -8026,44 +8028,66 @@ header .navbar {
   -webkit-transform: translateY(50%);
   transform: translateY(50%); }
   #infoButtons li {
-    width: 200px;
+    width: 350px;
     background-color: transparent;
     -webkit-transition: all .2s ease-in;
     transition: all .2s ease-in;
     cursor: pointer;
-    border: 1px solid transparent; }
+    border: 1px solid transparent;
+    position: relative; }
     #infoButtons li .inner {
-      background-color: #0090cc;
-      width: 45px;
-      height: 45px;
+      display: inline-block;
+      background-color: #212529;
+      width: 65px;
+      height: 65px;
       text-align: center;
       position: relative;
-      right: calc(-200px + 45px);
-      border: 1px solid #fff;
+      right: calc(-350px + 65px);
+      border: 1px solid #212529;
       border-right: none; }
       #infoButtons li .inner svg {
         margin-top: 7px;
         color: #fff; }
+    #infoButtons li .info-text {
+      margin-left: 75px;
+      position: absolute;
+      bottom: 50%;
+      max-width: calc(350px - 65px - 20px);
+      -webkit-transform: translateY(50%);
+      transform: translateY(50%);
+      display: none; }
+      #infoButtons li .info-text a {
+        font-size: 2rem;
+        color: #fff; }
     #infoButtons li:not(:last-of-type) {
-      margin-bottom: 15px; }
+      margin-bottom: 5px; }
     #infoButtons li.active {
-      background-color: #0090cc;
+      background-color: #212529;
       -webkit-transition: all .2s ease-out;
       transition: all .2s ease-out;
-      border: 1px solid #fff;
+      border: 1px solid #212529;
       border-right: none; }
       #infoButtons li.active .inner {
         right: unset;
         border: none; }
+      #infoButtons li.active .info-text {
+        display: block; }
+    #infoButtons li.blue .inner {
+      background-color: #0090cc;
+      border: 1px solid #0090cc; }
+    #infoButtons li.blue.active {
+      background-color: #0090cc;
+      border: 1px solid #0090cc; }
 
 body {
   overflow-x: hidden; }
 
 main {
   margin-top: 80px;
-  /* Fixed Header Mobile */
   position: relative;
-  z-index: 1; }
+  z-index: 1;
+  min-height: calc(100vh - 80px - 56px - 1rem);
+  /* - Header, Footer, and Footer Margin */ }
 
 button:focus {
   outline: none; }
@@ -8236,5 +8260,36 @@ button:focus {
 .owl-theme .owl-nav .owl-prev,
 .owl-theme .owl-nav .owl-next {
   margin: -25px; }
+
+.kurs-term-image {
+  width: 100%;
+  height: 600px;
+  -o-object-fit: cover;
+  object-fit: cover;
+  -o-object-position: center center;
+  object-position: center center; }
+  @media (min-width: 992px) {
+    .kurs-term-image {
+      height: 510px; } }
+  @media (min-width: 1200px) {
+    .kurs-term-image {
+      height: 655px; } }
+
+.sanpool-accordion .card {
+  box-shadow: none !important; }
+  .sanpool-accordion .card .card-header {
+    cursor: pointer;
+    background-color: #0090cc;
+    color: #fff;
+    border-bottom: 5px solid #fff; }
+  .sanpool-accordion .card .collapse {
+    margin-top: -5px;
+    border: 1px solid #0090cc;
+    border-top: none;
+    margin-bottom: 5px; }
+    .sanpool-accordion .card .collapse .card-body p:last-of-type {
+      margin-bottom: 0; }
+  .sanpool-accordion .card:last-of-type .card-header {
+    border-bottom: none; }
 
 /*# sourceMappingURL=theme.css.map */
