@@ -1,0 +1,125 @@
+{
+    "key": "group_5e57bd5d46b75",
+    "title": "Felder für Kurse",
+    "fields": [
+        {
+            "key": "field_5e57bdba4a00f",
+            "label": "Kursnummer",
+            "name": "kurse_kursnummer",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e57bdc94a010",
+            "label": "Kursbeginn",
+            "name": "kurse_beginn",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d.m.Y",
+            "return_format": "d.m.Y",
+            "first_day": 1,
+            "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_5e57be4c4a011",
+            "label": "Kursende",
+            "name": "kurse_kursende",
+            "type": "date_picker",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "display_format": "d.m.Y",
+            "return_format": "d.m.Y",
+            "first_day": 1,
+            "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_5e57be694a012",
+            "label": "Kursort",
+            "name": "kurse_ort",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5e57be9a4a013",
+            "label": "Kurssprache",
+            "name": "kurse_lng",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": {
+                "de": "Deutsch",
+                "fr": "Französisch"
+            },
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": "de",
+            "layout": "horizontal",
+            "return_format": "value",
+            "wpml_cf_preferences": 0,
+            "save_other_choice": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "post_type",
+                "operator": "==",
+                "value": "sp_interne_kurse"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1582809201
+}
