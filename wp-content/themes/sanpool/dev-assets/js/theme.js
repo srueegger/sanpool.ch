@@ -84,4 +84,7 @@ function _toConsumableArray(t){return _arrayWithoutHoles(t)||_iterableToArray(t)
 		$('h2[aria-expanded="true"] .iconopened').show();
 	});
 
+	/* Alle Tooltips aktivieren */
+	$('[data-toggle="tooltip"]').tooltip();
+
 })(jQuery);

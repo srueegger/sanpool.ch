@@ -68,6 +68,88 @@ $image = get_field('kurskategorie_image', $term);
 				?>
 			</div>
 		</div>
+		<div class="kurse-table-container my-5">
+			<div class="container">
+				<div class="row">
+					<div class="col-12">
+						<div class="kurse-table">
+							<div class="kurse-table__head">
+								<div class="kurse-table__head--item kurse-table__head--item--1">Status</div>
+								<div class="kurse-table__head--item kurse-table__head--item--2">Bezeichnung</div>
+								<div class="kurse-table__head--item kurse-table__head--item--3">von - bis</div>
+								<div class="kurse-table__head--item kurse-table__head--item--4">Ort</div>
+								<div class="kurse-table__head--item kurse-table__head--item--5">Anmelden</div>
+							</div>
+							<div class="kurse-table__body">
+								<?php
+								/* Kurse die zum Taxonomy gehören abrufen und ausgeben */
+								$date_now = date('Y-m-d');
+								$args = array(
+									'numberposts' => -1,
+									'post_status' => 'publish',
+									'post_type' => 'sp_interne_kurse',
+									'order' => 'ASC',
+									'orderby' => 'meta_value',
+									'meta_key' => 'kurse_beginn',
+									'meta_type' => 'DATE',
+									'tax_query' => array(
+										array(
+											'taxonomy' => $term->taxonomy,
+											'field' => 'term_id',
+											'terms' => $term->term_id
+										)
+										),
+									'meta_query' => array(
+										array(
+											'key' => 'kurse_beginn',
+											'compare' => '>=',
+											'value' => $date_now,
+											'type' => 'DATE',
+										)
+									)
+								);
+								$kurse = get_posts($args);
+								if(!empty($kurse)) {
+									/* Es sind Kurse vorhanden - Kurse ausgeben */
+									global $post;
+									foreach($kurse as $post) {
+										setup_postdata( $post );
+										/* Status ermitteln:
+											Status 0 = Plätze verfügbar
+											Status 1 = Ausgebucht
+											Status 2 = Storniert
+										*/
+										$status = get_field('kurse_status');
+										$status_print = '';
+										if($status['value'] == 0) {
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="'.$status['label'].'" class="kurs-status"><i class="fas fa-check-circle fa-fw fa-lg text-success"></i></span>';
+										}elseif($status['value'] == 1) {
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="'.$status['label'].'" class="kurs-status"><i class="fas fa-minus-circle fa-fw fa-lg text-warning"></i></span>';
+										}elseif($status['value'] == 2) {
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="'.$status['label'].'" class="kurs-status"><i class="fas fa-times-circle fa-fw fa-lg text-danger"></i></span>';
+										}
+										?>
+										<div class="kurse-table__body--row">
+											<div class="kurse-table__body--item kurse-table__body--item--1"><?php echo $status_print; ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--2"><?php the_title(); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--3"><?php the_field('kurse_beginn'); ?> - <?php the_field('kurse_kursende'); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--4"><?php the_field('kurse_ort'); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--5"><a href="<?php the_permalink(); ?>" class="btn btn-primary">Anmelden</a></div>
+										</div>
+										<?php
+									}
+									wp_reset_postdata();
+								} else {
+									/* Es sind keine Kurse vorhanden Fehlermeldung ausgeben */
+									echo '<div class="kurse-table__body--row"><div class="kurse-table__body--item kurse-table__body--item--fullwidth">Es sind zurzet keine Kurse in dieser Kategorie vorhanden.</div></div>';
+								}
+								?>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 	</div>
 </main>
 <?php
