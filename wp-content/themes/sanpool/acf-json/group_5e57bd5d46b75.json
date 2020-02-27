@@ -102,6 +102,52 @@
             "return_format": "value",
             "wpml_cf_preferences": 0,
             "save_other_choice": 0
+        },
+        {
+            "key": "field_5e57d33245564",
+            "label": "Kurstext (Kommentar)",
+            "name": "kurse_kommentar",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0,
+            "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_5e57d35845565",
+            "label": "Kursstatus",
+            "name": "kurse_status",
+            "type": "radio",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [
+                "Plätze verfügbar",
+                "Ausgebucht",
+                "Storniert"
+            ],
+            "allow_null": 0,
+            "other_choice": 0,
+            "default_value": 0,
+            "layout": "horizontal",
+            "return_format": "array",
+            "wpml_cf_preferences": 0,
+            "save_other_choice": 0
         }
     ],
     "location": [
@@ -121,5 +167,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582809201
+    "modified": 1582814139
 }
