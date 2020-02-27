@@ -8,3 +8,11 @@
 .column-description {
 	display: none;
 }
+
+.wp-block {
+	max-width: 1140px;
+}
+
+.wp-block[data-align="wide"] {
+	max-width: 1200px;
+}

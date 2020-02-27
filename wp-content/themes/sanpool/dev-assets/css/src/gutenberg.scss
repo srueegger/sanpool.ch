@@ -1,0 +1,65 @@
+/* Gutenberg Custom Colors */
+$colors: (
+	'blue': $primary,
+	'lightgray': $gray-300,
+	'darkgray': $gray-900,
+	'white': $white,
+	'black': $black
+);
+@each $name, $color in $colors {
+	.has-#{$name}-color {
+		color: $color;
+	}
+	.has-#{$name}-background-color {
+		background-color: $color;
+	}
+}
+
+/* Gutenberg volle Breite */
+.alignfull {
+	margin-left: calc( -100vw / 2 + 100% / 2 );
+	margin-right: calc( -100vw / 2 + 100% / 2 );
+	max-width: 100vw;
+	img {
+		width: 100vw !important;
+	}
+}
+
+.wp-block-image {
+	&.aboutus {
+		img {
+			height: calc(100vh - 80px);
+			-o-object-fit: cover;
+			object-fit: cover;
+			-o-object-position: center;
+			object-position: center;
+		}
+		figcaption {
+			position: absolute;
+			top: 0;
+			left: 0;
+			background-color: rgba(0,0,0, .8);
+			color: $white;
+			width: 35%;
+			height: calc(100vh - 80px);
+			margin-top: 0;
+			margin-bottom: 0;
+			font-size: 5rem;
+			font-weight: 700;
+			padding: 3rem;
+		}
+	}
+}
+
+.numbers-and-facts {
+	padding: 3rem;
+	color: $white;
+	text-align: center;
+	.number {
+		font-weight: 700;
+		font-size: 3rem;
+	}
+	.fact {
+		font-size: 2rem;
+	}
+}

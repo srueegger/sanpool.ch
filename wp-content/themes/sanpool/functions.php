@@ -16,6 +16,7 @@ define( 'FILES_DIR', THEME_URI . '/dist-assets/files' );
  * Include helpers
  ***************************************/
 require_once 'inc/bootstrap-navwalker.php';
+require_once 'inc/custom-gutenberg-blocks.php';
 
 /***************************************
  * 		Theme Support and Options
@@ -23,6 +24,36 @@ require_once 'inc/bootstrap-navwalker.php';
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
 add_theme_support( 'title-tag' );
 add_theme_support( 'menus' );
+add_theme_support( 'align-wide' );
+add_theme_support( 'responsive-embeds' );
+/* Gtenberg Colors */
+add_theme_support( 'editor-color-palette', array(
+	array(
+		'name'  => 'Blau',
+		'slug'  => 'blue',
+		'color'	=> '#0090cc',
+	),
+	array(
+		'name'  => 'Hellgrau',
+		'slug'  => 'lightgray',
+		'color' => '#dee2e6',
+	),
+	array(
+		'name'  => 'Dunkelgrau',
+		'slug'  => 'darkgray',
+		'color' => '#212529',
+	),
+	array(
+		'name'	=> 'Schwarz',
+		'slug'	=> 'black',
+		'color'	=> '#000000',
+	),
+	array(
+		'name'	=> 'Weiss',
+		'slug'	=> 'white',
+		'color'	=> '#ffffff',
+	)
+) );
 add_filter('show_admin_bar', '__return_false');
 
 /***************************************
@@ -114,3 +145,25 @@ function sp_send_smtp( $phpmailer ) {
 	$phpmailer->CharSet = 'utf-8';
 }
 //add_action( 'phpmailer_init', 'sp_send_smtp' );
+
+/***************************************
+ * 	 Container entfernen bei Gutenberg Blocks die Align full oder width sind.
+ ***************************************/
+function sp_wrap_alignment_full( $block_content, $block ) {
+	if ( isset( $block['attrs']['align'] ) && in_array( $block['attrs']['align'], array( 'full' ) ) ) {
+		/* Fullwidth Block */
+		$return_code = '</div></div></div><div>';
+		$return_code .= $block_content;
+		$return_code .= '</div><div class="container"><div class="row"><div class="col-12 col-lg-10">';
+		return $return_code;
+	}elseif (isset( $block['attrs']['align'] ) && in_array( $block['attrs']['align'], array( 'wide' ) )) {
+		/* Wide Block */
+		$return_code = '</div></div></div><div class="container-fluid"><div class="row justify-content-center"><div class="col-12 col-lg-10">';
+		$return_code .= $block_content;
+		$return_code .= '</div></div></div><div class="container"><div class="row"><div class="col-12 col-lg-10">';
+		return $return_code;
+	} else {
+		return $block_content;
+	}
+}
+add_filter( 'render_block', 'sp_wrap_alignment_full', 10, 2 );
