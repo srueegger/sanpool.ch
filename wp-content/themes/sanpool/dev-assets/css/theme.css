@@ -8310,7 +8310,7 @@ button:focus {
 
 .iconbox .fa-stack {
   -webkit-transition: .9s;
-  ransition: .9s; }
+  transition: .9s; }
 .iconbox:hover .fa-stack {
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg); }
