@@ -80,11 +80,13 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 							<div class="overlay-container">
 								<div class="inner">
 									<p>Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-									<div href="#" class="text-center mt-3">
-										<a href="#"><span class="fa-stack fa-2x text-white">
-											<i class="fal fa-circle fa-stack-2x"></i>
-											<i class="fas fa-plus fa-stack-1x fa-inverse"></i>
-										</span></a>
+									<div class="text-center mt-3">
+										<a href="#" target="_self">
+											<span class="fa-stack fa-2x text-white">
+												<i class="fal fa-circle fa-stack-2x"></i>
+												<i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+											</span>
+										</a>
 									</div>
 								</div>
 							</div>
