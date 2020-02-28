@@ -4,14 +4,14 @@
  * Plugin URI: https://rueegger.me
  * Description: Dieses Plugin managt die Custom Post Types für die SanPool Webseite
  * Author: Samuel Rüegger
- * Version: 1.3
+ * Version: 1.4
  * Author URI: https://rueegger.me
  */
 
 function cptui_register_my_cpts() {
 
 	/**
-	 * Post Type: Kurse.
+	 * Post Type: Kurse
 	 */
 
 	$labels = [
@@ -33,7 +33,7 @@ function cptui_register_my_cpts() {
 	$args = [
 		"label" => __( "Kurse", "sp-theme" ),
 		"labels" => $labels,
-		"description" => "Diese Pos Type managt die Kurse von SanPool",
+		"description" => "Diese Post Type managt die Kurse von SanPool.",
 		"public" => true,
 		"publicly_queryable" => true,
 		"show_ui" => true,
@@ -53,6 +53,50 @@ function cptui_register_my_cpts() {
 	];
 
 	register_post_type( "sp_interne_kurse", $args );
+
+	/**
+	 * Post Type: Team
+	 */
+
+	$labels = [
+		"name" => __( "Team", "sp-theme" ),
+		"singular_name" => __( "Team", "sp-theme" ),
+		"menu_name" => __( "Team", "sp-theme" ),
+		"all_items" => __( "Alle Teammitglieder", "sp-theme" ),
+		"add_new" => __( "Neues Teamitglied", "sp-theme" ),
+		"add_new_item" => __( "Neues Teammitglied hinzufügen", "sp-theme" ),
+		"edit_item" => __( "Teammitglied bearbeiten", "sp-theme" ),
+		"view_item" => __( "Teammitglied ansehen", "sp-theme" ),
+		"view_items" => __( "Teammitglieder ansehen", "sp-theme" ),
+		"search_items" => __( "Teammitglieder suchen", "sp-theme" ),
+		"not_found" => __( "Kein Teammitglied gefunden", "sp-theme" ),
+		"not_found_in_trash" => __( "Keine Teammitglieder im Papierkorb gefunden", "sp-theme" ),
+		"item_published" => __( "Teammitglied veröffentlicht", "sp-theme" ),
+	];
+
+	$args = [
+		"label" => __( "Teammitglied", "sp-theme" ),
+		"labels" => $labels,
+		"description" => "Diese Post Type managt die Teammitglied von SanPool.",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => false,
+		"query_var" => true,
+		"menu_icon" => "dashicons-groups",
+		"supports" => [ "title", "custom-fields", "author", "page-attributes" ],
+	];
+
+	register_post_type( "sp_team", $args );
 }
 
 add_action( 'init', 'cptui_register_my_cpts' );
