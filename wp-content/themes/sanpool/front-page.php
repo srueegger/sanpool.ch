@@ -63,7 +63,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 							<div class="image-container">
 								<picture>
 									<source data-srcset="https://picsum.photos/894/800 2x, https://picsum.photos/1110/400 1x" />
-									<img data-src="https://picsum.photos/447/300" class="card-img-top lazy" alt="...">
+									<img data-src="https://picsum.photos/447/400" class="card-img-top lazy" alt="...">
 								</picture>
 							</div>
 							<div class="overlay-seen-container">

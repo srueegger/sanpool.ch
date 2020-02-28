@@ -36,6 +36,18 @@ function sp_register_acf_block_types() {
 		'keywords' => array( 'slider', 'bild', 'image', 'video' ),
 		'mode' => 'edit'
 	));
+
+	/* Infoblöcke */
+	acf_register_block_type(array(
+		'name' => 'sp_infoblocks',
+		'title' => 'Infoblöcke',
+		'description' => 'Dieser Block zeichnet die Infoblöcke.',
+		'render_template' => 'templates/blocks/infoblocks.php',
+		'category' => 'layout',
+		'icon' => 'info',
+		'keywords' => array( 'info', 'bild', 'image' ),
+		'mode' => 'edit'
+	));
 }
 
 // Check if function exists and hook into setup.

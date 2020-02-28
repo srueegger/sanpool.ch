@@ -63,6 +63,8 @@ add_image_size( 'kurs-box', 350, 9999, false );
 add_image_size( 'kurs-box-2x', 700, 9999, false );
 add_image_size( 'fullwidth', 1920, 9999, false );
 add_image_size( 'fullwidth-2x', 3840, 9999, false );
+add_image_size( 'infoblock', 447, 9999, false );
+add_image_size( 'infoblock-2x', 894, 9999, false );
 
 /***************************************
  * Add Wordpress Menus
