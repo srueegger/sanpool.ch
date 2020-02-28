@@ -109,8 +109,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 				<div class="shortlink-item text-center">
 					<div class="iconbox">
 						<span class="fa-stack fa-4x">
-							<i class="fal fa-square fa-stack-2x text-white"></i>
-							<i class="far fa-chalkboard-teacher fa-stack-1x text-white"></i>
+							<i class="fal fa-square fa-stack-2x"></i>
+							<i class="far fa-chalkboard-teacher fa-stack-1x"></i>
 						</span>
 					</div>
 					<div class="textbox mt-3">

@@ -8310,10 +8310,12 @@ button:focus {
 
 .iconbox .fa-stack {
   -webkit-transition: .9s;
-  transition: .9s; }
+  transition: .9s;
+  color: #fff; }
 .iconbox:hover .fa-stack {
   -webkit-transform: rotateY(180deg);
-  transform: rotateY(180deg); }
+  transform: rotateY(180deg);
+  color: #000; }
 
 .course-container {
   max-width: 100%; }
