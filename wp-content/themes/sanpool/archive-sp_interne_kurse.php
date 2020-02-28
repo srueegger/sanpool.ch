@@ -21,11 +21,12 @@ get_header();
 						/* Einzelne Kategorie als Card ausgeben */
 						$image = get_field('kurskategorie_image', $term);
 						?>
-						<div class="col-4 mb-4">
+						<div class="col-12 col-md-6 col-lg-4 mb-4">
 							<div class="card h-100">
 								<div class="image-container">
 									<picture>
-										<img data-src="<?php echo $image['url']; ?>" class="card-img-top lazy img-kurs-cat" alt="<?php echo $image['alt']; ?>">
+										<source data-srcset="<?php echo $image['sizes']['kurs-box-2x']; ?> 2x, <?php echo $image['sizes']['kurs-box']; ?> 1x" />
+										<img data-src="<?php echo $image['sizes']['kurs-box']; ?>" class="card-img-top lazy img-kurs-cat" alt="<?php echo $image['alt']; ?>">
 									</picture>
 								</div>
 								<div class="card-body">

@@ -59,6 +59,8 @@ add_filter('show_admin_bar', '__return_false');
 /***************************************
  * Custom Image Size
  ***************************************/
+add_image_size( 'kurs-box', 350, 9999, false );
+add_image_size( 'kurs-box-2x', 700, 9999, false );
 
 /***************************************
  * Add Wordpress Menus
