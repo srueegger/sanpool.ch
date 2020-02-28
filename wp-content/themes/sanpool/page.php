@@ -4,7 +4,7 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 ?>
 <main id="page-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<div class="container">
-		<div class="row">
+		<div class="row justify-content-center">
 			<?php
 			$page_body_top_margin = '';
 			if(!get_field('page_has_title')) {

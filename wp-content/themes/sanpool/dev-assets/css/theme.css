@@ -8361,12 +8361,16 @@ button:focus {
   .sanpool-accordion .card:last-of-type .card-header {
     border-bottom: none; }
 
-.img-kurs-cat {
+.img-kurs-cat,
+.img-team-cat {
   height: 190px;
   -o-object-fit: cover;
   object-fit: cover;
   -o-object-position: center;
   object-position: center; }
+
+.img-team-cat {
+  height: 280px; }
 
 .kurse-table-container {
   background-color: #0090cc;

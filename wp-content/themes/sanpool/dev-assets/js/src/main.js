@@ -20,7 +20,7 @@
 	});
 
 	/* Kurs Cards Slider */
-	$('.courseSlider').owlCarousel({
+	$('.courseSlider, .teamSlider').owlCarousel({
 		loop: true,
 		autplay: false,
 		navText: ['<i class="far fa-angle-left text-primary fa-10x"></i>', '<i class="far fa-angle-right text-primary fa-10x"></i>'],

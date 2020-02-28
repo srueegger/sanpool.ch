@@ -12,6 +12,18 @@ function sp_register_acf_block_types() {
 		'keywords' => array( 'zahlen', 'fakten', 'numbers' ),
 		'mode' => 'edit'
 	));
+
+	/* Teamslider Block */
+	acf_register_block_type(array(
+		'name' => 'sp_teamslider',
+		'title' => 'Teamslider',
+		'description' => 'Dieser Block zeichnet den Teamslider.',
+		'render_template' => 'templates/blocks/teamslider.php',
+		'category' => 'layout',
+		'icon' => 'groups',
+		'keywords' => array( 'team', 'slider', 'personen' ),
+		'mode' => 'edit'
+	));
 }
 
 // Check if function exists and hook into setup.

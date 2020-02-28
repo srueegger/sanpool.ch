@@ -295,12 +295,17 @@ button {
 	}
 }
 
-.img-kurs-cat {
+.img-kurs-cat,
+.img-team-cat {
 	height: 190px;
 	-o-object-fit: cover;
 	   object-fit: cover;
 	-o-object-position: center;
 	   object-position: center;
+}
+
+.img-team-cat {
+	height: 280px;
 }
 
 .kurse-table-container {
