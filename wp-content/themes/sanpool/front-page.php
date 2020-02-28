@@ -9,8 +9,8 @@ if ( have_posts() ) : while ( have_posts() ) : the_post();
 				<div class="headerSlider owl-carousel owl-theme">
 					<div class="item">
 						<picture>
-							<source srcset="https://picsum.photos/2220/1310 2x, https://picsum.photos/1110/655 1x" />
-							<img src="https://picsum.photos/1110/655" alt="">
+							<source srcset="https://picsum.photos/3840/1310 2x, https://picsum.photos/1920/655 1x" />
+							<img src="https://picsum.photos/1920/655" alt="">
 						</picture>
 						<div class="text-container">
 							<div class="inner">

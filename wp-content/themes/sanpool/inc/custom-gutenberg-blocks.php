@@ -24,6 +24,18 @@ function sp_register_acf_block_types() {
 		'keywords' => array( 'team', 'slider', 'personen' ),
 		'mode' => 'edit'
 	));
+
+	/* Bild / Video Slider */
+	acf_register_block_type(array(
+		'name' => 'sp_image_video_slider',
+		'title' => 'Bild und Videoslider',
+		'description' => 'Dieser Block zeichnet einen Bild und Video Slider.',
+		'render_template' => 'templates/blocks/imageandvideoslider.php',
+		'category' => 'layout',
+		'icon' => 'slides',
+		'keywords' => array( 'slider', 'bild', 'image', 'video' ),
+		'mode' => 'edit'
+	));
 }
 
 // Check if function exists and hook into setup.
