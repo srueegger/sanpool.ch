@@ -8308,9 +8308,10 @@ button:focus {
 .shortlink-item h5 {
   color: #fff; }
 
+.iconbox .fa-stack {
+  -webkit-transition: .9s;
+  ransition: .9s; }
 .iconbox:hover .fa-stack {
-  -webkit-transition: 0.9s;
-  transition: 0.9s;
   -webkit-transform: rotateY(180deg);
   transform: rotateY(180deg); }
 
