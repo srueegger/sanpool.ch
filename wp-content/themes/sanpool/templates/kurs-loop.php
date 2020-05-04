@@ -10,7 +10,7 @@ $course_lang = get_field( 'kurse_lng', get_the_ID() );
 	<div class="card h-100">
 		<div class="image-container">
 			<picture>
-				<source data-srcset="<?php echo $image['sizes']['infoblock-2x']; ?> 2x, <?php echo $image['sizes']['infoblock']; ?> 1x" />
+				<source srcset="<?php echo $image['sizes']['infoblock-2x']; ?> 2x, <?php echo $image['sizes']['infoblock']; ?> 1x" />
 				<img loading="lazy" src="<?php echo $image['sizes']['infoblock']; ?>" class="card-img-top" alt="<?php echo $image['alt']; ?>">
 			</picture>
 		</div>
