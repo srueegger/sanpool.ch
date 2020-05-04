@@ -83,6 +83,7 @@ wp-admin/
 .idea/
 node_modules/
 bower_components/
+wp-content/wpbot-dfv2-client/
 wp-content/plugins/*
 !wp-content/plugins/sp-cpt-tax/
 *.swp
