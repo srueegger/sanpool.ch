@@ -25,8 +25,8 @@ get_header();
 							<div class="card h-100">
 								<div class="image-container">
 									<picture>
-										<source data-srcset="<?php echo $image['sizes']['kurs-box-2x']; ?> 2x, <?php echo $image['sizes']['kurs-box']; ?> 1x" />
-										<img data-src="<?php echo $image['sizes']['kurs-box']; ?>" class="card-img-top lazy img-kurs-cat" alt="<?php echo $image['alt']; ?>">
+										<source srcset="<?php echo $image['sizes']['kurs-box-2x']; ?> 2x, <?php echo $image['sizes']['kurs-box']; ?> 1x" />
+										<img loading="lazy" src="<?php echo $image['sizes']['kurs-box']; ?>" class="card-img-top img-kurs-cat" alt="<?php echo $image['alt']; ?>">
 									</picture>
 								</div>
 								<div class="card-body">

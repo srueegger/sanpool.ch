@@ -10594,10 +10594,8 @@ button:focus {
 .kurs-term-image {
   width: 100%;
   height: 600px;
-  -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: center center;
-  object-position: center center;
+  object-position: top center;
 }
 @media (min-width: 992px) {
   .kurs-term-image {

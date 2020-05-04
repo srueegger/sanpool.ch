@@ -268,10 +268,8 @@ button {
 .kurs-term-image {
 	width: 100%;
 	height: 600px;
-	-o-object-fit: cover;
-	   object-fit: cover;
-	-o-object-position: center center;
-	   object-position: center center;
+	object-fit: cover;
+	object-position: top center;
 	@include media-breakpoint-up(lg) {
 		height: 510px;
 	}

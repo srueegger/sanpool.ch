@@ -24,8 +24,8 @@ if( !empty($block['className']) ) {
 						<div class="card">
 							<div class="image-container">
 								<picture>
-									<source data-srcset="<?php echo $image['sizes']['infoblock-2x']; ?> 2x, <?php echo $image['sizes']['infoblock']; ?> 1x" />
-									<img data-src="<?php echo $image['sizes']['infoblock']; ?>" class="card-img-top lazy" alt="<?php echo $image['alt']; ?>">
+									<source srcset="<?php echo $image['sizes']['infoblock-2x']; ?> 2x, <?php echo $image['sizes']['infoblock']; ?> 1x" />
+									<img loading="lazy" src="<?php echo $image['sizes']['infoblock']; ?>" class="card-img-top" alt="<?php echo $image['alt']; ?>">
 								</picture>
 							</div>
 							<div class="overlay-seen-container">

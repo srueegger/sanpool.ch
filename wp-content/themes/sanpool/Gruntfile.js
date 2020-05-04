@@ -20,7 +20,6 @@ module.exports = function( grunt ) {
 					'dev-assets/js/_vendor/*.js',
                     'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js',
                     'node_modules/owl.carousel/dist/owl.carousel.min.js',
-                    'node_modules/vanilla-lazyload/dist/lazyload.min.js',
                     'dev-assets/js/src/main.js'
                 ],
                 dest: 'dev-assets/js/theme.js'

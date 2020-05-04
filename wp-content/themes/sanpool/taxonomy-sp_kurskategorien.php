@@ -9,7 +9,7 @@ $image = get_field('kurskategorie_image', $term);
 		<div class="row no-gutters">
 			<div class="col-12">
 				<picture>
-					<img src="<?php echo $image['url']; ?>" class="lazy kurs-term-image" alt="<?php echo $image['alt']; ?>">
+					<img loading="lazy" src="<?php echo $image['url']; ?>" class="kurs-term-image" alt="<?php echo $image['alt']; ?>">
 				</picture>
 			</div>
 		</div>
