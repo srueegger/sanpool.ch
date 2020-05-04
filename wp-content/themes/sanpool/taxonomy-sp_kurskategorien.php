@@ -83,15 +83,14 @@ $image = get_field('kurskategorie_image', $term);
 							<div class="kurse-table__body">
 								<?php
 								/* Kurse die zum Taxonomy gehören abrufen und ausgeben */
-								$date_now = date('Y-m-d');
+								$date_now = date('Ymd');
 								$args = array(
 									'numberposts' => -1,
 									'post_status' => 'publish',
 									'post_type' => 'sp_interne_kurse',
 									'order' => 'ASC',
-									'orderby' => 'meta_value',
+									'orderby' => 'meta_value_num',
 									'meta_key' => 'kurse_beginn',
-									'meta_type' => 'DATE',
 									'tax_query' => array(
 										array(
 											'taxonomy' => $term->taxonomy,
