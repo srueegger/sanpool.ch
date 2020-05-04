@@ -118,7 +118,8 @@ $image = get_field('kurskategorie_image', $term);
 											Status 1 = Ausgebucht
 											Status 2 = Storniert
 										*/
-										$status = get_field('kurse_status');
+										//$status = get_field('kurse_status');
+										$status['value'] = 0;
 										$status_print = '';
 										if($status['value'] == 0) {
 											$status_print = '<span data-toggle="tooltip" data-placement="top" title="'.$status['label'].'" class="kurs-status"><i class="fas fa-check-circle fa-fw fa-lg text-success"></i></span>';

@@ -1,4 +1,3 @@
-
 <?php
 /* Diese Datei rendert die Info Icons */
 $id = 'infoicons-' . $block['id'];

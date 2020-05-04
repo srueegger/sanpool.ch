@@ -54,13 +54,44 @@ get_header();
 				<h2 class="h1 text-primary">Unsere nächste Kurse</h2>
 			</div>
 			<div class="col-12">
-				<div class="courseSlider owl-carousel owl-theme">
-					<?php
-					for($i = 1; $i <= 6; $i++) {
+				<?php
+				/* Kurse laden und in einem Loop ausgeben */
+				$date_now = date('Ymd');
+				$args = array(
+					'numberposts' => -1,
+					'post_status' => 'publish',
+					'post_type' => 'sp_interne_kurse',
+					'order' => 'ASC',
+					'orderby' => 'meta_value',
+					'meta_key' => 'kurse_beginn',
+					'meta_query' => array(
+						'relation' => 'AND',
+						array(
+							'key' => 'kurse_beginn',
+							'compare' => '>=',
+							'value' => $date_now,
+							'type' => 'DATE',
+						),
+						array(
+							'key' => 'kurse_storniert',
+							'value' => 0,
+							'compare' => '=',
+							'type' => 'NUMERIC'
+						)
+					)
+				);
+				$kurse = get_posts($args);
+				if(!empty($kurse)) {
+					echo '<div class="courseSlider owl-carousel owl-theme">';
+					global $post;
+					foreach($kurse as $post) {
+						setup_postdata( $post );
 						get_template_part( 'templates/kurs', 'loop' );
 					}
-					?>
-				</div>
+					wp_reset_postdata();
+					echo '</div>';
+				}
+				?>
 			</div>
 		</div>
 	</div>

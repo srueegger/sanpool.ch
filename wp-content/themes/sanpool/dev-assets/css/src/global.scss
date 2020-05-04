@@ -232,6 +232,17 @@ button {
 }
 
 .courseSlider {
+	.owl-stage {
+		background: $gray-100;
+	}
+	.card-img-top {
+		height: 240px;
+		object-position: center;
+		object-fit: cover;
+	}
+	.card-text {
+		min-height: 200px;
+	}
 	.owl-dots {
 		.owl-dot {
 			span {

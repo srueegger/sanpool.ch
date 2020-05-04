@@ -3,26 +3,6 @@
     "title": "Felder für Kurse",
     "fields": [
         {
-            "key": "field_5e57bdba4a00f",
-            "label": "Kursnummer",
-            "name": "kurse_kursnummer",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "wpml_cf_preferences": 0,
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
-        },
-        {
             "key": "field_5e57bdc94a010",
             "label": "Kursbeginn",
             "name": "kurse_beginn",
@@ -91,6 +71,7 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "choices": {
                 "de": "Deutsch",
                 "fr": "Französisch"
@@ -99,8 +80,7 @@
             "other_choice": 0,
             "default_value": "de",
             "layout": "horizontal",
-            "return_format": "value",
-            "wpml_cf_preferences": 0,
+            "return_format": "array",
             "save_other_choice": 0
         },
         {
@@ -124,30 +104,24 @@
             "wpml_cf_preferences": 0
         },
         {
-            "key": "field_5e57d35845565",
-            "label": "Kursstatus",
-            "name": "kurse_status",
-            "type": "radio",
+            "key": "field_5eb01eef61b76",
+            "label": "Wurde der Kurs storniert?",
+            "name": "kurse_storniert",
+            "type": "true_false",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "choices": [
-                "Plätze verfügbar",
-                "Ausgebucht",
-                "Storniert"
-            ],
-            "allow_null": 0,
-            "other_choice": 0,
+            "message": "",
             "default_value": 0,
-            "layout": "horizontal",
-            "return_format": "array",
-            "wpml_cf_preferences": 0,
-            "save_other_choice": 0
+            "ui": 1,
+            "ui_on_text": "",
+            "ui_off_text": "",
+            "wpml_cf_preferences": 0
         }
     ],
     "location": [
@@ -167,5 +141,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582814139
+    "modified": 1588602415
 }

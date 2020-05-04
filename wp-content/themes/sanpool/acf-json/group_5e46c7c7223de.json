@@ -141,6 +141,28 @@
                     "delay": 0
                 }
             ]
+        },
+        {
+            "key": "field_5eb01e53843ff",
+            "label": "Maximale Anzahl Teilnehmer",
+            "name": "kurskategorie_teilnehmer",
+            "type": "number",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "wpml_cf_preferences": 0
         }
     ],
     "location": [
@@ -160,5 +182,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1581769554
+    "modified": 1588600424
 }

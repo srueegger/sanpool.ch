@@ -60,6 +60,18 @@ function sp_register_acf_block_types() {
 		'keywords' => array( 'info', 'icons' ),
 		'mode' => 'edit'
 	));
+
+	/* Kursslider */
+	acf_register_block_type(array(
+		'name' => 'sp_kursslider',
+		'title' => 'Kursslider',
+		'description' => 'Dieser Block zeigt alle aktuellen Kurse in einem Slider an',
+		'render_template' => 'templates/blocks/kursslider.php',
+		'category' => 'layout',
+		'icon' => 'images-alt',
+		'keywords' => array( 'kurse', 'slider', 'carousel', 'angebote' ),
+		'mode' => 'edit'
+	));
 }
 
 // Check if function exists and hook into setup.

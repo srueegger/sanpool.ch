@@ -1,22 +1,35 @@
+<?php
+/* Kategorie des Kurses ermitteln - Ein Kurs kann nur in eine Kategorie sein - daher von der ersten Kategorie ausgehen */
+$terms = wp_get_post_terms( get_the_ID(), 'sp_kurskategorien' );
+$image = get_field( 'kurskategorie_image', $terms[0] );
+$course_date = get_field( 'kurse_beginn', get_the_ID() );
+$course_date_i18n = date_i18n( get_option('date_format'), strtotime($course_date) );
+$course_lang = get_field( 'kurse_lng', get_the_ID() );
+?>
 <div class="item">
-	<div class="card">
-		<div class="image-container"><img src="https://picsum.photos/1110/655" class="card-img-top" alt="..."></div>
+	<div class="card h-100">
+		<div class="image-container">
+			<picture>
+				<source data-srcset="<?php echo $image['sizes']['infoblock-2x']; ?> 2x, <?php echo $image['sizes']['infoblock']; ?> 1x" />
+				<img loading="lazy" src="<?php echo $image['sizes']['infoblock']; ?>" class="card-img-top" alt="<?php echo $image['alt']; ?>">
+			</picture>
+		</div>
 		<div class="card-body">
-			<h5 class="card-title">Nothilfekurse</h5>
-			<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+			<h5 class="card-title"><?php echo $terms[0]->name; ?> - <?php echo get_the_title( get_the_ID() ); ?></h5>
+			<p class="card-text"><?php the_field( 'kurskategorie_shortdesc', $terms[0] ); ?></p>
 			<hr>
 			<div class="row text-center">
 				<div class="col">
 					<div class="mb-2"><i class="fal fa-calendar-check fa-2x"></i></div>
-					<div>23.08.1988</div>
+					<div><?php echo $course_date_i18n; ?></div>
 				</div>
 				<div class="col">
 					<div class="mb-2"><i class="fal fa-map-marker-alt fa-2x"></i></div>
-					<div>Basel</div>
+					<div><?php the_field( 'kurse_ort', get_the_ID() ); ?></div>
 				</div>
 				<div class="col">
-					<div class="mb-2"><i class="fal fa-language fa-2x"></i></div>
-					<div>Deutsch</div>
+					<div class="mb-2"><i class="fal fa-comment-dots fa-2x"></i></div>
+					<div><?php echo $course_lang['label']; ?></div>
 				</div>
 				<a href="#" target="_self">
 					<div class="overlay-container">
