@@ -10722,4 +10722,23 @@ button:focus {
   }
 }
 
+#courseSubscribe {
+  overflow: hidden;
+}
+#courseSubscribe .inner {
+  max-height: 0;
+  visibility: hidden;
+  transition: max-height 0.3s ease-out;
+}
+#courseSubscribe .inner.show {
+  max-height: 9999px;
+  visibility: visible;
+}
+
+body .gform_wrapper input,
+body .gform_wrapper textarea,
+body .gform_wrapper select {
+  outline-color: #0090cc;
+}
+
 /*# sourceMappingURL=theme.css.map */

@@ -415,3 +415,16 @@ button {
 		}
 	}
 }
+
+#courseSubscribe {
+	overflow: hidden;
+	.inner {
+		max-height: 0;
+		visibility: hidden;
+		transition: max-height .3s ease-out; 
+		&.show {
+			max-height: 9999px;
+			visibility: visible;
+		}
+	}
+}

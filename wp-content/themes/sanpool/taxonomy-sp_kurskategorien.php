@@ -131,7 +131,7 @@ $image = get_field('kurskategorie_image', $term);
 											<div class="kurse-table__body--item kurse-table__body--item--3"><?php echo strtoupper( $lng['value'] ); ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--4"><?php the_field('kurse_beginn'); ?> - <?php the_field('kurse_kursende'); ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--5"><?php the_field('kurse_ort'); ?></div>
-											<div class="kurse-table__body--item kurse-table__body--item--6"><a href="<?php the_permalink(); ?>" class="btn btn-primary">Anmelden</a></div>
+											<div class="kurse-table__body--item kurse-table__body--item--6"><button data-postid="<?php echo get_the_ID(); ?>" data-kursnummer="<?php echo the_title(); ?>" type="button" class="btn btn-primary js_subscribe_course">Anmelden</a></div>
 										</div>
 										<?php
 									}
@@ -143,6 +143,20 @@ $image = get_field('kurskategorie_image', $term);
 								?>
 							</div>
 						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div id="courseSubscribe" class="container">
+			<div class="inner">
+				<div class="row">
+					<div class="col-12">
+						<h2>Anmeldung für Kurs: <span id="subscribe-kursnr"></span></h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-12">
+						<?php echo do_shortcode( '[gravityform id="1" title="false" description="false" ajax="true"]' ); ?>
 					</div>
 				</div>
 			</div>

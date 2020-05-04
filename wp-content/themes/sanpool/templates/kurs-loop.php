@@ -31,7 +31,7 @@ $course_lang = get_field( 'kurse_lng', get_the_ID() );
 					<div class="mb-2"><i class="fal fa-comment-dots fa-2x"></i></div>
 					<div><?php echo $course_lang['label']; ?></div>
 				</div>
-				<a href="#" target="_self">
+				<a href="<?php echo get_term_link( $terms[0], 'sp_kurskategorien' ); ?>#<?php echo get_the_ID(); ?>;<?php echo urldecode(get_the_title()); ?>" target="_self">
 					<div class="overlay-container">
 						<div class="inner">
 							<h6 class="h3 text-white">Jetzt buchen</h6>

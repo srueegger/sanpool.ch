@@ -92,4 +92,43 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 		});
 	});
 
+	/* Funktion um das Kurs-Anmeldeformular vorzubereiten und anzuzeigen */
+	function sp_prepare_and_show_subscribe_form(post_id, kurs_nr) {
+		/* Falls Formular eingeblendet ist Formular ausblenden */
+		var form = $('#courseSubscribe .inner');
+		form.removeClass('show');
+		/* Titel und unsichtbare Werte eintragen */
+		$('#subscribe-kursnr').text(kurs_nr);
+		$('#input_1_1').val(post_id);
+		$('#input_1_2').val(kurs_nr);
+		/* Formular anzeigen */
+		form.addClass('show');
+		/* Zum Formular scrollen */
+		var header_height = $('header .fixed-top').outerHeight();
+		$('html, body').animate({ 
+			scrollTop: ($('#courseSubscribe').offset().top - header_height
+		)}, 'slow');
+	}
+
+	/* Bei Klick auf "Anmelden-Button" Formular anzeigen */
+	$('.js_subscribe_course').on('click', function() {
+		/* Wichtige Variabeln ermitteln */
+		var post_id = $(this).data('postid');
+		var kurs_nr = $(this).data('kursnummer');
+		sp_prepare_and_show_subscribe_form(post_id, kurs_nr);
+	});
+
+	/* Prüfen ob man auf einer Kurskategorie Seite ist, falls ja muss geprüft werden ob über dne Hastag Parameter mitgegeben wurden, falls ja muss die Funktion für die Kursanmeldung aufgerufen werden */
+	if($('body').hasClass('tax-sp_kurskategorien') && window.location.hash) {
+		/* Wir befinden uns auf der Kurskategorie Seite und es gibt einen Hash  */
+		var hash = window.location.hash;
+		/* Hastag entfernen */
+		hash = hash.substring(1, hash.length);
+		hash = hash.split(';');
+		var post_id = hash[0];
+		var kurs_nr = decodeURI(hash[1]);
+		/* Funktion starten */
+		sp_prepare_and_show_subscribe_form(post_id, kurs_nr);
+	}
+
 })(jQuery);

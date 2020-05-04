@@ -17,6 +17,7 @@ define( 'FILES_DIR', THEME_URI . '/dist-assets/files' );
  ***************************************/
 require_once 'inc/bootstrap-navwalker.php';
 require_once 'inc/custom-gutenberg-blocks.php';
+require_once 'inc/gravityforms.php';
 
 /***************************************
  * 		Theme Support and Options
