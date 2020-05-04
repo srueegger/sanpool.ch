@@ -18,27 +18,32 @@ get_header();
 				if(!empty($terms)) {
 					echo '<div class="row">';
 					foreach($terms as $term) {
+						/* Kursstatus auslesen */
+						$status = get_field('kurskategorie_status', $term);
 						/* Einzelne Kategorie als Card ausgeben */
 						$image = get_field('kurskategorie_image', $term);
-						?>
-						<div class="col-12 col-md-6 col-lg-4 mb-4">
-							<div class="card h-100">
-								<div class="image-container">
-									<picture>
-										<source srcset="<?php echo $image['sizes']['kurs-box-2x']; ?> 2x, <?php echo $image['sizes']['kurs-box']; ?> 1x" />
-										<img loading="lazy" src="<?php echo $image['sizes']['kurs-box']; ?>" class="card-img-top img-kurs-cat" alt="<?php echo $image['alt']; ?>">
-									</picture>
-								</div>
-								<div class="card-body">
-									<h2 class="h5 card-title"><?php echo $term->name; ?></h2>
-									<p class="card-text"><?php the_field('kurskategorie_shortdesc', $term); ?></p>
-								</div>
-								<div class="card-footer">
-									<a href="<?php echo get_term_link($term, 'sp_kurskategorien'); ?>" class="btn btn-primary w-100">Details / Termine</a>
+						/* Kurskategorie nur anzeigen wenn der Status "aktiv (1)" ist */
+						if($status == 1) {
+							?>
+							<div class="col-12 col-md-6 col-lg-4 mb-4">
+								<div class="card h-100">
+									<div class="image-container">
+										<picture>
+											<source srcset="<?php echo $image['sizes']['kurs-box-2x']; ?> 2x, <?php echo $image['sizes']['kurs-box']; ?> 1x" />
+											<img loading="lazy" src="<?php echo $image['sizes']['kurs-box']; ?>" class="card-img-top img-kurs-cat" alt="<?php echo $image['alt']; ?>">
+										</picture>
+									</div>
+									<div class="card-body">
+										<h2 class="h5 card-title"><?php echo $term->name; ?></h2>
+										<p class="card-text"><?php the_field('kurskategorie_shortdesc', $term); ?></p>
+									</div>
+									<div class="card-footer">
+										<a href="<?php echo get_term_link($term, 'sp_kurskategorien'); ?>" class="btn btn-primary w-100">Details / Termine</a>
+									</div>
 								</div>
 							</div>
-						</div>
-						<?php
+							<?php
+						}
 					}
 					echo '</div>';
 				} else {

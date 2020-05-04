@@ -3,6 +3,26 @@
     "title": "Kurskategorien",
     "fields": [
         {
+            "key": "field_5eb05091c3365",
+            "label": "Status",
+            "name": "kurskategorie_status",
+            "type": "true_false",
+            "instructions": "Wenn der Status auf \"Inaktiv\" gsetzt ist, wird die Kurskategorie im Frontend nicht angezeigt.",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "message": "",
+            "default_value": 1,
+            "ui": 1,
+            "ui_on_text": "Aktiv",
+            "ui_off_text": "Inaktiv",
+            "wpml_cf_preferences": 0
+        },
+        {
             "key": "field_5e46cde42a91a",
             "label": "Untertitel",
             "name": "kurskategorie_subtitle",
@@ -182,5 +202,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1588600424
+    "modified": 1588613340
 }
