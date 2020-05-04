@@ -31,7 +31,7 @@ if( !empty($block['align']) ) {
 				?>
 				<picture>
 					<source srcset="<?php echo $image['sizes']['fullwidth-2x']; ?> 2x, <?php echo $image['sizes']['fullwidth']; ?> 1x" />
-					<img src="<?php echo $image['sizes']['fullwidth']; ?>" alt="<?php echo $image['alt']; ?>">
+					<img loading="lazy" src="<?php echo $image['sizes']['fullwidth']; ?>" alt="<?php echo $image['alt']; ?>">
 				</pictue>
 				<?php
 			} else {
