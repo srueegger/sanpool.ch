@@ -10661,10 +10661,10 @@ button:focus {
 .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--1 {
   width: 10%;
 }
-.kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--2, .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--3, .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--4 {
-  width: 25%;
+.kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--2, .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--3, .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--4, .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--5 {
+  width: calc(75% / 4);
 }
-.kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--5 {
+.kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--6 {
   width: 15%;
 }
 .kurse-table .kurse-table__body {
@@ -10675,10 +10675,7 @@ button:focus {
   padding: 10px 0;
   -webkit-transition: all 0.35s ease;
   transition: all 0.35s ease;
-}
-.kurse-table .kurse-table__body .kurse-table__body--row:hover {
-  background-color: #0090cc;
-  color: #fff;
+  border-bottom: 1px solid rgba(0, 144, 204, 0.4);
 }
 .kurse-table .kurse-table__body .kurse-table__body--item {
   display: inline-block;
@@ -10687,7 +10684,7 @@ button:focus {
 .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--1 {
   width: 10%;
 }
-.kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4 {
+.kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--5 {
   display: block;
   width: 90%;
   margin-left: 10%;
@@ -10696,7 +10693,7 @@ button:focus {
   font-weight: 700;
   width: 90%;
 }
-.kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--5 {
+.kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--6 {
   width: 100%;
   display: block;
   text-align: center;
@@ -10711,14 +10708,14 @@ button:focus {
   .kurse-table .kurse-table__head {
     display: block;
   }
-  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--2, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4 {
-    width: 25%;
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--2, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--5 {
+    width: calc(75% / 4);
   }
-  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4 {
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--5 {
     display: inline-block;
     margin-left: 0;
   }
-  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--5 {
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--6 {
     display: inline-block;
     width: 15%;
     text-align: left;

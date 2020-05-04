@@ -34,12 +34,6 @@ $image = get_field('kurskategorie_image', $term);
 								$show = '';
 								$iconclose = 'block';
 								$iconopen = 'none';
-								if($rowIndex == 1) {
-									$expanded = 'true';
-									$show = ' show';
-									$iconclose = 'none';
-									$iconopen = 'block';
-								}
 								?>
 								<div class="card">
 									<div class="card-header" id="heading-<?php echo $rowIndex; ?>">
@@ -76,9 +70,10 @@ $image = get_field('kurskategorie_image', $term);
 							<div class="kurse-table__head">
 								<div class="kurse-table__head--item kurse-table__head--item--1">Status</div>
 								<div class="kurse-table__head--item kurse-table__head--item--2">Bezeichnung</div>
-								<div class="kurse-table__head--item kurse-table__head--item--3">von - bis</div>
-								<div class="kurse-table__head--item kurse-table__head--item--4">Ort</div>
-								<div class="kurse-table__head--item kurse-table__head--item--5">Anmelden</div>
+								<div class="kurse-table__head--item kurse-table__head--item--3">Sprache</div>
+								<div class="kurse-table__head--item kurse-table__head--item--4">von - bis</div>
+								<div class="kurse-table__head--item kurse-table__head--item--5">Ort</div>
+								<div class="kurse-table__head--item kurse-table__head--item--6">Anmelden</div>
 							</div>
 							<div class="kurse-table__body">
 								<?php
@@ -119,6 +114,7 @@ $image = get_field('kurskategorie_image', $term);
 											Status 2 = Storniert
 										*/
 										//$status = get_field('kurse_status');
+										$lng = get_field( 'kurse_lng' );
 										$status['value'] = 0;
 										$status_print = '';
 										if($status['value'] == 0) {
@@ -132,9 +128,10 @@ $image = get_field('kurskategorie_image', $term);
 										<div class="kurse-table__body--row">
 											<div class="kurse-table__body--item kurse-table__body--item--1"><?php echo $status_print; ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--2"><?php the_title(); ?></div>
-											<div class="kurse-table__body--item kurse-table__body--item--3"><?php the_field('kurse_beginn'); ?> - <?php the_field('kurse_kursende'); ?></div>
-											<div class="kurse-table__body--item kurse-table__body--item--4"><?php the_field('kurse_ort'); ?></div>
-											<div class="kurse-table__body--item kurse-table__body--item--5"><a href="<?php the_permalink(); ?>" class="btn btn-primary">Anmelden</a></div>
+											<div class="kurse-table__body--item kurse-table__body--item--3"><?php echo strtoupper( $lng['value'] ); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--4"><?php the_field('kurse_beginn'); ?> - <?php the_field('kurse_kursende'); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--5"><?php the_field('kurse_ort'); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--6"><a href="<?php the_permalink(); ?>" class="btn btn-primary">Anmelden</a></div>
 										</div>
 										<?php
 									}
