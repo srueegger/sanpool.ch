@@ -1,5 +1,5 @@
 <?php
-/* Diese Datei rendert den Bild und Video Slider Block */
+/* Diese Datei rendert die Info Blocks */
 $id = 'infoblocks-' . $block['id'];
 if( !empty($block['anchor']) ) {
 	$id = $block['anchor'];

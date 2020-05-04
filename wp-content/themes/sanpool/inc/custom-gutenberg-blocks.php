@@ -48,6 +48,18 @@ function sp_register_acf_block_types() {
 		'keywords' => array( 'info', 'bild', 'image' ),
 		'mode' => 'edit'
 	));
+
+	/* Infoicons */
+	acf_register_block_type(array(
+		'name' => 'sp_infoicons',
+		'title' => 'Infoicons',
+		'description' => 'Dieser Block zeichnet die Infoicons.',
+		'render_template' => 'templates/blocks/infoicons.php',
+		'category' => 'layout',
+		'icon' => 'info',
+		'keywords' => array( 'info', 'icons' ),
+		'mode' => 'edit'
+	));
 }
 
 // Check if function exists and hook into setup.
