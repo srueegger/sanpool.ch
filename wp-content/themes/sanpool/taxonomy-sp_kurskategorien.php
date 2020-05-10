@@ -69,9 +69,9 @@ $image = get_field('kurskategorie_image', $term);
 						<div class="kurse-table">
 							<div class="kurse-table__head">
 								<div class="kurse-table__head--item kurse-table__head--item--1">Status</div>
-								<div class="kurse-table__head--item kurse-table__head--item--2">Bezeichnung</div>
+								<div class="kurse-table__head--item kurse-table__head--item--2">Kurs-Nr.</div>
 								<div class="kurse-table__head--item kurse-table__head--item--3">Sprache</div>
-								<div class="kurse-table__head--item kurse-table__head--item--4">von - bis</div>
+								<div class="kurse-table__head--item kurse-table__head--item--4">Datum (von - bis)</div>
 								<div class="kurse-table__head--item kurse-table__head--item--5">Ort</div>
 								<div class="kurse-table__head--item kurse-table__head--item--6">Anmelden</div>
 							</div>

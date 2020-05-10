@@ -167,12 +167,12 @@ button {
 	@include media-breakpoint-up(xl) {
 		.item {
 			height: 655px;
-			.text-container {
-				width: 40%;
+			.text-container {	
+				width: 716.8px;
 			}
 		}
 		.owl-dots {
-			left: 33.5%;
+			left: 590px;
 		}
 	}
 }
