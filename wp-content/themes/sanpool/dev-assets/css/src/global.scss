@@ -22,7 +22,7 @@ button {
 
 .card {
 	border: none;
-	@extend .shadow-lg;
+	@extend .shadow;
 	.overlay-seen-container {
 		position: absolute;
 		top: 0;
@@ -239,6 +239,7 @@ button {
 .courseSlider {
 	.owl-stage {
 		background: $gray-100;
+		padding-bottom: 75px;
 	}
 	.card-img-top {
 		height: 240px;

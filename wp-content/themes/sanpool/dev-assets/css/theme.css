@@ -7845,11 +7845,11 @@ button.bg-dark:focus {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-.shadow, #infoButtons li.active, #infoButtons li .inner {
+.shadow, .card, #infoButtons li.active, #infoButtons li .inner {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
-.shadow-lg, .card {
+.shadow-lg {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 
@@ -11315,6 +11315,7 @@ button:focus {
 
 .courseSlider .owl-stage {
   background: #f8f9fa;
+  padding-bottom: 75px;
 }
 .courseSlider .card-img-top {
   height: 240px;
