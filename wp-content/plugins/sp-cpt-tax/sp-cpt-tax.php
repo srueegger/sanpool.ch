@@ -131,7 +131,7 @@ function cptui_register_my_taxes() {
 		"show_in_nav_menus" => true,
 		"query_var" => true,
 		"rewrite" => [ 'slug' => 'kurskategorie', 'with_front' => true, ],
-		"show_admin_column" => false,
+		"show_admin_column" => true,
 		"show_in_rest" => true,
 		"rest_base" => "sp_kurskategorien",
 		"rest_controller_class" => "WP_REST_Terms_Controller",
