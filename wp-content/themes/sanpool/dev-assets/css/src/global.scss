@@ -335,49 +335,64 @@ button {
 			display: inline-block;
 			color: $white;
 			margin-bottom: 1rem;
+			text-align: center;
 			&.kurse-table__head--item--1 {
-				width: 10%;
+				width: 5%;
 			}
 			&.kurse-table__head--item--2,
 			&.kurse-table__head--item--3,
 			&.kurse-table__head--item--4,
 			&.kurse-table__head--item--5,
 			&.kurse-table__head--item--6 {
-				width: calc(75% / 5);
+				width: calc(80% / 5);
 			}
 			&.kurse-table__head--item--7 {
 				width: 15%;
+				padding-right: 35px;
 			}
 		}
 	}
 	.kurse-table__body {
 		white-space: nowrap;
+		overflow-x: hidden;
 		.kurse-table__body--row {
-			padding: 10px 0;
-			-webkit-transition: all .35s ease;
-			transition: all .35s ease;
+			padding: 25px 0;
 			border-bottom: 1px solid rgba(0,144,204, .4);
+			position: relative;
 		}
 		.kurse-table__body--item {
 			display: inline-block;
 			white-space: normal;
 			&.kurse-table__body--item--1 {
-				width: 10%;
+				width: 50px;
+				position: absolute;
+				bottom: 50%;
+				left: 10px;
+				transform: translateY(50%);
+				svg {
+					font-size: 1.5rem;
+				}
 			}
 			&.kurse-table__body--item--3,
-			&.kurse-table__body--item--4,
-			&.kurse-table__body--item--5,
 			&.kurse-table__body--item--6 {
 				display: block;
-				width: 90%;
-				margin-left: 10%;
+				width: 95%;
+				text-align: left;
+				margin-left: 50px;
+			}
+			&.kurse-table__body--item--4 {
+				margin-left: 50px;
 			}
 			&.kurse-table__body--item--2 {
 				font-weight: 700;
 				width: 90%;
+				font-size: 1.5rem;
+				margin-left: 50px;
 			}
 			&.kurse-table__body--item--5 {
 				/* Abstände zwischen den Wochentagen */
+				display: block;
+				margin-left: 79px;
 				span {
 					&:not(:last-of-type) {
 						&:after {
@@ -389,7 +404,11 @@ button {
 			&.kurse-table__body--item--7 {
 				width: 100%;
 				display: block;
-				text-align: center;
+				margin-left: 50px;
+				margin-top: 15px;
+				.btn {
+					width: 50%;
+				}
 			}
 			&.kurse-table__body--item--fullwidth {
 				width: 100%;
@@ -401,29 +420,92 @@ button {
 		background-color: $white;
 	}
 	@include media-breakpoint-up(md) {
+		.kurse-table__body {
+			.kurse-table__body--row {
+				padding: 15px 0;
+			}
+			.kurse-table__body--item {
+				&.kurse-table__body--item--1 {
+					width: 75px;
+					left: 18px;
+					svg {
+						font-size: 2rem;
+					}
+				}
+				&.kurse-table__body--item--4 {
+					display: inline-block;
+					&:after {
+						content: ' - ';
+					}
+				}
+				&.kurse-table__body--item--5 {
+					display: inline-block;
+					margin-left: 0;
+				}
+				&.kurse-table__body--item--2,
+				&.kurse-table__body--item--3,
+				&.kurse-table__body--item--4,
+				&.kurse-table__body--item--6,
+				&.kurse-table__body--item--7 {
+					margin-left: 75px;
+				}
+			}
+		}
+	}
+	@include media-breakpoint-up(lg) {
 		.kurse-table__head {
 			display: block;
 		}
 		.kurse-table__body {
+			.kurse-table__body--row {
+				padding: 10px 0;
+			}
 			.kurse-table__body--item {
+				text-align: center;
+				white-space: nowrap;
+				&.kurse-table__body--item--1 {
+					width: 5%;
+					position: static;
+					transform: none;
+					svg {
+						font-size: 1.3333333333em;
+					}
+				}
 				&.kurse-table__body--item--2,
 				&.kurse-table__body--item--3,
 				&.kurse-table__body--item--4,
 				&.kurse-table__body--item--5,
 				&.kurse-table__body--item--6 {
-					width: calc(75% / 5);
+					width: calc(80% / 5);
+					margin-left: 0;
+				}
+				&.kurse-table__body--item--3,
+				&.kurse-table__body--item--6 {
+					text-align: center;
+				}
+				&.kurse-table__body--item--2 {
+					font-size: unset;
+				}
+				&.kurse-table__body--item--4 {
+					&:after {
+						display: none;
+					}
 				}
 				&.kurse-table__body--item--3,
 				&.kurse-table__body--item--4,
 				&.kurse-table__body--item--5,
 				&.kurse-table__body--item--6 {
 					display: inline-block;
-					margin-left: 0;
 				}
 				&.kurse-table__body--item--7 {
 					display: inline-block;
 					width: 15%;
-					text-align: left;
+					padding-right: 35px;
+					margin-left: 0;
+					margin-top: 0;
+					.btn {
+						width: 100%;
+					}
 				}
 			}
 		}

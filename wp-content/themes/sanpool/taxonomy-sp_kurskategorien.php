@@ -19,7 +19,7 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * 75;
 		<div class="container">
 			<div class="row mt-4">
 				<div class="col-12">
-					<h1><?php echo $term->name; ?></h1>
+					<h1 class="category-title"><?php echo $term->name; ?></h1>
 					<h2 class="mt-2 mb-4 h3"><?php the_field('kurskategorie_subtitle', $term); ?></h2>
 					<?php the_field('kurskategorie_longdesc', $term); ?>
 				</div>
@@ -65,7 +65,7 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * 75;
 				?>
 			</div>
 		</div>
-		<div class="kurse-table-container my-5">
+		<div class="kurse-table-container mt-5">
 			<div class="container">
 				<div class="row">
 					<div class="col-12">
@@ -126,25 +126,25 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * 75;
 											Wenn keine Plätze verfügbar sind:
 											_Rotes Icon (Dreieck) keine Plätze verfügbar
 										*/
-										$subscribe_button = '<button data-postid="'.get_the_ID().'" data-kursnummer="'.get_the_title().'" type="button" class="btn btn-primary w-100 js_subscribe_course">Anmelden</button>';
+										$subscribe_button = '<button data-postid="'.get_the_ID().'" data-kursnummer="'.get_the_title().'" type="button" class="btn btn-primary js_subscribe_course">Anmelden</button>';
 										/* Genügend freie Plätze */
 										if($bisherige_teilnehmer < $total_anzahl_teilnehmer_schwelle && $bisherige_teilnehmer < $total_anzahl_teilnehmer) {
-											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Plätze verfügbar" class="kurs-status"><i class="fas fa-check-circle fa-fw fa-lg text-success"></i></span>';
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Plätze verfügbar" class="kurs-status"><i class="fas fa-check-circle fa-fw text-success"></i></span>';
 											/* Wenig Plätze verfügbar */
 										} elseif($bisherige_teilnehmer >= $total_anzahl_teilnehmer_schwelle && $bisherige_teilnehmer < $total_anzahl_teilnehmer) {
-											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Wenig Plätze verfügbar" class="kurs-status"><i class="fas fa-check-circle fa-fw fa-lg text-warning"></i></span>';
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Wenig Plätze verfügbar" class="kurs-status"><i class="fas fa-check-circle fa-fw text-warning"></i></span>';
 											/* Kurs ist ausgebucht */
 										} elseif($bisherige_teilnehmer > $total_anzahl_teilnehmer_schwelle && $bisherige_teilnehmer >= $total_anzahl_teilnehmer) {
-											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Kurs ist ausgebucht" class="kurs-status"><i class="fas fa-exclamation-triangle fa-fw fa-lg text-danger"></i></span>';
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Kurs ist ausgebucht" class="kurs-status"><i class="fas fa-exclamation-triangle fa-fw text-danger"></i></span>';
 											/* Button disabeln */
-											$subscribe_button = '<button type="button" class="btn btn-primary w-100" disabled>Anmeldung</button>';
+											$subscribe_button = '<button type="button" class="btn btn-primary" disabled>Anmeldung</button>';
 										}
 										?>
 										<div class="kurse-table__body--row">
 											<div class="kurse-table__body--item kurse-table__body--item--1"><?php echo $status_print; ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--2"><?php the_title(); ?></div>
-											<div class="kurse-table__body--item kurse-table__body--item--3"><?php echo strtoupper( $lng['value'] ); ?></div>
-											<div class="kurse-table__body--item kurse-table__body--item--4"><?php the_field('kurse_beginn'); ?> - <?php the_field('kurse_kursende'); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--3"><i class="fal fa-comment-dots fa-fw mr-2"></i><?php echo strtoupper( $lng['value'] ); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--4"><i class="fal fa-calendar-check fa-fw mr-2"></i><span class="<?php echo get_the_ID(); ?>-date"><?php the_field('kurse_beginn'); ?> - <?php the_field('kurse_kursende'); ?></span></div>
 											<div class="kurse-table__body--item kurse-table__body--item--5">
 												<?php
 												$wochentage = get_field('kurse_wochentage');
@@ -155,7 +155,7 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * 75;
 												}
 												?>
 											</div>
-											<div class="kurse-table__body--item kurse-table__body--item--6"><?php the_field('kurse_ort'); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--6"><i class="fal fa-map-marker-alt fa-fw mr-2"></i><?php the_field('kurse_ort'); ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--7"><?php echo $subscribe_button; ?></div>
 										</div>
 										<?php
@@ -176,7 +176,7 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * 75;
 			<div class="inner">
 				<div class="row">
 					<div class="col-12">
-						<h2>Anmeldung für Kurs: <span id="subscribe-kursnr"></span></h2>
+						<h2>Anmeldung für Kurs: <span id="subscribe-kursnr"></span> - <span id="subscribe-category"></span> - <span id="subscribe-date"></span></h2>
 					</div>
 				</div>
 				<div class="row">

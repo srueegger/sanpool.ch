@@ -10657,44 +10657,61 @@ button:focus {
   display: inline-block;
   color: #fff;
   margin-bottom: 1rem;
+  text-align: center;
 }
 .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--1 {
-  width: 10%;
+  width: 5%;
 }
 .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--2, .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--3, .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--4, .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--5, .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--6 {
-  width: calc(75% / 5);
+  width: calc(80% / 5);
 }
 .kurse-table .kurse-table__head .kurse-table__head--item.kurse-table__head--item--7 {
   width: 15%;
+  padding-right: 35px;
 }
 .kurse-table .kurse-table__body {
   white-space: nowrap;
+  overflow-x: hidden;
   background-color: #fff;
 }
 .kurse-table .kurse-table__body .kurse-table__body--row {
-  padding: 10px 0;
-  -webkit-transition: all 0.35s ease;
-  transition: all 0.35s ease;
+  padding: 25px 0;
   border-bottom: 1px solid rgba(0, 144, 204, 0.4);
+  position: relative;
 }
 .kurse-table .kurse-table__body .kurse-table__body--item {
   display: inline-block;
   white-space: normal;
 }
 .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--1 {
-  width: 10%;
+  width: 50px;
+  position: absolute;
+  bottom: 50%;
+  left: 10px;
+  transform: translateY(50%);
 }
-.kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--5, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--6 {
+.kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--1 svg {
+  font-size: 1.5rem;
+}
+.kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--6 {
   display: block;
-  width: 90%;
-  margin-left: 10%;
+  width: 95%;
+  text-align: left;
+  margin-left: 50px;
+}
+.kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4 {
+  margin-left: 50px;
 }
 .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--2 {
   font-weight: 700;
   width: 90%;
+  font-size: 1.5rem;
+  margin-left: 50px;
 }
 .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--5 {
   /* Abstände zwischen den Wochentagen */
+  display: block;
+  margin-left: 79px;
 }
 .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--5 span:not(:last-of-type):after {
   content: " / ";
@@ -10702,7 +10719,11 @@ button:focus {
 .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--7 {
   width: 100%;
   display: block;
-  text-align: center;
+  margin-left: 50px;
+  margin-top: 15px;
+}
+.kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--7 .btn {
+  width: 50%;
 }
 .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--fullwidth {
   width: 100%;
@@ -10711,20 +10732,74 @@ button:focus {
   font-size: 1.3rem;
 }
 @media (min-width: 768px) {
+  .kurse-table .kurse-table__body .kurse-table__body--row {
+    padding: 15px 0;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--1 {
+    width: 75px;
+    left: 18px;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--1 svg {
+    font-size: 2rem;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4 {
+    display: inline-block;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4:after {
+    content: " - ";
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--5 {
+    display: inline-block;
+    margin-left: 0;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--2, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--6, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--7 {
+    margin-left: 75px;
+  }
+}
+@media (min-width: 992px) {
   .kurse-table .kurse-table__head {
     display: block;
   }
+  .kurse-table .kurse-table__body .kurse-table__body--row {
+    padding: 10px 0;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item {
+    text-align: center;
+    white-space: nowrap;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--1 {
+    width: 5%;
+    position: static;
+    transform: none;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--1 svg {
+    font-size: 1.3333333333em;
+  }
   .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--2, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--5, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--6 {
-    width: calc(75% / 5);
+    width: calc(80% / 5);
+    margin-left: 0;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--6 {
+    text-align: center;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--2 {
+    font-size: unset;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4:after {
+    display: none;
   }
   .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--3, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--4, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--5, .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--6 {
     display: inline-block;
-    margin-left: 0;
   }
   .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--7 {
     display: inline-block;
     width: 15%;
-    text-align: left;
+    padding-right: 35px;
+    margin-left: 0;
+    margin-top: 0;
+  }
+  .kurse-table .kurse-table__body .kurse-table__body--item.kurse-table__body--item--7 .btn {
+    width: 100%;
   }
 }
 

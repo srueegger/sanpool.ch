@@ -84,11 +84,19 @@
 	function sp_prepare_and_show_subscribe_form(post_id, kurs_nr) {
 		/* Falls Formular eingeblendet ist Formular ausblenden */
 		var form = $('#courseSubscribe .inner');
+		var course_table_container = $('.kurse-table-container');
 		form.removeClass('show');
+		course_table_container.removeClass('mb-5');
+		/* Weitere Daten ermitteln */
+		var category_name = $('.category-title').text();
+		var course_date = $('.' + post_id + '-date').text();
 		/* Titel und unsichtbare Werte eintragen */
 		$('#subscribe-kursnr').text(kurs_nr);
+		$('#subscribe-category').text(category_name);
+		$('#subscribe-date').text(course_date);
 		$('#input_1_1').val(post_id);
 		$('#input_1_2').val(kurs_nr);
+		course_table_container.addClass('mb-5');
 		/* Formular anzeigen */
 		form.addClass('show');
 		/* Zum Formular scrollen */

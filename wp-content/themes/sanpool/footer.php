@@ -1,4 +1,4 @@
-		<footer class="mt-3">
+		<footer>
 			<div>
 				<nav class="navbar navbar-expand-xl navbar-dark bg-dark">
 					<?php
