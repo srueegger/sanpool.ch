@@ -32,7 +32,7 @@ if( !empty($block['align']) ) {
 				<picture>
 					<source srcset="<?php echo $image['sizes']['fullwidth-2x']; ?> 2x, <?php echo $image['sizes']['fullwidth']; ?> 1x" />
 					<img loading="lazy" src="<?php echo $image['sizes']['fullwidth']; ?>" alt="<?php echo $image['alt']; ?>">
-				</pictue>
+				</picture>
 				<?php
 			} else {
 				/* Video Slider ausgeben */
