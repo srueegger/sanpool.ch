@@ -17,7 +17,7 @@ if(!empty($menuItems)) {
 						?>
 						<li class="<?php the_field('iconmenu_color', $menuItem); ?>">
 							<div class="inner">
-								<i class="<?php the_field('iconmenu_icon', $menuItem); ?> fa-3x"></i>
+								<i class="<?php the_field('iconmenu_icon', $menuItem); ?> fa-fw"></i>
 							</div>
 							<span class="info-text">
 								<a href="<?php echo esc_url( $menuItem->url ); ?>" target="<?php echo $target; ?>">

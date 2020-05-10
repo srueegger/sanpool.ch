@@ -7845,7 +7845,7 @@ button.bg-dark:focus {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-.shadow, .card, #infoButtons li.active, #infoButtons li .inner {
+.shadow, .card, #infoButtons li.active {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
@@ -7853,7 +7853,7 @@ button.bg-dark:focus {
   box-shadow: 0 1rem 3rem rgba(0, 0, 0, 0.175) !important;
 }
 
-.shadow-none, #infoButtons li.active .inner {
+.shadow-none {
   box-shadow: none !important;
 }
 
@@ -11029,40 +11029,38 @@ header .navbar .navbar-collapse.show .navbar-nav .nav-item .nav-link {
   transform: translateY(50%);
 }
 #infoButtons li {
-  width: 350px;
-  background-color: transparent;
-  -webkit-transition: all 0.2s ease-in;
-  transition: all 0.2s ease-in;
+  width: 230px;
+  background-color: #212529;
+  transition: all 0.2s linear;
   cursor: pointer;
-  border: 1px solid transparent;
+  border: 1px solid #212529;
   position: relative;
+  right: -190px;
 }
 #infoButtons li .inner {
   display: inline-block;
-  background-color: #212529;
-  width: 65px;
-  height: 65px;
+  width: 35px;
+  height: 35px;
   text-align: center;
   position: relative;
-  right: calc(-350px + 65px);
-  border: 1px solid #212529;
-  border-right: none;
+  margin-left: 1px;
 }
 #infoButtons li .inner svg {
-  margin-top: 7px;
+  margin-top: 4px;
   color: #fff;
+  font-size: 1.6em;
 }
 #infoButtons li .info-text {
-  margin-left: 75px;
+  margin-left: 50px;
   position: absolute;
   bottom: 50%;
-  max-width: calc(350px - 65px - 20px);
+  max-width: calc(330px - 65px - 20px);
   -webkit-transform: translateY(50%);
   transform: translateY(50%);
-  display: none;
+  display: block;
 }
 #infoButtons li .info-text a {
-  font-size: 2rem;
+  font-size: 1.3rem;
   color: #fff;
 }
 #infoButtons li:not(:last-of-type) {
@@ -11070,25 +11068,38 @@ header .navbar .navbar-collapse.show .navbar-nav .nav-item .nav-link {
 }
 #infoButtons li.active {
   background-color: #212529;
-  -webkit-transition: all 0.2s ease-out;
-  transition: all 0.2s ease-out;
+  transition: all 0.2s linear;
   border: 1px solid #212529;
   border-right: none;
+  right: 0;
 }
-#infoButtons li.active .inner {
-  right: unset;
-  border: none;
-}
-#infoButtons li.active .info-text {
-  display: block;
-}
-#infoButtons li.blue .inner {
+#infoButtons li.blue {
   background-color: #0090cc;
   border: 1px solid #0090cc;
 }
 #infoButtons li.blue.active {
   background-color: #0090cc;
   border: 1px solid #0090cc;
+}
+@media (min-width: 768px) {
+  #infoButtons li {
+    right: -260px;
+    width: 330px;
+  }
+  #infoButtons li .inner {
+    width: 65px;
+    height: 65px;
+  }
+  #infoButtons li .inner svg {
+    margin-top: 7px;
+    font-size: 3em;
+  }
+  #infoButtons li .info-text {
+    margin-left: 75px;
+  }
+  #infoButtons li .info-text a {
+    font-size: 2rem;
+  }
 }
 
 body {
