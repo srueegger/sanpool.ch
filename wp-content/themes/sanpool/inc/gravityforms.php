@@ -6,7 +6,7 @@ function sp_add_custom_css_classes( $button, $form ) {
 	$dom = new DOMDocument();
 	$dom->loadHTML( $button );
 	$input = $dom->getElementsByTagName( 'input' )->item(0);
-	$classes = "btn btn-primary";
+	$classes = "btn btn-primary btn-lg";
 	$input->setAttribute( 'class', $classes );
 	return $dom->saveHtml( $input );
 }

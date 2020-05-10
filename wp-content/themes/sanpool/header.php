@@ -3,7 +3,7 @@
 	<head>
 		<meta charset="<?php bloginfo('charset'); ?>">
 		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<script src="https://kit.fontawesome.com/b0102dcf34.js" crossorigin="anonymous"></script>
+		<script src="https://kit.fontawesome.com/b0102dcf34.js" defer crossorigin="anonymous"></script>
 		<?php wp_head(); ?>
 	</head>
 	<body <?php body_class(); ?>>
