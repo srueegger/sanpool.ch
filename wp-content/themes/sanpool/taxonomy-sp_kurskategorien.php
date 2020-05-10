@@ -75,8 +75,9 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * 75;
 								<div class="kurse-table__head--item kurse-table__head--item--2">Kurs-Nr.</div>
 								<div class="kurse-table__head--item kurse-table__head--item--3">Sprache</div>
 								<div class="kurse-table__head--item kurse-table__head--item--4">Datum (von - bis)</div>
-								<div class="kurse-table__head--item kurse-table__head--item--5">Ort</div>
-								<div class="kurse-table__head--item kurse-table__head--item--6">Anmelden</div>
+								<div class="kurse-table__head--item kurse-table__head--item--5">Wochentage</div>
+								<div class="kurse-table__head--item kurse-table__head--item--6">Ort</div>
+								<div class="kurse-table__head--item kurse-table__head--item--7">Anmelden</div>
 							</div>
 							<div class="kurse-table__body">
 								<?php
@@ -144,8 +145,18 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * 75;
 											<div class="kurse-table__body--item kurse-table__body--item--2"><?php the_title(); ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--3"><?php echo strtoupper( $lng['value'] ); ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--4"><?php the_field('kurse_beginn'); ?> - <?php the_field('kurse_kursende'); ?></div>
-											<div class="kurse-table__body--item kurse-table__body--item--5"><?php the_field('kurse_ort'); ?></div>
-											<div class="kurse-table__body--item kurse-table__body--item--6"><?php echo $subscribe_button; ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--5">
+												<?php
+												$wochentage = get_field('kurse_wochentage');
+												if(!empty($wochentage)) {
+													foreach($wochentage as $wochentag) {
+														echo '<span data-toggle="tooltip" data-placement="bottom" title="'.$wochentag['label'].'">'.strtoupper( $wochentag['value'] ).'</span>';
+													}
+												}
+												?>
+											</div>
+											<div class="kurse-table__body--item kurse-table__body--item--6"><?php the_field('kurse_ort'); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--7"><?php echo $subscribe_button; ?></div>
 										</div>
 										<?php
 									}

@@ -341,10 +341,11 @@ button {
 			&.kurse-table__head--item--2,
 			&.kurse-table__head--item--3,
 			&.kurse-table__head--item--4,
-			&.kurse-table__head--item--5 {
-				width: calc(75% / 4);
-			}
+			&.kurse-table__head--item--5,
 			&.kurse-table__head--item--6 {
+				width: calc(75% / 5);
+			}
+			&.kurse-table__head--item--7 {
 				width: 15%;
 			}
 		}
@@ -365,7 +366,8 @@ button {
 			}
 			&.kurse-table__body--item--3,
 			&.kurse-table__body--item--4,
-			&.kurse-table__body--item--5 {
+			&.kurse-table__body--item--5,
+			&.kurse-table__body--item--6 {
 				display: block;
 				width: 90%;
 				margin-left: 10%;
@@ -374,7 +376,17 @@ button {
 				font-weight: 700;
 				width: 90%;
 			}
-			&.kurse-table__body--item--6 {
+			&.kurse-table__body--item--5 {
+				/* Abstände zwischen den Wochentagen */
+				span {
+					&:not(:last-of-type) {
+						&:after {
+							content: ' / ';
+						}
+					}
+				}
+			}
+			&.kurse-table__body--item--7 {
 				width: 100%;
 				display: block;
 				text-align: center;
@@ -397,16 +409,18 @@ button {
 				&.kurse-table__body--item--2,
 				&.kurse-table__body--item--3,
 				&.kurse-table__body--item--4,
-				&.kurse-table__body--item--5 {
-					width: calc(75% / 4);
+				&.kurse-table__body--item--5,
+				&.kurse-table__body--item--6 {
+					width: calc(75% / 5);
 				}
 				&.kurse-table__body--item--3,
 				&.kurse-table__body--item--4,
-				&.kurse-table__body--item--5 {
+				&.kurse-table__body--item--5,
+				&.kurse-table__body--item--6 {
 					display: inline-block;
 					margin-left: 0;
 				}
-				&.kurse-table__body--item--6 {
+				&.kurse-table__body--item--7 {
 					display: inline-block;
 					width: 15%;
 					text-align: left;

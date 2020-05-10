@@ -39,6 +39,37 @@
             "wpml_cf_preferences": 0
         },
         {
+            "key": "field_5eb7a41526dc6",
+            "label": "Wochentage",
+            "name": "kurse_wochentage",
+            "type": "select",
+            "instructions": "Wähle die Wochentage an denen der Kurs stattfindet.",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "choices": {
+                "mo": "Montag",
+                "di": "Dienstag",
+                "mi": "Mittwoch",
+                "do": "Donnerstag",
+                "fr": "Freitag",
+                "sa": "Samstag",
+                "so": "Sonntag"
+            },
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "array",
+            "placeholder": ""
+        },
+        {
             "key": "field_5e57be694a012",
             "label": "Kursort",
             "name": "kurse_ort",
@@ -141,5 +172,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1588602415
+    "modified": 1589094115
 }
