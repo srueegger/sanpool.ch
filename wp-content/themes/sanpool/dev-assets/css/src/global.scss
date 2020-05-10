@@ -2,10 +2,15 @@ body {
 	overflow-x: hidden;
 }
 
+#page_wrapper {
+	position: relative;
+	z-index: 2;
+	background-color: $gray-100;
+}
+
 main {
 	margin-top: 80px;
 	position: relative;
-	z-index: 1;
 	min-height: calc(100vh - 80px - 56px - 1rem); /* - Header, Footer, and Footer Margin */
 }
 

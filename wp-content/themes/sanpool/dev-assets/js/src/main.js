@@ -127,4 +127,18 @@
 		sp_prepare_and_show_subscribe_form(post_id, kurs_nr);
 	}
 
+	/* Für den Parallax Footer muss die Höhe des Footers beim #page_wrapper als margin-bottom hinzugefügt werden */
+	/* Funktion beim Seitenstart initialisieren */
+	sp_add_margin_for_footer();
+	/* Wenn Seitenfenster vergrössert oder verkleinert wird, muss die Funktion ebenfalls aufgerufen werden */
+	$(window).on('resize', function(){
+		sp_add_margin_for_footer();
+	});
+
+	/* Funktion die die Höhe des Footers misst und als Margin hinzufügt */
+	function sp_add_margin_for_footer() {
+		var footer_height = $('#siteFooter').outerHeight();
+		$('#page_wrapper').css('margin-bottom', footer_height);
+	}
+
 })(jQuery);

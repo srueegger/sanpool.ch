@@ -117,15 +117,20 @@ add_action('admin_enqueue_scripts', 'sp_admin_style_and_script');
  * 		sp ACF Init
  ***************************************/
 function sp_acf_init() {
+	/* Optionsseiten erstellen */
 	 $args = array(
-		'page_title' => 'Einstellungen für JTI Datenbank',
-		'menu_title' => 'Datenbank Einstellungen',
-		'menu_slug' => 'sp-db-settings',
-		'parent_slug' => 'options-general.php',
+		'page_title' => 'Footer Inhalte definieren',
+		'menu_title' => 'Footer',
+		'menu_slug' => 'sp-footer-settings',
+		'parent_slug' => 'themes.php',
 	);
 	acf_add_options_sub_page($args);
+	/* Menü verbergen */
+	if(!WP_DEBUG) {
+		add_filter('acf/settings/show_admin', '__return_false');
+	}
 }
-//add_action( 'acf/init', 'sp_acf_init' );
+add_action( 'acf/init', 'sp_acf_init' );
 
 /***************************************
  * Remove Menus from Backend

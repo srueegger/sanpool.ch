@@ -483,15 +483,15 @@ mark,
   list-style: none;
 }
 
-.list-inline {
+.list-inline, #siteFooter .footer-menu ul {
   padding-left: 0;
   list-style: none;
 }
 
-.list-inline-item {
+.list-inline-item, #siteFooter .footer-menu ul li {
   display: inline-block;
 }
-.list-inline-item:not(:last-child) {
+.list-inline-item:not(:last-child), #siteFooter .footer-menu ul li:not(:last-child) {
   margin-right: 0.5rem;
 }
 
@@ -11095,10 +11095,15 @@ body {
   overflow-x: hidden;
 }
 
+#page_wrapper {
+  position: relative;
+  z-index: 2;
+  background-color: #f8f9fa;
+}
+
 main {
   margin-top: 80px;
   position: relative;
-  z-index: 1;
   min-height: calc(100vh - 80px - 56px - 1rem);
   /* - Header, Footer, and Footer Margin */
 }
@@ -11572,6 +11577,77 @@ button:focus {
 
 .validation_message {
   display: none;
+}
+
+#siteFooter {
+  background-color: #343a40;
+  position: fixed;
+  width: 100%;
+  left: 0;
+  bottom: 0;
+  z-index: -100;
+  padding: 30px 0;
+}
+#siteFooter p {
+  color: #fff;
+  font-size: 1rem;
+}
+#siteFooter p a {
+  color: #fff;
+}
+#siteFooter p a:hover, #siteFooter p a:focus, #siteFooter p a:active {
+  color: #fff;
+}
+#siteFooter .footer-logo,
+#siteFooter .footer-spacer {
+  height: 46px;
+  width: auto;
+  margin-bottom: 10px;
+}
+#siteFooter .footer-spacer {
+  display: none;
+}
+#siteFooter .contact-info p {
+  font-size: 1.5rem;
+}
+#siteFooter .contact-info p a {
+  color: #0090cc;
+}
+#siteFooter .contact-info p a:hover, #siteFooter .contact-info p a:focus, #siteFooter .contact-info p a:active {
+  color: #0090cc;
+}
+#siteFooter .footer-menu ul li a {
+  text-transform: uppercase;
+  color: #adb5bd;
+  font-size: 0.9rem;
+}
+#siteFooter .footer-menu ul li a:hover, #siteFooter .footer-menu ul li a:focus, #siteFooter .footer-menu ul li a:active {
+  color: #0090cc;
+}
+#siteFooter .footer-menu ul li:not(:last-of-type) {
+  margin-right: 25px;
+}
+@media (min-width: 768px) {
+  #siteFooter {
+    padding: 70px 0;
+  }
+  #siteFooter p {
+    font-size: 1.5rem;
+  }
+  #siteFooter .contact-info p {
+    font-size: 3.438rem;
+  }
+  #siteFooter .footer-logo,
+#siteFooter .footer-spacer {
+    margin-bottom: 25px;
+    display: block;
+  }
+  #siteFooter .footer-menu {
+    margin-top: 25px;
+  }
+  #siteFooter .footer-menu ul li a {
+    font-size: 1.25rem;
+  }
 }
 
 /*# sourceMappingURL=theme.css.map */
