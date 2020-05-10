@@ -3,6 +3,9 @@
 get_header();
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 $image = get_field('kurskategorie_image', $term);
+$total_anzahl_teilnehmer = get_field('kurskategorie_teilnehmer', $term);
+/* Die Schwelle liegt bei 75% */
+$total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * 75;
 ?>
 <main>
 	<div>
@@ -108,21 +111,32 @@ $image = get_field('kurskategorie_image', $term);
 									global $post;
 									foreach($kurse as $post) {
 										setup_postdata( $post );
-										/* Status ermitteln:
-											Status 0 = Plätze verfügbar
-											Status 1 = Ausgebucht
-											Status 2 = Storniert
-										*/
-										//$status = get_field('kurse_status');
 										$lng = get_field( 'kurse_lng' );
-										$status['value'] = 0;
-										$status_print = '';
-										if($status['value'] == 0) {
-											$status_print = '<span data-toggle="tooltip" data-placement="top" title="'.$status['label'].'" class="kurs-status"><i class="fas fa-check-circle fa-fw fa-lg text-success"></i></span>';
-										}elseif($status['value'] == 1) {
-											$status_print = '<span data-toggle="tooltip" data-placement="top" title="'.$status['label'].'" class="kurs-status"><i class="fas fa-minus-circle fa-fw fa-lg text-warning"></i></span>';
-										}elseif($status['value'] == 2) {
-											$status_print = '<span data-toggle="tooltip" data-placement="top" title="'.$status['label'].'" class="kurs-status"><i class="fas fa-times-circle fa-fw fa-lg text-danger"></i></span>';
+										/* Bisherige Kursteilnehmer ermitteln */
+										$search_criteria = array();
+										$search_criteria['status'] = 'active';
+										$search_criteria['field_filters'][] = array( 'key' => '1', 'value' => get_the_ID() );
+										$bisherige_teilnehmer = GFAPI::count_entries(1, $search_criteria); //Form ID, Suchkriterien
+										/* Status ermitteln:
+											Wenn mehr als 75% der Plätze verfügbar sind:
+											_Grünes Icon und Text Plätze verfügbar
+											Wenn weniger als 75% der Plätze verfügbar sind:
+											_Gelb/Oranges Icon und Text "Wenig Plätze verfügbar"
+											Wenn keine Plätze verfügbar sind:
+											_Rotes Icon (Dreieck) keine Plätze verfügbar
+										*/
+										$subscribe_button = '<button data-postid="'.get_the_ID().'" data-kursnummer="'.get_the_title().'" type="button" class="btn btn-primary w-100 js_subscribe_course">Anmelden</button>';
+										/* Genügend freie Plätze */
+										if($bisherige_teilnehmer < $total_anzahl_teilnehmer_schwelle && $bisherige_teilnehmer < $total_anzahl_teilnehmer) {
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Plätze verfügbar" class="kurs-status"><i class="fas fa-check-circle fa-fw fa-lg text-success"></i></span>';
+											/* Wenig Plätze verfügbar */
+										} elseif($bisherige_teilnehmer >= $total_anzahl_teilnehmer_schwelle && $bisherige_teilnehmer < $total_anzahl_teilnehmer) {
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Wenig Plätze verfügbar" class="kurs-status"><i class="fas fa-check-circle fa-fw fa-lg text-warning"></i></span>';
+											/* Kurs ist ausgebucht */
+										} elseif($bisherige_teilnehmer > $total_anzahl_teilnehmer_schwelle && $bisherige_teilnehmer >= $total_anzahl_teilnehmer) {
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Kurs ist ausgebucht" class="kurs-status"><i class="fas fa-exclamation-triangle fa-fw fa-lg text-danger"></i></span>';
+											/* Button disabeln */
+											$subscribe_button = '<button type="button" class="btn btn-primary w-100" disabled>Anmeldung</button>';
 										}
 										?>
 										<div class="kurse-table__body--row">
@@ -131,7 +145,7 @@ $image = get_field('kurskategorie_image', $term);
 											<div class="kurse-table__body--item kurse-table__body--item--3"><?php echo strtoupper( $lng['value'] ); ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--4"><?php the_field('kurse_beginn'); ?> - <?php the_field('kurse_kursende'); ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--5"><?php the_field('kurse_ort'); ?></div>
-											<div class="kurse-table__body--item kurse-table__body--item--6"><button data-postid="<?php echo get_the_ID(); ?>" data-kursnummer="<?php echo the_title(); ?>" type="button" class="btn btn-primary js_subscribe_course">Anmelden</a></div>
+											<div class="kurse-table__body--item kurse-table__body--item--6"><?php echo $subscribe_button; ?></div>
 										</div>
 										<?php
 									}
