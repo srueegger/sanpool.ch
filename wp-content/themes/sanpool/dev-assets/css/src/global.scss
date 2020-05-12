@@ -107,12 +107,11 @@ button {
 		height: 600px;
 		overflow: hidden;
 		position: relative;
-		img {
+		img,
+		.upload_video {
 			height: 100%;
-			-o-object-fit: cover;
-			   object-fit: cover;
-			-o-object-position: center center;
-			   object-position: center center;
+			object-fit: cover;
+			object-position: center center;
 		}
 		.text-container {
 			position: absolute;

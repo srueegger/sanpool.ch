@@ -36,13 +36,23 @@ if( !empty($block['align']) ) {
 				<?php
 			} else {
 				/* Video Slider ausgeben */
-				$video = get_sub_field('video');
-				$embed_code = wp_oembed_get($video);
-				$titel = get_sub_field('video_title');
-				$txt = get_sub_field('video_txt');
-				echo '<div class="video-container">';
-				echo $embed_code;
-				echo '</div>';
+				if(!get_sub_field('videotyp')) {
+					/* Embed Video */
+					$video = get_sub_field('video');
+					$embed_code = wp_oembed_get($video);
+					$titel = get_sub_field('video_title');
+					$txt = get_sub_field('video_txt');
+					echo '<div class="video-container">';
+					echo $embed_code;
+					echo '</div>';
+				} else {
+					/* hochgeladenes Video */
+					$video = get_sub_field('video_file');
+					$video_poster = get_sub_field('video_file_poster');
+					echo '<video class="upload_video w-100" poster="'.$video_poster['url'].'" controls preload="auto" playsinline>';
+					echo '<source src="'.$video['url'].'" type="'.$video['mime_type'].'">';
+					echo '</video>';
+				}
 			}
 			/* Text Container anzeigen */
 			echo '<div class="text-container"><div class="inner">';

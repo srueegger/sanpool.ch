@@ -11205,11 +11205,10 @@ button:focus {
   overflow: hidden;
   position: relative;
 }
-.headerSlider .item img {
+.headerSlider .item img,
+.headerSlider .item .upload_video {
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
-  -o-object-position: center center;
   object-position: center center;
 }
 .headerSlider .item .text-container {

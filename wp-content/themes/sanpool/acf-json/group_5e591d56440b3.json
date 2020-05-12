@@ -76,12 +76,12 @@
                     "wpml_cf_preferences": 0
                 },
                 {
-                    "key": "field_5e591e6c954cb",
-                    "label": "Video hinzufügen",
-                    "name": "video",
-                    "type": "url",
-                    "instructions": "YouTube oder Vimeo Link einfügen.",
-                    "required": 1,
+                    "key": "field_5eba701b6240c",
+                    "label": "Videotyp",
+                    "name": "videotyp",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
                     "conditional_logic": [
                         [
                             {
@@ -96,8 +96,112 @@
                         "class": "",
                         "id": ""
                     },
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Video hochladen",
+                    "ui_off_text": "Gehostetes Video",
+                    "wpml_cf_preferences": 0
+                },
+                {
+                    "key": "field_5e591e6c954cb",
+                    "label": "Video hinzufügen",
+                    "name": "video",
+                    "type": "url",
+                    "instructions": "YouTube oder Vimeo Link einfügen.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e591e06954c9",
+                                "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_5eba701b6240c",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
                     "default_value": "",
-                    "placeholder": "",
+                    "placeholder": ""
+                },
+                {
+                    "key": "field_5eba70c46240e",
+                    "label": "Video hochladen",
+                    "name": "video_file",
+                    "type": "file",
+                    "instructions": "Das Video muss zwingend eine \"*.mp4\" Datei sein. Das Video muss im h264 Code encodiert sein - ansonsten kann nicht garantiert werden, dass das Video in allen Browser \/ Betriebsystemen angezeigt werden kann.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e591e06954c9",
+                                "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_5eba701b6240c",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "library": "all",
+                    "min_size": "",
+                    "max_size": "",
+                    "mime_types": "mp4",
+                    "wpml_cf_preferences": 0
+                },
+                {
+                    "key": "field_5eba785b84059",
+                    "label": "Video Poster",
+                    "name": "video_file_poster",
+                    "type": "image",
+                    "instructions": "Dieses Bild wird als \"Video-Vorschau\" angezeigt bis das Video geladen wurde.",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5e591e06954c9",
+                                "operator": "==",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_5eba701b6240c",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "array",
+                    "preview_size": "medium",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": "",
                     "wpml_cf_preferences": 0
                 },
                 {
@@ -192,5 +296,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582900818
+    "modified": 1589278893
 }
