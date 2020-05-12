@@ -6,13 +6,13 @@ if( !empty($block['anchor']) ) {
 }
 
 // Create class attribute allowing for custom "className" and "align" values.
-$className = 'infoicons';
+$className = 'infoicons bg-primary';
 if( !empty($block['className']) ) {
 	$className .= ' ' . $block['className'];
 }
 ?>
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>">
-	<div class="container-fluid bg-primary py-4">
+	<div class="container py-4">
 		<div class="row">
 			<div class="col-12 text-center">
 				<h2 class="h1 text-white"><?php the_field('block_infoicon_title'); ?></h2>

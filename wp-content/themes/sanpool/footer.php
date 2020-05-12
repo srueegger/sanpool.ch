@@ -2,7 +2,7 @@
 			<footer id="siteFooter">
 				<div class="container">
 					<div class="row justify-content-center">
-						<div class="col-12 col-lg-5">
+						<div class="col-12 col-lg-6">
 							<a href="<?php echo HOME_URI; ?>" target="_self">
 								<picture>
 									<img src="<?php echo THEME_IMAGES; ?>/sanpool-logo.png" class="footer-logo" alt="">
@@ -13,14 +13,14 @@
 							the_field( 'footer_contacts', 'option' );
 							?>
 						</div>
-						<div class="col-12 col-lg-5">
+						<div class="col-12 col-lg-6">
 							<div class="footer-spacer"></div>
 							<p><?php the_field( 'footer_claim', 'option' ); ?></p>
 							<div class="contact-info">
 								<?php the_field( 'footer_bigtxt', 'option' ); ?>
 							</div>
 						</div>
-						<div class="col-12 col-lg-10 footer-menu">
+						<div class="col-12 col-lg-12 footer-menu">
 							<ul>
 								<?php
 								$locations = get_nav_menu_locations();

@@ -12,7 +12,7 @@ if( !empty($block['className']) ) {
 }
 ?>
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>">
-	<div class="container-fluid">
+	<div class="container">
 		<div class="row justify-content-center">
 			<?php
 			if(have_rows('block_infoblocks_infos')) {
@@ -20,7 +20,7 @@ if( !empty($block['className']) ) {
 					the_row();
 					$image = get_sub_field('image');
 					?>
-					<div class="col-12 col-md-6 col-lg-3 mb-3">
+					<div class="col-12 col-md-6 mb-3">
 						<div class="card">
 							<div class="image-container">
 								<picture>
