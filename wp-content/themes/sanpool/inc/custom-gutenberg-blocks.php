@@ -72,6 +72,18 @@ function sp_register_acf_block_types() {
 		'keywords' => array( 'kurse', 'slider', 'carousel', 'angebote' ),
 		'mode' => 'edit'
 	));
+
+	/* FAQ Block */
+	acf_register_block_type(array(
+		'name' => 'sp_faq',
+		'title' => 'FAQ',
+		'description' => 'Dieser Block zeigt ein typisches FAQ Layout an',
+		'render_template' => 'templates/blocks/faq.php',
+		'category' => 'layout',
+		'icon' => 'list-view',
+		'keywords' => array( 'faq', 'accordeon' ),
+		'mode' => 'edit'
+	));
 }
 
 // Check if function exists and hook into setup.

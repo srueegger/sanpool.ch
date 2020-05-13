@@ -179,3 +179,31 @@ function sp_wrap_alignment_full( $block_content, $block ) {
 	}
 }
 add_filter( 'render_block', 'sp_wrap_alignment_full', 10, 2 );
+
+/***************************************
+ * 	 Diese Funktion rendert den Inhalt eines Accordeons
+ ***************************************/
+function sp_render_accordeon_content($identifier, $rowIndex, $title, $txt) {
+	$identifier = esc_attr( $identifier );
+	$rowIndex = esc_attr( $rowIndex );
+	$title = esc_attr( $title );
+	?>
+	<div class="card">
+		<div class="card-header" id="heading-<?php echo $rowIndex; ?>">
+			<h2 class="mb-0" data-toggle="collapse" data-target="#collapse-<?php echo $rowIndex; ?>" aria-expanded="false" aria-controls="collapse-<?php echo $rowIndex; ?>">
+				<?php echo $title; ?>
+				<span class="icon float-right">
+					<i style="display: block;" class="far fa-angle-down fa-1x iconclosed"></i>
+					<i style="display: none;" class="far fa-times fa-1x iconopened"></i>
+				</span>
+			</h2>
+		</div>
+		<div id="collapse-<?php echo $rowIndex; ?>" class="collapse" aria-labelledby="heading-<?php echo $rowIndex; ?>" data-parent="#<?php echo $identifier; ?>">
+			<div class="card-body">
+				<?php echo $txt; ?>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<?php
+}

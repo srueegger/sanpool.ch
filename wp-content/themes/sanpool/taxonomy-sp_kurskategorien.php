@@ -26,36 +26,17 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * 75;
 				<?php
 				/* Akkordeon anzeigen - sofern es Inhalte gibt */
 				if(have_rows('kurskategorie_infos', $term)) {
+					$identifier = 'accordion-term-'.$term->term_id;
 					?>
 					<div class="col-12 mt-3">
-						<div class="accordion sanpool-accordion" id="accordion-term-<?php echo $term->term_id; ?>">
+						<div class="accordion sanpool-accordion" id="<?php echo $identifier; ?>">
 							<?php
 							while(have_rows('kurskategorie_infos', $term)) {
 								the_row();
 								$rowIndex = get_row_index();
-								$expanded = 'false';
-								$show = '';
-								$iconclose = 'block';
-								$iconopen = 'none';
-								?>
-								<div class="card">
-									<div class="card-header" id="heading-<?php echo $rowIndex; ?>">
-										<h2 class="mb-0" data-toggle="collapse" data-target="#collapse-<?php echo $rowIndex; ?>" aria-expanded="<?php echo $expanded; ?>" aria-controls="collapse-<?php echo $rowIndex; ?>">
-											<?php the_sub_field('title'); ?>
-											<span class="icon float-right">
-												<i style="display: <?php echo $iconclose; ?>;" class="far fa-angle-down fa-1x iconclosed"></i>
-												<i style="display: <?php echo $iconopen; ?>;" class="far fa-times fa-1x iconopened"></i>
-											</span>
-										</h2>
-									</div>
-									<div id="collapse-<?php echo $rowIndex; ?>" class="collapse<?php echo $show; ?>" aria-labelledby="heading-<?php echo $rowIndex; ?>" data-parent="#accordion-term-<?php echo $term->term_id; ?>">
-										<div class="card-body">
-											<?php the_sub_field('txt'); ?>
-										</div>
-									</div>
-								</div>
-								<div class="clearfix"></div>
-								<?php
+								$title = get_sub_field('title');
+								$txt = get_sub_field('txt');
+								sp_render_accordeon_content($identifier, $rowIndex, $title, $txt);
 							}
 							?>
 						</div>
