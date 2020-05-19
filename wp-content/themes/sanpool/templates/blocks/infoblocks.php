@@ -15,12 +15,32 @@ if( !empty($block['className']) ) {
 	<div class="container">
 		<div class="row justify-content-center">
 			<?php
+			$total_blocks = count( get_field('block_infoblocks_infos') );
 			if(have_rows('block_infoblocks_infos')) {
 				while(have_rows('block_infoblocks_infos')) {
 					the_row();
 					$image = get_sub_field('image');
+					$class_array = array(
+						'mb-3',
+						'col-12',
+						'col-md-6'
+					);
+					/* Desktop Grösse berechnen bei Total 4 einträgen */
+					if($total_blocks == 4 && get_row_index() <= 3) {
+						array_push($class_array, 'col-lg-4');
+					}
+					if($total_blocks == 4 && get_row_index() > 3) {
+						array_push($class_array, 'col-lg-12');
+					}
+					/* Desktop Grösse berechnen bei Total 5 einträgen */
+					if($total_blocks == 5 && get_row_index() <= 3) {
+						array_push($class_array, 'col-lg-4');
+					}
+					if($total_blocks == 5 && get_row_index() > 3) {
+						array_push($class_array, 'col-lg-6');
+					}
 					?>
-					<div class="col-12 col-md-6 mb-3">
+					<div class="<?php echo implode( ' ', $class_array ); ?>">
 						<div class="card">
 							<div class="image-container">
 								<picture>

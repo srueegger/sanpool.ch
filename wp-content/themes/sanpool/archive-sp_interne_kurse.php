@@ -53,12 +53,12 @@ get_header();
 			</div>
 		</div>
 	</div>
-	<div class="container-fluid course-container mt-3">
-		<div class="row">
-			<div class="col-12 my-4">
+	<div class="container course-container mt-3">
+		<div class="row justify-content-center">
+			<div class="col-12 col-xl-10 my-4">
 				<h2 class="h1 text-primary">Unsere nächste Kurse</h2>
 			</div>
-			<div class="col-12">
+			<div class="col-12 col-xl-10">
 				<?php
 				/* Kurse laden und in einem Loop ausgeben */
 				$date_now = date('Ymd');

@@ -20,6 +20,13 @@ button {
 	}
 }
 
+.infoblocks {
+	.card-img-top {
+		height: 220px;
+		object-fit: cover;
+	}
+}
+
 .card {
 	border: none;
 	@extend .shadow;
@@ -30,7 +37,6 @@ button {
 		width: 100%;
 		height: 100%;
 		overflow: visible;
-		-webkit-transition: all .2s linear;
 		transition: all .2s linear;
 		.inner {
 			padding: 1rem;
@@ -39,8 +45,7 @@ button {
 			text-align: center;
 			width: 100%;
 			right: 50%;
-			-webkit-transform: translate(50%, 50%);
-			        transform: translate(50%, 50%);
+			transform: translate(50%, 50%);
 		}
 	}
 	.overlay-container {
@@ -51,7 +56,6 @@ button {
 		height: 0%;
 		overflow: hidden;
 		background-color: $primary;
-		-webkit-transition: all .2s linear;
 		transition: all .2s linear;
 		.inner {
 			padding: 1rem;
@@ -59,8 +63,7 @@ button {
 			bottom: 50%;
 			right: 50%;
 			width: 100%;
-			-webkit-transform: translate(50%, 50%);
-			        transform: translate(50%, 50%);
+			transform: translate(50%, 50%);
 			p {
 				margin-bottom: 0;
 				color: $white;
@@ -110,8 +113,10 @@ button {
 		img,
 		.upload_video {
 			height: 100%;
-			object-fit: cover;
-			object-position: center center;
+			-o-object-fit: cover;
+			   object-fit: cover;
+			-o-object-position: center center;
+			   object-position: center center;
 		}
 		.text-container {
 			position: absolute;
@@ -139,7 +144,6 @@ button {
 		background-color: transparent;
 		.owl-dot {
 			span {
-				-webkit-transition: all .5s linear;
 				transition: all .5s linear;
 				border: 1px solid $blue;
 			}
@@ -186,15 +190,13 @@ button {
 	position: absolute;
 	bottom: 50%;
 	width: 100%;
-	-webkit-transform: translateY(50%);
-			transform: translateY(50%);
+	transform: translateY(50%);
 	.owl-prev,
 	.owl-next {
 		margin: 0;
 		position: absolute;
 		bottom: 50%;
-		-webkit-transform: translateY(50%);
-		        transform: translateY(50%);
+		transform: translateY(50%);
 		&:hover {
 			background: transparent !important;
 		}
@@ -215,14 +217,12 @@ button {
 
 .iconbox {
 	.fa-stack {
-		-webkit-transition: .9s;
 		transition: .9s;
 		color: $white;
 	}
 	&:hover {
 		.fa-stack {
-			-webkit-transform: rotateY(180deg);
-					transform: rotateY(180deg);
+			transform: rotateY(180deg);
 			color: $black;
 		}
 	}
@@ -242,8 +242,10 @@ button {
 	}
 	.card-img-top {
 		height: 240px;
-		object-position: center;
-		object-fit: cover;
+		-o-object-position: center;
+		   object-position: center;
+		-o-object-fit: cover;
+		   object-fit: cover;
 	}
 	.card-text {
 		min-height: 200px;
@@ -273,8 +275,10 @@ button {
 .kurs-term-image {
 	width: 100%;
 	height: 600px;
-	object-fit: cover;
-	object-position: top center;
+	-o-object-fit: cover;
+	   object-fit: cover;
+	-o-object-position: top center;
+	   object-position: top center;
 	@include media-breakpoint-up(lg) {
 		height: 510px;
 	}
