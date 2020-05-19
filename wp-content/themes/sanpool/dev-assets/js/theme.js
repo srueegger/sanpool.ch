@@ -30,7 +30,6 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 	$('.courseSlider, .teamSlider').owlCarousel({
 		loop: true,
 		autplay: false,
-		navText: ['<i class="far fa-angle-left text-primary fa-10x"></i>', '<i class="far fa-angle-right text-primary fa-10x"></i>'],
 		responsive: {
 			0 : {
 				items: 1,
@@ -49,6 +48,7 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 			1200 : {
 				dots: false,
 				nav: true,
+				navText: ['<i class="far fa-angle-left text-primary fa-10x"></i>', '<i class="far fa-angle-right text-primary fa-10x"></i>'],
 				margin: 25
 			}
 		}
