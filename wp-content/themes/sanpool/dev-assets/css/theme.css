@@ -9298,6 +9298,10 @@ button:focus {
 .tooltip {
   pointer-events: none; }
 
+.owl-stage-outer {
+  margin-left: -5px;
+  margin-right: -5px; }
+
 .gform_wrapper form {
   margin-bottom: 0; }
 
