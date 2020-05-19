@@ -215,3 +215,25 @@ function sp_render_accordeon_content($identifier, $rowIndex, $title, $txt) {
 	<div class="clearfix"></div>
 	<?php
 }
+
+/***************************************
+ * 	 Kursleiter Feld dynamisch füllen
+ ***************************************/
+function sp_acf_load_kursleiter_field_choices( $field ) {
+	// reset choices
+	$field['choices'] = array();
+	/* Inhalte laden */
+	$args = array(
+		'numberposts' => -1,
+		'post_status' => 'publish',
+		'post_type' => 'sp_kursleiter',
+	);
+	$kursleiter = get_posts($args);
+	if(!empty($kursleiter)) {
+		foreach($kursleiter as $leiter) {
+			$field[ 'choices' ][ $leiter->ID ] = get_the_title( $leiter->ID );
+		}
+	}
+	return $field;
+}
+add_filter('acf/load_field/name=kurse_leiter', 'sp_acf_load_kursleiter_field_choices');

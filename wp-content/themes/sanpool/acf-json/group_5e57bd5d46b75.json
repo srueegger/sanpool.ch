@@ -70,6 +70,29 @@
             "placeholder": ""
         },
         {
+            "key": "field_5ec3b53849a4a",
+            "label": "Kursleiter",
+            "name": "kurse_leiter",
+            "type": "select",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "choices": [],
+            "default_value": [],
+            "allow_null": 0,
+            "multiple": 1,
+            "ui": 1,
+            "ajax": 0,
+            "return_format": "array",
+            "wpml_cf_preferences": 0,
+            "placeholder": ""
+        },
+        {
             "key": "field_5e57be694a012",
             "label": "Kursort",
             "name": "kurse_ort",
@@ -172,5 +195,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1589094115
+    "modified": 1589884260
 }

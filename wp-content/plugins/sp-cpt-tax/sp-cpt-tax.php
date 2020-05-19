@@ -55,6 +55,50 @@ function cptui_register_my_cpts() {
 	register_post_type( "sp_interne_kurse", $args );
 
 	/**
+	 * Post Type: Kursleiter
+	 */
+
+	$labels = [
+		"name" => __( "Kursleiter", "sp-theme" ),
+		"singular_name" => __( "Kursleiter", "sp-theme" ),
+		"menu_name" => __( "Kursleiter", "sp-theme" ),
+		"all_items" => __( "Alle Kursleiter", "sp-theme" ),
+		"add_new" => __( "Neuer Kursleiter", "sp-theme" ),
+		"add_new_item" => __( "Neuer Kursleiter hinzufügen", "sp-theme" ),
+		"edit_item" => __( "Kursleiter bearbeiten", "sp-theme" ),
+		"view_item" => __( "Kursleiter ansehen", "sp-theme" ),
+		"view_items" => __( "Kursleiter ansehen", "sp-theme" ),
+		"search_items" => __( "Kursleiter suchen", "sp-theme" ),
+		"not_found" => __( "Keine Kursleiter gefunden", "sp-theme" ),
+		"not_found_in_trash" => __( "Keine Kursleiter im Papierkorb gefunden", "sp-theme" ),
+		"item_published" => __( "Kursleiter veröffentlicht", "sp-theme" ),
+	];
+
+	$args = [
+		"label" => __( "Kursleiter", "sp-theme" ),
+		"labels" => $labels,
+		"description" => "Diese Post Type managt die Kursleiter von SanPool.",
+		"public" => true,
+		"publicly_queryable" => true,
+		"show_ui" => true,
+		"show_in_rest" => true,
+		"has_archive" => false,
+		"show_in_menu" => true,
+		"show_in_nav_menus" => true,
+		"delete_with_user" => false,
+		"exclude_from_search" => true,
+		"capability_type" => "post",
+		"map_meta_cap" => true,
+		"hierarchical" => false,
+		"rewrite" => false,
+		"query_var" => true,
+		"menu_icon" => "dashicons-universal-access-alt",
+		"supports" => [ "title", "custom-fields", "author", "page-attributes" ],
+	];
+
+	register_post_type( "sp_kursleiter", $args );
+	
+	/**
 	 * Post Type: Team
 	 */
 
