@@ -8985,6 +8985,8 @@ button:focus {
       .card .overlay-container .inner p {
         margin-bottom: 0;
         color: #fff; }
+    .card .overlay-container.transparent {
+      background-color: rgba(0, 144, 204, 0.4); }
   .card .col:not(:last-of-type) {
     border-right: 1px solid #e9ecef; }
   .card:hover .overlay-seen-container {
@@ -8993,6 +8995,8 @@ button:focus {
   .card:hover .overlay-container {
     overflow: visible;
     height: 100%; }
+    .card:hover .overlay-container.imageonly {
+      height: 240px; }
 
 /* Responsive Video Embed 16:9 */
 .video-container {
