@@ -2,7 +2,7 @@
 	'use strict';
 
 	/* Slider vom Header Slider Blocks */
-	$('.headerSlider').owlCarousel({
+	var headerSlider = $('.headerSlider').owlCarousel({
 		loop: true,
 		margin: 0,
 		items: 1,
@@ -141,4 +141,18 @@
 		$('#page_wrapper').css('margin-bottom', footer_height);
 	}
 
+	/* Video im Header Slider automatisch abspielen, wenn entsprechender Slide angezeigt wird */
+	/* Alle Videos pausieren */
+	headerSlider.on('translate.owl.carousel',function(){
+		$('.owl-item video').each(function(){
+			$(this).get(0).pause();
+		});
+	});
+	/* Video bei azeige starten */
+	headerSlider.on('translated.owl.carousel',function(){
+		var video = $('.owl-item.active video');
+		if(video.length){
+			video.get(0).play();
+		}
+	})
 })(jQuery);

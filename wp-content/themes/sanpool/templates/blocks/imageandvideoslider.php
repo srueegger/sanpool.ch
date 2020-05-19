@@ -49,7 +49,7 @@ if( !empty($block['align']) ) {
 					/* hochgeladenes Video */
 					$video = get_sub_field('video_file');
 					$video_poster = get_sub_field('video_file_poster');
-					echo '<video class="upload_video w-100" poster="'.$video_poster['url'].'" controls preload="auto" playsinline>';
+					echo '<video class="upload_video w-100" poster="'.$video_poster['url'].'" controls preload="auto" playsinline muted>';
 					echo '<source src="'.$video['url'].'" type="'.$video['mime_type'].'">';
 					echo '</video>';
 				}
