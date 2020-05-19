@@ -11,7 +11,7 @@
 			<header>
 				<div class="fixed-top bg-primary shadow">
 					<div class="container">
-						<nav class="navbar navbar-expand-xl">
+						<nav class="navbar navbar-expand-xl px-0">
 							<a class="navbar-brand" href="<?php echo HOME_URI; ?>">
 								<picture>
 									<img src="<?php echo THEME_IMAGES; ?>/sanpool-logo.png" alt="Logo">
