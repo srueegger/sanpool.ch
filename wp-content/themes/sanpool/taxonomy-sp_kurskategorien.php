@@ -4,8 +4,9 @@ get_header();
 $term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
 $image = get_field('kurskategorie_image', $term);
 $total_anzahl_teilnehmer = get_field('kurskategorie_teilnehmer', $term);
-/* Die Schwelle liegt bei 75% */
-$total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * 75;
+/* Die Schwelle liegt bei xx Prozent */
+$the_percent = get_field( 'course_setting_percent_range', 'option' );
+$total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * $the_percent;
 ?>
 <main>
 	<div>
@@ -144,7 +145,7 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * 75;
 									wp_reset_postdata();
 								} else {
 									/* Es sind keine Kurse vorhanden Fehlermeldung ausgeben */
-									echo '<div class="kurse-table__body--row"><div class="kurse-table__body--item kurse-table__body--item--fullwidth">Es sind zurzet keine Kurse in dieser Kategorie vorhanden.</div></div>';
+									echo '<div class="kurse-table__body--row"><div class="kurse-table__body--item kurse-table__body--item--fullwidth">'.get_field( 'course_setting_nocourses', 'option' ).'</div></div>';
 								}
 								?>
 							</div>

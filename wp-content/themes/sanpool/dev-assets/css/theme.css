@@ -9295,6 +9295,9 @@ button:focus {
       max-height: 9999px;
       visibility: visible; }
 
+.tooltip {
+  pointer-events: none; }
+
 .gform_wrapper form {
   margin-bottom: 0; }
 

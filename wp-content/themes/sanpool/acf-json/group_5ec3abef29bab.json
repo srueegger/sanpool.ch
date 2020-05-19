@@ -1,0 +1,65 @@
+{
+    "key": "group_5ec3abef29bab",
+    "title": "Einstellungen für Kurse",
+    "fields": [
+        {
+            "key": "field_5ec3ac3436646",
+            "label": "Bei wieviel Prozent sollen Kurse mit \"wenige Plätze verfügbar\" definiert werden?",
+            "name": "course_setting_percent_range",
+            "type": "range",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "min": 0,
+            "max": 100,
+            "step": 5,
+            "prepend": "",
+            "append": "%",
+            "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_5ec3ac7e36647",
+            "label": "Text der angezeigt werden soll, wenn keine Kurse verfügbar sind",
+            "name": "course_setting_nocourses",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": 4,
+            "new_lines": "br",
+            "wpml_cf_preferences": 0
+        }
+    ],
+    "location": [
+        [
+            {
+                "param": "options_page",
+                "operator": "==",
+                "value": "sp-course-settings"
+            }
+        ]
+    ],
+    "menu_order": 0,
+    "position": "normal",
+    "style": "default",
+    "label_placement": "top",
+    "instruction_placement": "label",
+    "hide_on_screen": "",
+    "active": 1,
+    "description": "",
+    "modified": 1589882029
+}
