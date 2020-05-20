@@ -78,7 +78,7 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * $the_percen
 											'field' => 'term_id',
 											'terms' => $term->term_id
 										)
-										),
+									),
 									'meta_query' => array(
 										array(
 											'key' => 'kurse_beginn',

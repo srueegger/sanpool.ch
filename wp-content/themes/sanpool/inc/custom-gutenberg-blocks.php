@@ -84,6 +84,18 @@ function sp_register_acf_block_types() {
 		'keywords' => array( 'faq', 'accordeon' ),
 		'mode' => 'edit'
 	));
+
+	/* Google Maps Block */
+	acf_register_block_type(array(
+		'name' => 'sp_google_maps',
+		'title' => 'Google Maps',
+		'description' => 'Dieser Block zeigt den Google Maps Block an',
+		'render_template' => 'templates/blocks/google-maps.php',
+		'category' => 'layout',
+		'icon' => 'location',
+		'keywords' => array( 'google', 'maps', 'contact' ),
+		'mode' => 'edit'
+	));
 }
 
 // Check if function exists and hook into setup.

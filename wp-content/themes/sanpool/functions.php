@@ -81,17 +81,20 @@ add_action( 'after_setup_theme', 'register_sp_menu' );
  * 		Enqueue scripts and styles.
  ***************************************/
 function sp_startup_scripts() {
+	/* Google Fonts */
 	wp_enqueue_style( 'sp-fonts', 'https://fonts.googleapis.com/css?family=Oswald:400,500,700&display=swap', null, false );
+	/* Google Maps */
+	wp_enqueue_script( 'sp-google-maps', 'https://maps.googleapis.com/maps/api/js?key=AIzaSyClyTgPGOjbFlQsNCJ6xo_WSv5975VHXSo&language=de-CH&region=CH', null, null, true );
 	if (WP_DEBUG) {
 		$modificated_css = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dev-assets/css/theme.css' ) );
 		$modificated_js = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dev-assets/js/theme.js' ) );
 		wp_register_style( 'sp-style', DEV_CSS . '/theme.css', array('sp-fonts'), $modificated_css );
-		wp_register_script( 'sp-script', DEV_JS . '/theme.js', array('jquery'), $modificated_js, true );
+		wp_register_script( 'sp-script', DEV_JS . '/theme.js', array('jquery', 'sp-google-maps'), $modificated_js, true );
 	} else {
 		$modificated_css = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dist-assets/css/theme.min.css' ) );
 		$modificated_js = date( 'YmdHis', filemtime( get_stylesheet_directory() . '/dist-assets/js/theme.min.js' ) );
 		wp_register_style( 'sp-style', DIST_CSS . '/theme.min.css', array('sp-fonts'), $modificated_css );
-		wp_register_script( 'sp-script', DIST_JS . '/theme.min.js', array('jquery'), $modificated_js, true );
+		wp_register_script( 'sp-script', DIST_JS . '/theme.min.js', array('jquery', 'sp-google-maps'), $modificated_js, true );
 	}
 	$global_vars = array(
 		'home_url' => HOME_URI,
@@ -133,6 +136,8 @@ function sp_acf_init() {
 		'parent_slug' => 'edit.php?post_type=sp_interne_kurse',
 	);
 	acf_add_options_sub_page($args);
+	/* Google Maps API KEY */
+	acf_update_setting( 'google_api_key', 'AIzaSyClyTgPGOjbFlQsNCJ6xo_WSv5975VHXSo' );
 	/* Menü verbergen */
 	if(!WP_DEBUG) {
 		//add_filter('acf/settings/show_admin', '__return_false');
