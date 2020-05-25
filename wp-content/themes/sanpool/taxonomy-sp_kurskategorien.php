@@ -80,11 +80,18 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * $the_percen
 										)
 									),
 									'meta_query' => array(
+										'relation' => 'AND',
 										array(
 											'key' => 'kurse_beginn',
 											'compare' => '>=',
 											'value' => $date_now,
 											'type' => 'DATE',
+										),
+										array(
+											'key' => 'kurse_storniert',
+											'value' => 0,
+											'compare' => '=',
+											'type' => 'NUMERIC'
 										)
 									)
 								);
