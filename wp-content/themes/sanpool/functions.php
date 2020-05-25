@@ -242,3 +242,28 @@ function sp_acf_load_kursleiter_field_choices( $field ) {
 	return $field;
 }
 add_filter('acf/load_field/name=kurse_leiter', 'sp_acf_load_kursleiter_field_choices');
+
+/***************************************
+ * 	 Prüfen ob schon ein Kurs mit diesem Titel gespeichert wurde.
+ ***************************************/
+function sp_disallow_posts_with_same_title($messages) {
+	global $post;
+	global $wpdb ;
+	$title = $post->post_title;
+	$post_id = $post->ID ;
+	$wtitlequery = "SELECT post_title FROM $wpdb->posts WHERE post_status = 'publish' AND post_type = 'sp_interne_kurse' AND post_title = '{$title}' AND ID != {$post_id} " ;
+
+	$wresults = $wpdb->get_results( $wtitlequery) ;
+
+	if ( $wresults ) {
+		$error_message = 'Dieser Titel wurde schon einmal verwendet! Kurs wurde als Entwurf gespeichert.';
+		add_settings_error('post_has_links', '', $error_message, 'error');
+		settings_errors( 'post_has_links' );
+		$post->post_status = 'draft';
+		wp_update_post($post);
+		return;
+	}
+	return $messages;
+
+}
+add_action('post_updated_messages', 'sp_disallow_posts_with_same_title');
