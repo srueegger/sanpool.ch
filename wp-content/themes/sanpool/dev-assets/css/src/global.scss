@@ -55,7 +55,7 @@ button {
 		width: 100%;
 		height: 0%;
 		overflow: hidden;
-		background-color: $primary;
+		background-color: rgba(0,144,204, .7);
 		transition: all .2s linear;
 		.inner {
 			padding: 1rem;
@@ -68,9 +68,6 @@ button {
 				margin-bottom: 0;
 				color: $white;
 			}
-		}
-		&.transparent {
-			background-color: rgba(0,144,204, .4);
 		}
 	}
 	.col {
@@ -86,9 +83,6 @@ button {
 		.overlay-container {
 			overflow: visible;
 			height: 100%;
-			&.imageonly {
-				height: 240px;
-			}
 		}
 	}
 }
@@ -254,7 +248,7 @@ button {
 		   object-fit: cover;
 	}
 	.card-text {
-		min-height: 200px;
+		min-height: 150px;
 	}
 	.owl-dots {
 		.owl-dot {

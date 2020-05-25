@@ -3,16 +3,8 @@
 $terms = wp_get_post_terms( get_the_ID(), 'sp_kurskategorien' );
 $image = get_field( 'kurskategorie_image', $terms[0] );
 $course_date = get_field( 'kurse_beginn', get_the_ID() );
-$course_date_i18n = date_i18n( get_option('date_format'), strtotime($course_date) );
+$course_date_i18n = date_i18n( 'd.m.Y', strtotime($course_date) );
 $course_lang = get_field( 'kurse_lng', get_the_ID() );
-$overlay_class = '';
-$random_number = rand(1,3);
-if($random_number == 2) {
-	$overlay_class = ' imageonly';
-}
-if($random_number == 3) {
-	$overlay_class = ' transparent';
-}
 ?>
 <div class="item">
 	<div class="card h-100">
@@ -24,7 +16,7 @@ if($random_number == 3) {
 		</div>
 		<div class="card-body">
 			<h5 class="card-title"><?php echo $terms[0]->name; ?> - <?php echo get_the_title( get_the_ID() ); ?></h5>
-			<p class="card-text"><?php the_field( 'kurskategorie_shortdesc', $terms[0] ); ?></p>
+			<p class="card-text mb-0"><?php the_field( 'kurskategorie_shortdesc', $terms[0] ); ?></p>
 			<hr>
 			<div class="row text-center">
 				<div class="col">
@@ -40,7 +32,7 @@ if($random_number == 3) {
 					<div><?php echo $course_lang['label']; ?></div>
 				</div>
 				<a href="<?php echo get_term_link( $terms[0], 'sp_kurskategorien' ); ?>#<?php echo get_the_ID(); ?>;<?php echo urldecode(get_the_title()); ?>" target="_self">
-					<div class="overlay-container<?php echo $overlay_class; ?>">
+					<div class="overlay-container">
 						<div class="inner">
 							<h6 class="h3 text-white">Jetzt buchen</h6>
 						</div>
