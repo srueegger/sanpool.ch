@@ -82,7 +82,11 @@
                 "class": "",
                 "id": ""
             },
-            "choices": [],
+            "choices": {
+                "578": "Mirjam Baumgartner",
+                "577": "Anita Meier",
+                "576": "Max Müller"
+            },
             "default_value": [],
             "allow_null": 0,
             "multiple": 1,
@@ -139,23 +143,23 @@
         },
         {
             "key": "field_5e57d33245564",
-            "label": "Kurstext (Kommentar)",
+            "label": "Notiz \/ Kommentar (nur intern)",
             "name": "kurse_kommentar",
             "type": "wysiwyg",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "default_value": "",
             "tabs": "all",
             "toolbar": "full",
             "media_upload": 0,
-            "delay": 0,
-            "wpml_cf_preferences": 0
+            "delay": 0
         },
         {
             "key": "field_5eb01eef61b76",
@@ -195,5 +199,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1589884260
+    "modified": 1589919296
 }
