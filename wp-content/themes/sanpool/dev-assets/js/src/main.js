@@ -165,8 +165,56 @@
 	
 		// Create gerenic map.
 		var mapArgs = {
-			zoom        : $el.data('zoom') || 16,
-			mapTypeId   : google.maps.MapTypeId.ROADMAP
+			zoom : $el.data('zoom') || 16,
+			mapTypeId : google.maps.MapTypeId.ROADMAP,
+			styles: [
+				{
+					"featureType": "all",
+					"stylers": [
+						{
+							"saturation": 0
+						},
+						{
+							"hue": "#e7ecf0"
+						}
+					]
+				},
+				{
+					"featureType": "road",
+					"stylers": [
+						{
+							"saturation": -70
+						}
+					]
+				},
+				{
+					"featureType": "transit",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "poi",
+					"stylers": [
+						{
+							"visibility": "off"
+						}
+					]
+				},
+				{
+					"featureType": "water",
+					"stylers": [
+						{
+							"visibility": "simplified"
+						},
+						{
+							"saturation": -60
+						}
+					]
+				}
+			]
 		};
 		var map = new google.maps.Map( $el[0], mapArgs );
 	
@@ -243,6 +291,5 @@
 	/* Alle vorhanden Google Maps KArten auf der Webseite laden */
 	$('.sanpool-map').each(function() {
 		var map = initMap( $(this) );
-		google.maps.event.trigger(map, 'resize');
 	});
 })(jQuery);
