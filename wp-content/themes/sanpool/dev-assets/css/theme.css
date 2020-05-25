@@ -11677,6 +11677,9 @@ button:focus {
   #siteFooter .footer-menu ul li a {
     font-size: 1.25rem;
   }
+  #siteFooter .social-menu {
+    margin-top: 25px;
+  }
 }
 
 /*# sourceMappingURL=theme.css.map */

@@ -20,7 +20,7 @@
 								<?php the_field( 'footer_bigtxt', 'option' ); ?>
 							</div>
 						</div>
-						<div class="col-12 col-lg-12 footer-menu">
+						<div class="col-12 col-lg-6 footer-menu">
 							<ul>
 								<?php
 								$locations = get_nav_menu_locations();
@@ -29,6 +29,19 @@
 								foreach($footer_menu as $menu) {
 									$link_target = $menu->target ? $menu->target : '_self';
 									echo '<li><a href="'.$menu->url.'" target="'.$link_target.'">'.$menu->title.'</a></li>';
+								}
+								?>
+							</ul>
+						</div>
+						<div class="col-12 col-lg-6 text-right social-menu">
+							<ul class="list-inline mb-0">
+								<?php
+								$menu_id = $locations['socialmenu'];
+								$social_menu = wp_get_nav_menu_items( $menu_id );
+								foreach($social_menu as $menu) {
+									$link_target = $menu->target ? $menu->target : '_self';
+									$icon = get_field( 'iconmenu_icon', $menu );
+									echo '<li class="list-inline-item"><a href="'.$menu->url.'" target="'.$link_target.'" title="'.$menu->title.'"><i class="'.$icon.' fa-fw fa-2x text-white"></i></a></li>';
 								}
 								?>
 							</ul>

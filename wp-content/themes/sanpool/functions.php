@@ -74,6 +74,7 @@ function register_sp_menu() {
 	register_nav_menu( 'mainmenu', 'Hauptmenü' );
 	register_nav_menu( 'footermenu', 'Footermenü' );
 	register_nav_menu( 'iconmenu', 'Iconmenü' );
+	register_nav_menu( 'socialmenu', 'Social Media Menü' );
 }
 add_action( 'after_setup_theme', 'register_sp_menu' );
 
