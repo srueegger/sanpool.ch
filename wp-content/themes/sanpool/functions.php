@@ -180,13 +180,13 @@ function sp_wrap_alignment_full( $block_content, $block ) {
 		/* Fullwidth Block */
 		$return_code = '</div></div></div><div>';
 		$return_code .= $block_content;
-		$return_code .= '</div><div class="container"><div class="row justify-content-center"><div class="col-12 col-lg-10">';
+		$return_code .= '</div><div class="container"><div class="row"><div class="col-12">';
 		return $return_code;
 	}elseif (isset( $block['attrs']['align'] ) && in_array( $block['attrs']['align'], array( 'wide' ) )) {
 		/* Wide Block */
-		$return_code = '</div></div></div><div class="container-fluid"><div class="row justify-content-center"><div class="col-12 col-lg-10">';
+		$return_code = '</div></div></div><div class="container-fluid"><div class="row"><div class="col-12">';
 		$return_code .= $block_content;
-		$return_code .= '</div></div></div><div class="container"><div class="row"><div class="col-12 col-lg-10">';
+		$return_code .= '</div></div></div><div class="container"><div class="row"><div class="col-12">';
 		return $return_code;
 	} else {
 		return $block_content;
