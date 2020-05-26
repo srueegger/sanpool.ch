@@ -24,7 +24,7 @@ if( !empty($block['className']) ) {
 			while(have_rows('block_infoicons_icons')) {
 				the_row();
 				?>
-				<div class="col-6 col-md-4 col-xl-2 mb-3 mb-xl-0">
+				<div class="col-6 col-md-4 col-xl mb-3 mb-xl-0">
 					<div class="shortlink-item text-center">
 						<div class="iconbox">
 							<span class="fa-stack fa-4x">
