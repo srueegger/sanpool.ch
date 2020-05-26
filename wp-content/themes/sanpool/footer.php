@@ -1,7 +1,7 @@
 			</div>
 			<footer id="siteFooter">
 				<div class="container">
-					<div class="row justify-content-center">
+					<div class="row">
 						<div class="col-12 col-lg-6">
 							<a href="<?php echo HOME_URI; ?>" target="_self">
 								<picture>

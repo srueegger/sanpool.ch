@@ -16,11 +16,11 @@ if( !empty($block['align']) ) {
 ?>
 </div></div></div>
 <div class="container course-container">
-	<div class="row justify-content-center">
-		<div class="col-12 col-lg-10 mb-4">
+	<div class="row">
+		<div class="col-12 mb-4">
 			<h2 class="h1 text-primary"><?php the_field('block_teamslider_title'); ?></h2>
 		</div>
-		<div class="col-12 col-lg-10">
+		<div class="col-12">
 			<div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>">
 				<?php
 					/* Alle Teammitglieder ausgeben */

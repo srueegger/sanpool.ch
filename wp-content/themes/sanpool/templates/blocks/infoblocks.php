@@ -13,7 +13,7 @@ if( !empty($block['className']) ) {
 ?>
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>">
 	<div class="container">
-		<div class="row justify-content-center">
+		<div class="row">
 			<?php
 			$total_blocks = count( get_field('block_infoblocks_infos') );
 			if(have_rows('block_infoblocks_infos')) {

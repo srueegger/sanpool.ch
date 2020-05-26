@@ -10876,6 +10876,21 @@ body {
   transition: bottom 0.1s ease-out, transform 0.22s 0.12s cubic-bezier(0.215, 0.61, 0.355, 1);
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+  color: #0090cc;
+}
+
 /* Gutenberg Custom Colors */
 .has-blue-color {
   color: #0090cc;
@@ -11589,6 +11604,13 @@ button:focus {
 }
 .sanpool-map img {
   max-width: inherit !important;
+}
+
+.sanpool-marker-link {
+  cursor: pointer;
+}
+.sanpool-marker-link.active, .sanpool-marker-link:hover {
+  text-decoration: underline;
 }
 
 .gform_wrapper form {

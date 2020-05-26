@@ -13,6 +13,10 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 (function($) {
 	'use strict';
 
+	/* Globale Variabeln */
+	var map;
+	var active_info_window;
+
 	/* Slider vom Header Slider Blocks */
 	var headerSlider = $('.headerSlider').owlCarousel({
 		loop: true,
@@ -232,23 +236,24 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 	
 		// Add markers.
 		map.markers = [];
-		$markers.each(function(){
-			initMarker( $(this), map );
+		$markers.each(function(index){
+			initMarker( $(this), map, index );
 		});
 	
-		// Center map based on markers.
-		centerMap( map );
+		/* Open First Marker by Default */
+		google.maps.event.trigger(map.markers[0], 'click');
 	
 		// Return map instance.
 		return map;
 	}
 
 	/* Draw Markers on the Map */
-	function initMarker( $marker, map ) {
+	function initMarker( $marker, map, row_index ) {
 
 		// Get position from marker.
 		var lat = $marker.data('lat');
 		var lng = $marker.data('lng');
+		var location_name = $marker.data('locationname');
 		var latLng = {
 			lat: parseFloat( lat ),
 			lng: parseFloat( lng )
@@ -257,11 +262,20 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 		// Create marker instance.
 		var marker = new google.maps.Marker({
 			position : latLng,
-			map: map
+			map: map,
+			title: location_name
 		});
 	
 		// Append to reference for later use.
 		map.markers.push( marker );
+
+		var add_button_active_class = '';
+		if(row_index == 0) {
+			add_button_active_class = ' active';
+		}
+
+		var add_button = '<li class="list-inline-item"><h3 class="sanpool-marker-link' + add_button_active_class + '" data-markerid="' + row_index + '">' + location_name + '</h3></li>';
+		$('#mapMarkersLinks').append(add_button);
 	
 		// If marker contains HTML, add it to an infoWindow.
 		if( $marker.html() ){
@@ -273,35 +287,27 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 	
 			// Show info window when marker is clicked.
 			google.maps.event.addListener(marker, 'click', function() {
+				if (active_info_window) {
+					active_info_window.close();
+				}
+				map.setCenter(marker.getPosition());
 				infowindow.open( map, marker );
+				active_info_window = infowindow;
 			});
 		}
 	}
 
-	/* Karte anhand der Marker zentrieren */
-	function centerMap( map ) {
-
-		// Create map boundaries from all map markers.
-		var bounds = new google.maps.LatLngBounds();
-		map.markers.forEach(function( marker ){
-			bounds.extend({
-				lat: marker.position.lat(),
-				lng: marker.position.lng()
-			});
-		});
-	
-		// Case: Single marker.
-		if( map.markers.length == 1 ){
-			map.setCenter( bounds.getCenter() );
-	
-		// Case: Multiple markers.
-		} else{
-			map.fitBounds( bounds );
-		}
-	}
 
 	/* Alle vorhanden Google Maps KArten auf der Webseite laden */
 	$('.sanpool-map').each(function() {
-		var map = initMap( $(this) );
+		map = initMap( $(this) );
+	});
+
+	/* Bei Klick auf einen Marker Link, entsprechendes Info Modal öffnen und zum Bereich zoomen */
+	$(document).on('click', '.sanpool-marker-link', function() {
+		var marker_id = $(this).data('markerid');
+		$('.sanpool-marker-link').removeClass('active');
+		$(this).addClass('active');
+		google.maps.event.trigger(map.markers[marker_id], 'click');
 	});
 })(jQuery);
