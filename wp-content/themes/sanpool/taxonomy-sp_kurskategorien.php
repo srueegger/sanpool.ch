@@ -53,13 +53,13 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * $the_percen
 					<div class="col-12">
 						<div class="kurse-table">
 							<div class="kurse-table__head">
-								<div class="kurse-table__head--item kurse-table__head--item--1">Status</div>
-								<div class="kurse-table__head--item kurse-table__head--item--2">Kurs-Nr.</div>
-								<div class="kurse-table__head--item kurse-table__head--item--3">Sprache</div>
-								<div class="kurse-table__head--item kurse-table__head--item--4">Datum (von - bis)</div>
-								<div class="kurse-table__head--item kurse-table__head--item--5">Wochentage</div>
-								<div class="kurse-table__head--item kurse-table__head--item--6">Ort</div>
-								<div class="kurse-table__head--item kurse-table__head--item--7">Anmelden</div>
+								<div class="kurse-table__head--item kurse-table__head--item--1"><?php echo apply_filters( 'wpml_translate_single_string', 'Status', 'sp-theme', 'Status' ); ?></div>
+								<div class="kurse-table__head--item kurse-table__head--item--2"><?php echo apply_filters( 'wpml_translate_single_string', 'Kurs-Nr.', 'sp-theme', 'Kurs-Nr.' ); ?></div>
+								<div class="kurse-table__head--item kurse-table__head--item--3"><?php echo apply_filters( 'wpml_translate_single_string', 'Sprache', 'sp-theme', 'Sprache' ); ?></div>
+								<div class="kurse-table__head--item kurse-table__head--item--4"><?php echo apply_filters( 'wpml_translate_single_string', 'Datum (von - bis)', 'sp-theme', 'Datum (von - bis)' ); ?></div>
+								<div class="kurse-table__head--item kurse-table__head--item--5"><?php echo apply_filters( 'wpml_translate_single_string', 'Wochentage', 'sp-theme', 'Wochentage' ); ?></div>
+								<div class="kurse-table__head--item kurse-table__head--item--6"><?php echo apply_filters( 'wpml_translate_single_string', 'Ort', 'sp-theme', 'Ort' ); ?></div>
+								<div class="kurse-table__head--item kurse-table__head--item--7"><?php echo apply_filters( 'wpml_translate_single_string', 'Anmelden', 'sp-theme', 'Anmelden' ); ?></div>
 							</div>
 							<div class="kurse-table__body">
 								<?php
@@ -165,7 +165,7 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * $the_percen
 			<div class="inner">
 				<div class="row">
 					<div class="col-12">
-						<h2>Anmeldung für Kurs: <span id="subscribe-kursnr"></span> - <span id="subscribe-category"></span> - <span id="subscribe-date"></span></h2>
+						<h2><?php echo apply_filters( 'wpml_translate_single_string', 'Anmeldung für Kurs:', 'sp-theme', 'Anmeldung für Kurs:' ); ?> <span id="subscribe-kursnr"></span> - <span id="subscribe-category"></span> - <span id="subscribe-date"></span></h2>
 					</div>
 				</div>
 				<div class="row">
