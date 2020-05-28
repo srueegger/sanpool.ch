@@ -13,7 +13,7 @@
 							the_field( 'footer_contacts', 'option' );
 							?>
 						</div>
-						<div class="col-12 col-lg-6">
+						<div class="col-12 col-lg-6 text-lg-right">
 							<div class="footer-spacer"></div>
 							<p><?php the_field( 'footer_claim', 'option' ); ?></p>
 							<div class="contact-info">
