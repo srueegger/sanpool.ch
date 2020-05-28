@@ -184,3 +184,21 @@ function cptui_register_my_taxes() {
 	register_taxonomy( "sp_kurskategorien", [ "sp_interne_kurse" ], $args );
 }
 add_action( 'init', 'cptui_register_my_taxes' );
+
+
+/* Add Custom Admin Columns to CPT */
+function sp_add_admin_columns_interne_kurse($columns) {
+	print_r($columns);
+	$columns['sp_interne_kurse_subs'] = 'Anzahl Anmeldungen';
+	return $columns;
+}
+add_filter( 'manage_sp_interne_kurse_posts_columns', 'sp_add_admin_columns_interne_kurse' );
+
+/* Add Content to the new Admin Columns */
+function sp_add_content_to_admin_columns_interne_kurse( $column, $post_id ) {
+	if($column == 'sp_interne_kurse_subs') {
+		/* Anzahl Teilnehmer ermitteln */
+		sp_count_subs_by_course_id( $post_id );
+	}
+}
+add_action( 'manage_sp_interne_kurse_posts_custom_column' , 'sp_add_content_to_admin_columns_interne_kurse', 10, 2 );

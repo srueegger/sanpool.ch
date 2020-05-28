@@ -36,10 +36,7 @@ function sp_check_gf_submission_subscribers_number( $validation_result ) {
 	$form = $validation_result['form'];
 	$kurs_post_id = rgpost( 'input_1' );
 	/* Prüfen wie viele Anmeldungen es auf dieser Kurs ID schon gibt */
-	$search_criteria = array();
-	$search_criteria['status'] = 'active';
-	$search_criteria['field_filters'][] = array( 'key' => '1', 'value' => $kurs_post_id );
-	$bisherige_teilnehmer = GFAPI::count_entries(1, $search_criteria); //Form ID, Suchkriterien
+	$bisherige_teilnehmer = sp_count_subs_by_course_id( $kurs_post_id, false );
 	/* Prüfen wie viele Personen maximal angemeldet sein dürfen */
 	/* Kategorie ID des Kurses ermitteln */
 	$terms = get_the_terms( $kurs_post_id, 'sp_kurskategorien' );

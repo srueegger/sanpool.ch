@@ -269,3 +269,19 @@ function sp_disallow_posts_with_same_title($messages) {
 
 }
 add_action('post_updated_messages', 'sp_disallow_posts_with_same_title');
+
+/***************************************
+ * 	 Anzahl Teilnehmer eines Kurses ermitteln
+ ***************************************/
+function sp_count_subs_by_course_id( $post_id, $echo = true ) {
+	$post_id = esc_attr( $post_id );
+	$search_criteria = array();
+	$search_criteria['status'] = 'active';
+	$search_criteria['field_filters'][] = array( 'key' => '1', 'value' => $post_id );
+	$bisherige_teilnehmer = GFAPI::count_entries(1, $search_criteria); //Form ID
+	if($echo) {
+		echo $bisherige_teilnehmer;
+	} else {
+		return $bisherige_teilnehmer;
+	}
+}

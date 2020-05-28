@@ -103,10 +103,7 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * $the_percen
 										setup_postdata( $post );
 										$lng = get_field( 'kurse_lng' );
 										/* Bisherige Kursteilnehmer ermitteln */
-										$search_criteria = array();
-										$search_criteria['status'] = 'active';
-										$search_criteria['field_filters'][] = array( 'key' => '1', 'value' => get_the_ID() );
-										$bisherige_teilnehmer = GFAPI::count_entries(1, $search_criteria); //Form ID, Suchkriterien
+										$bisherige_teilnehmer = sp_count_subs_by_course_id( get_the_ID(), false );
 										/* Status ermitteln:
 											Wenn mehr als 75% der Plätze verfügbar sind:
 											_Grünes Icon und Text Plätze verfügbar
