@@ -7845,7 +7845,7 @@ button.bg-dark:focus {
   box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075) !important;
 }
 
-.shadow, .card, #infoButtons li.active {
+.shadow, .card, #infoButtons li.active, #infoButtons li:hover {
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15) !important;
 }
 
@@ -11080,7 +11080,7 @@ header .navbar .navbar-collapse.show .navbar-nav .nav-item .nav-link {
 #infoButtons li:not(:last-of-type) {
   margin-bottom: 5px;
 }
-#infoButtons li.active {
+#infoButtons li.active, #infoButtons li:hover {
   background-color: #212529;
   transition: all 0.2s linear;
   border: 1px solid #212529;

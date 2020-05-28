@@ -36,12 +36,12 @@ if( !empty($block['align']) ) {
 				<?php
 			} else {
 				/* Video Slider ausgeben */
+				$titel = get_sub_field('video_title');
+				$txt = get_sub_field('video_txt');
 				if(!get_sub_field('videotyp')) {
 					/* Embed Video */
 					$video = get_sub_field('video');
 					$embed_code = wp_oembed_get($video);
-					$titel = get_sub_field('video_title');
-					$txt = get_sub_field('video_txt');
 					echo '<div class="video-container">';
 					echo $embed_code;
 					echo '</div>';

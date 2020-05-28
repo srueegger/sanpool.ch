@@ -48,9 +48,10 @@
 	});
 
 	/* InfoButtons ein und ausfahren */
-	$('#infoButtons li').on('click', function() {
+	/* Mobile muss da noch eine bessere Lösung gefunden werden */
+/* 	$('#infoButtons li').on('click', function() {
 		$(this).toggleClass('active');
-	});
+	}); */
 
 	/* Hamburger Button animinieren */
 	$('.hamburger').on('click', function() {

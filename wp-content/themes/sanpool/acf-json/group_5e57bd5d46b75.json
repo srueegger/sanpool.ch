@@ -52,6 +52,11 @@
                 "id": ""
             },
             "wpml_cf_preferences": 0,
+            "admin_column_enabled": 1,
+            "admin_column_post_types": [
+                "sp_interne_kurse"
+            ],
+            "admin_column_taxonomies": "",
             "choices": {
                 "mo": "Montag",
                 "di": "Dienstag",
@@ -83,9 +88,11 @@
                 "id": ""
             },
             "choices": {
-                "578": "Mirjam Baumgartner",
-                "577": "Anita Meier",
-                "576": "Max Müller"
+                "628": "Pascal Rey",
+                "627": "Silvia Frey",
+                "578": "Didier Gonzalez",
+                "577": "Daniel Uebersax",
+                "576": "Simon Faust"
             },
             "default_value": [],
             "allow_null": 0,
@@ -110,6 +117,11 @@
                 "id": ""
             },
             "wpml_cf_preferences": 0,
+            "admin_column_enabled": 1,
+            "admin_column_post_types": [
+                "sp_interne_kurse"
+            ],
+            "admin_column_taxonomies": "",
             "default_value": "",
             "placeholder": "",
             "prepend": "",
@@ -130,6 +142,11 @@
                 "id": ""
             },
             "wpml_cf_preferences": 0,
+            "admin_column_enabled": 1,
+            "admin_column_post_types": [
+                "sp_interne_kurse"
+            ],
+            "admin_column_taxonomies": "",
             "choices": {
                 "de": "Deutsch",
                 "fr": "Französisch"
@@ -167,19 +184,22 @@
             "name": "kurse_storniert",
             "type": "true_false",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 0,
+            "admin_column_post_types": "",
+            "admin_column_taxonomies": "",
             "message": "",
             "default_value": 0,
             "ui": 1,
             "ui_on_text": "",
-            "ui_off_text": "",
-            "wpml_cf_preferences": 0
+            "ui_off_text": ""
         }
     ],
     "location": [
@@ -199,5 +219,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1589919296
+    "modified": 1590490509
 }

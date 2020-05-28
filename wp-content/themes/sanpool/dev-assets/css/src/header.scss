@@ -118,7 +118,8 @@ header {
 		&:not(:last-of-type) {
 			margin-bottom: 5px;
 		}
-		&.active {
+		&.active,
+		&:hover {
 			background-color: $gray-900;
 			transition: all .2s linear;
 			border: 1px solid $gray-900;

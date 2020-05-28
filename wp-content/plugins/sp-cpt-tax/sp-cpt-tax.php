@@ -49,7 +49,7 @@ function cptui_register_my_cpts() {
 		"rewrite" => false,
 		"query_var" => true,
 		"menu_icon" => "dashicons-star-filled",
-		"supports" => [ "title", "custom-fields", "author", "page-attributes" ],
+		"supports" => [ "title", "custom-fields", "page-attributes" ],
 	];
 
 	register_post_type( "sp_interne_kurse", $args );

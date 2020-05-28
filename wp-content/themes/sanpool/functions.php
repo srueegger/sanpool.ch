@@ -204,7 +204,7 @@ function sp_render_accordeon_content($identifier, $rowIndex, $title, $txt) {
 	?>
 	<div class="card">
 		<div class="card-header" id="heading-<?php echo $rowIndex; ?>">
-			<h2 class="mb-0" data-toggle="collapse" data-target="#collapse-<?php echo $rowIndex; ?>" aria-expanded="false" aria-controls="collapse-<?php echo $rowIndex; ?>">
+			<h2 class="mb-0 text-white" data-toggle="collapse" data-target="#collapse-<?php echo $rowIndex; ?>" aria-expanded="false" aria-controls="collapse-<?php echo $rowIndex; ?>">
 				<?php echo $title; ?>
 				<span class="icon float-right">
 					<i style="display: block;" class="far fa-angle-down fa-1x iconclosed"></i>

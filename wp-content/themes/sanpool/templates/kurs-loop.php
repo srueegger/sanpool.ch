@@ -15,7 +15,7 @@ $course_lang = get_field( 'kurse_lng', get_the_ID() );
 			</picture>
 		</div>
 		<div class="card-body">
-			<h5 class="card-title"><?php echo $terms[0]->name; ?> - <?php echo get_the_title( get_the_ID() ); ?></h5>
+			<h5 class="card-title"><?php echo $terms[0]->name; ?></h5>
 			<p class="card-text mb-0"><?php the_field( 'kurskategorie_shortdesc', $terms[0] ); ?></p>
 			<hr>
 			<div class="row text-center">
