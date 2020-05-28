@@ -31,15 +31,16 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 	});
 
 	/* Kurs Cards Slider */
-	$('.courseSlider, .teamSlider').owlCarousel({
+	var sanpool_owl_carousel = $('.courseSlider, .teamSlider').owlCarousel({
 		loop: true,
 		autplay: false,
+		nav: true,
+		dots: true,
+		navText: ['<i class="far fa-angle-left text-primary fa-8x"></i>', '<i class="far fa-angle-right text-primary fa-8x"></i>'],
 		responsive: {
 			0 : {
 				items: 1,
 				margin: 0,
-				nav: false,
-				dots: true
 			},
 			768 : {
 				items: 2,
@@ -48,15 +49,15 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 			992 : {
 				items: 3,
 				margin: 25,
-			},
-			1200 : {
-				dots: false,
-				nav: true,
-				navText: ['<i class="far fa-angle-left text-primary fa-10x"></i>', '<i class="far fa-angle-right text-primary fa-10x"></i>'],
-				margin: 25,
-				items: 4
+				nav: true
 			}
 		}
+	});
+
+	/* Bugfix um OWL Navigation immer anzuzeigen */
+	$('.courseSlider, .teamSlider').find('.owl-nav').removeClass('disabled');
+	sanpool_owl_carousel.on('changed.owl.carousel', function(event) {
+		$(this).find('.owl-nav').removeClass('disabled');
 	});
 
 	/* InfoButtons ein und ausfahren */

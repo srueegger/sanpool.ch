@@ -11289,7 +11289,7 @@ button:focus {
 }
 
 .owl-nav {
-  margin: 0;
+  margin: 0 !important;
   position: absolute;
   bottom: 50%;
   width: 100%;
@@ -11353,8 +11353,8 @@ button:focus {
   border: 1px solid #0090cc;
 }
 
-.fa-10x {
-  font-size: 10em;
+.fa-8x {
+  font-size: 8em;
 }
 
 .owl-theme .owl-nav .owl-prev,

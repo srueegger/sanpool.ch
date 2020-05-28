@@ -42,6 +42,41 @@
             "rows": 4,
             "new_lines": "br",
             "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_5ecfab0558d06",
+            "label": "Text der als Fehlermeldung im Formular angezeigt werden soll, wenn das Anmeldelimit erreicht wurde",
+            "name": "course_setting_sublimit",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 0,
+            "admin_column_post_types": [
+                "post",
+                "page",
+                "sp_interne_kurse",
+                "sp_kursleiter",
+                "sp_team"
+            ],
+            "admin_column_taxonomies": [
+                "category",
+                "post_tag",
+                "link_category",
+                "translation_priority",
+                "sp_kurskategorien"
+            ],
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         }
     ],
     "location": [
@@ -61,5 +96,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1589882029
+    "modified": 1590668086
 }

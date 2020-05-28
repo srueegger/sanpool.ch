@@ -15,10 +15,15 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 1,
+            "admin_column_post_types": [
+                "sp_interne_kurse"
+            ],
+            "admin_column_taxonomies": "",
             "display_format": "d.m.Y",
             "return_format": "d.m.Y",
-            "first_day": 1,
-            "wpml_cf_preferences": 0
+            "first_day": 1
         },
         {
             "key": "field_5e57be4c4a011",
@@ -33,10 +38,15 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 1,
+            "admin_column_post_types": [
+                "sp_interne_kurse"
+            ],
+            "admin_column_taxonomies": "",
             "display_format": "d.m.Y",
             "return_format": "d.m.Y",
-            "first_day": 1,
-            "wpml_cf_preferences": 0
+            "first_day": 1
         },
         {
             "key": "field_5eb7a41526dc6",
@@ -87,6 +97,12 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 1,
+            "admin_column_post_types": [
+                "sp_interne_kurse"
+            ],
+            "admin_column_taxonomies": "",
             "choices": {
                 "628": "Pascal Rey",
                 "627": "Silvia Frey",
@@ -100,7 +116,6 @@
             "ui": 1,
             "ajax": 0,
             "return_format": "array",
-            "wpml_cf_preferences": 0,
             "placeholder": ""
         },
         {
@@ -184,7 +199,7 @@
             "name": "kurse_storniert",
             "type": "true_false",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -219,5 +234,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1590490509
+    "modified": 1590525614
 }
