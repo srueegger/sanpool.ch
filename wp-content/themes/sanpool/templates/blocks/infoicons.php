@@ -23,18 +23,22 @@ if( !empty($block['className']) ) {
 			echo '<div class="row mt-3">';
 			while(have_rows('block_infoicons_icons')) {
 				the_row();
+				$link = get_sub_field( 'link' );
+				$link_target = $link['target'] ? $link['target'] : '_self';
 				?>
 				<div class="col-6 col-md-4 col-xl mb-3 mb-xl-0">
 					<div class="shortlink-item text-center">
-						<div class="iconbox">
-							<span class="fa-stack fa-4x">
-								<i class="fal fa-square fa-stack-2x"></i>
-								<i class="<?php the_sub_field('icon'); ?> fa-stack-1x"></i>
-							</span>
-						</div>
-						<div class="textbox mt-3">
-							<h5><?php the_sub_field('txt'); ?></h5>
-						</div>
+						<a href="<?php echo $link['url']; ?>" target="<?php echo $link_target; ?>">
+							<div class="iconbox">
+								<span class="fa-stack fa-4x">
+									<i class="fal fa-square fa-stack-2x"></i>
+									<i class="<?php the_sub_field('icon'); ?> fa-stack-1x"></i>
+								</span>
+							</div>
+							<div class="textbox mt-3">
+								<h5><?php echo $link['title']; ?></h5>
+							</div>
+						</a>
 					</div>
 				</div>
 				<?php

@@ -70,10 +70,10 @@
                     "choices": []
                 },
                 {
-                    "key": "field_5eafcd825450d",
-                    "label": "Text",
-                    "name": "txt",
-                    "type": "text",
+                    "key": "field_5ecfaca31f117",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "link",
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
@@ -82,12 +82,11 @@
                         "class": "",
                         "id": ""
                     },
-                    "wpml_cf_preferences": 0,
-                    "default_value": "",
-                    "placeholder": "",
-                    "prepend": "",
-                    "append": "",
-                    "maxlength": ""
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": "",
+                    "admin_column_taxonomies": "",
+                    "return_format": "array",
+                    "wpml_cf_preferences": 0
                 }
             ]
         }
@@ -109,5 +108,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1588585730
+    "modified": 1590668824
 }
