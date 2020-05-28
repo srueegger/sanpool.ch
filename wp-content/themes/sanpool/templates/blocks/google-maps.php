@@ -9,7 +9,7 @@ if( !empty($block['anchor']) ) {
 	<?php
 	if(have_rows( 'block_gm_locations' )) {
 		echo '<div class="container"><div class="row"><div class="col-12"><ul class="list-inline" id="mapMarkersLinks"></ul></div></div></div>';
-		echo '<div class="sanpool-map" data-zoom="16">';
+		echo '<div class="sanpool-map" data-zoom="'.get_field( 'block_gm_zoom' ).'">';
 		while(have_rows( 'block_gm_locations' )) {
 			the_row();
 			$location = get_sub_field( 'location' );

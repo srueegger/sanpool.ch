@@ -3,6 +3,30 @@
     "title": "Block: Google Maps",
     "fields": [
         {
+            "key": "field_5ecfb721da5c9",
+            "label": "Zoomstufe der Karte",
+            "name": "block_gm_zoom",
+            "type": "range",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "admin_column_enabled": 0,
+            "admin_column_post_types": "",
+            "admin_column_taxonomies": "",
+            "default_value": "",
+            "min": 1,
+            "max": 18,
+            "step": "",
+            "prepend": "",
+            "append": "",
+            "wpml_cf_preferences": 0
+        },
+        {
             "key": "field_5ec3bbf5658a9",
             "label": "Standorte",
             "name": "block_gm_locations",
@@ -101,5 +125,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1589886093
+    "modified": 1590671236
 }
