@@ -60,11 +60,10 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 		$(this).find('.owl-nav').removeClass('disabled');
 	});
 
-	/* InfoButtons ein und ausfahren */
-	/* Mobile muss da noch eine bessere Lösung gefunden werden */
-/* 	$('#infoButtons li').on('click', function() {
+	/* InfoButtons ein und ausfahren - Mobile Bugfix da es kein CSS Hover gibt */
+ 	$('#infoButtons li').on('click touchstart', function() {
 		$(this).toggleClass('active');
-	}); */
+	});
 
 	/* Hamburger Button animinieren */
 	$('.hamburger').on('click', function() {

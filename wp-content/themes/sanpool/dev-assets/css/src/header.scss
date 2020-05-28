@@ -130,7 +130,8 @@ header {
 		&.blue {
 			background-color: $primary;
 			border: 1px solid $primary;
-			&.active {
+			&.active,
+			&:hover {
 				background-color: $primary;
 				border: 1px solid $primary;
 			}

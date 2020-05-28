@@ -11091,7 +11091,7 @@ header .navbar .navbar-collapse.show .navbar-nav .nav-item .nav-link {
   background-color: #0090cc;
   border: 1px solid #0090cc;
 }
-#infoButtons li.blue.active {
+#infoButtons li.blue.active, #infoButtons li.blue:hover {
   background-color: #0090cc;
   border: 1px solid #0090cc;
 }
