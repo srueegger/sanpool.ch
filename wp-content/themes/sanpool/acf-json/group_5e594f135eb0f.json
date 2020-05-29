@@ -15,19 +15,19 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
             "collapsed": "",
             "min": 1,
             "max": 0,
-            "layout": "table",
+            "layout": "block",
             "button_label": "Info hinzufügen",
-            "wpml_cf_preferences": 0,
             "sub_fields": [
                 {
-                    "key": "field_5e594f9ca9220",
-                    "label": "Bild",
-                    "name": "image",
-                    "type": "image",
-                    "instructions": "",
+                    "key": "field_5ed0987074ac9",
+                    "label": "Raster - Ausrichtung",
+                    "name": "raster",
+                    "type": "range",
+                    "instructions": "Mit diesem Wert wird die Breite des Blocks bestimmt.\r\nEin Block der über die komplette Breite trägt hat den Wert 12.\r\nBei Wert 6 geht der Block über die Hälfte der Breite.\r\nBei Wert 3 werden 4 Blöcke in einer Reihe angezeigt.\r\nBei Wert 0 werden die Blöcke automatisch ausgerichtet\r\n\r\nEs kann jeder beliebiger Wert (nur Ganzzahlen) zwischen 0 und 12 eingegeben werden.",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -35,7 +35,92 @@
                         "class": "",
                         "id": ""
                     },
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": "",
+                    "admin_column_taxonomies": "",
+                    "default_value": 4,
+                    "min": 0,
+                    "max": 12,
+                    "step": "",
+                    "prepend": "",
+                    "append": "",
+                    "wpml_cf_preferences": 0
+                },
+                {
+                    "key": "field_5ed09e9c5caad",
+                    "label": "Kacheltyp",
+                    "name": "typ",
+                    "type": "true_false",
+                    "instructions": "Zwischen Bild- und Farbkachel wählen",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": "",
+                    "admin_column_taxonomies": "",
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "Farbkachel",
+                    "ui_off_text": "Bildkachel",
+                    "wpml_cf_preferences": 0
+                },
+                {
+                    "key": "field_5ed09fb56879c",
+                    "label": "Hintergrundfarbe",
+                    "name": "bgcolor",
+                    "type": "color_picker",
+                    "instructions": "Standard Blau: #0090cc",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ed09e9c5caad",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": "",
+                    "admin_column_taxonomies": "",
+                    "default_value": "#0090cc",
+                    "wpml_cf_preferences": 0
+                },
+                {
+                    "key": "field_5e594f9ca9220",
+                    "label": "Bild",
+                    "name": "image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ed09e9c5caad",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
                     "wpml_cf_preferences": 0,
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": "",
+                    "admin_column_taxonomies": "",
                     "return_format": "array",
                     "preview_size": "thumbnail",
                     "library": "all",
@@ -48,10 +133,10 @@
                     "mime_types": ""
                 },
                 {
-                    "key": "field_5e594faaa9221",
-                    "label": "Link",
-                    "name": "link",
-                    "type": "url",
+                    "key": "field_5ed09642a4eed",
+                    "label": "Titel",
+                    "name": "titel",
+                    "type": "text",
                     "instructions": "",
                     "required": 1,
                     "conditional_logic": 0,
@@ -60,9 +145,86 @@
                         "class": "",
                         "id": ""
                     },
+                    "wpml_cf_preferences": 0,
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": [
+                        "post",
+                        "page",
+                        "sp_interne_kurse",
+                        "sp_kursleiter",
+                        "sp_team"
+                    ],
+                    "admin_column_taxonomies": [
+                        "category",
+                        "post_tag",
+                        "link_category",
+                        "translation_priority",
+                        "sp_kurskategorien"
+                    ],
                     "default_value": "",
                     "placeholder": "",
-                    "wpml_cf_preferences": 0
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ed09658a4eee",
+                    "label": "Text",
+                    "name": "txt",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ed09e9c5caad",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": "",
+                    "admin_column_taxonomies": "",
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
+                },
+                {
+                    "key": "field_5e594faaa9221",
+                    "label": "Link",
+                    "name": "link",
+                    "type": "url",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ed09e9c5caad",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": "",
+                    "admin_column_taxonomies": "",
+                    "default_value": "",
+                    "placeholder": ""
                 }
             ]
         }
@@ -84,5 +246,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1582911793
+    "modified": 1590730766
 }

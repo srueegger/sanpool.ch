@@ -15,63 +15,83 @@ if( !empty($block['className']) ) {
 	<div class="container">
 		<div class="row">
 			<?php
-			$total_blocks = count( get_field('block_infoblocks_infos') );
 			if(have_rows('block_infoblocks_infos')) {
 				while(have_rows('block_infoblocks_infos')) {
 					the_row();
-					$image = get_sub_field('image');
+					$typ = get_sub_field( 'typ' );
+					$image = get_sub_field( 'image' );
+					$link = get_sub_field( 'link' );
+					$overlay_seen_container_no_animation = '';
+					if(!$link) {
+						$overlay_seen_container_no_animation = ' no-animation';
+					}
 					$class_array = array(
-						'mb-3',
+						'mb-kachel-card',
 						'col-12',
 						'col-md-6'
 					);
-					/* Desktop Grösse berechnen bei Total 4 einträgen */
-					if($total_blocks == 4 && get_row_index() <= 3) {
-						array_push($class_array, 'col-lg-4');
+					$raster = get_sub_field( 'raster' );
+					$print_raster = 'col-lg-' . $raster;
+					if($raster == 0) {
+						$print_raster = 'col-lg';
 					}
-					if($total_blocks == 4 && get_row_index() > 3) {
-						array_push($class_array, 'col-lg-12');
-					}
-					/* Desktop Grösse berechnen bei Total 5 einträgen */
-					if($total_blocks == 5 && get_row_index() <= 3) {
-						array_push($class_array, 'col-lg-4');
-					}
-					if($total_blocks == 5 && get_row_index() > 3) {
-						array_push($class_array, 'col-lg-6');
+					array_push($class_array, $print_raster);
+					$background_color_style = '';
+					if($typ) {
+						$background_color_style = ' style="background-color: ' . get_sub_field( 'bgcolor' ) . ';"';
 					}
 					?>
 					<div class="<?php echo implode( ' ', $class_array ); ?>">
-						<div class="card">
-							<div class="image-container">
-								<picture>
-									<source srcset="<?php echo $image['sizes']['infoblock-2x']; ?> 2x, <?php echo $image['sizes']['infoblock']; ?> 1x" />
-									<img loading="lazy" src="<?php echo $image['sizes']['infoblock']; ?>" class="card-img-top" alt="<?php echo $image['alt']; ?>">
-								</picture>
-							</div>
-							<div class="overlay-seen-container">
-								<div class="inner">
-									<h4 class="text-white"><?php echo $image['title']; ?></h4>
-									<div class="text-center mt-3">
-										<span class="fa-stack fa-2x text-white">
-											<i class="fal fa-circle fa-stack-2x"></i>
-											<i class="fas fa-plus fa-stack-1x fa-inverse"></i>
-										</span>
-									</div>
+						<div<?php echo $background_color_style; ?> class="card h-100">
+							<?php
+							if(!$typ) {
+								?>
+								<div class="image-container">
+									<picture>
+										<source srcset="<?php echo $image['sizes']['infoblock-2x']; ?> 2x, <?php echo $image['sizes']['infoblock']; ?> 1x" />
+										<img loading="lazy" src="<?php echo $image['sizes']['infoblock']; ?>" class="card-img-top" alt="<?php echo $image['alt']; ?>">
+									</picture>
 								</div>
-							</div>
-							<div class="overlay-container">
+								<?php
+							}
+							?>
+							<div class="overlay-seen-container<?php echo $overlay_seen_container_no_animation; ?>">
 								<div class="inner">
-									<p><?php echo $image['caption']; ?></p>
-									<div class="text-center mt-3">
-										<a href="<?php the_sub_field('link'); ?>" target="_self">
+									<h4 class="text-white custom-text-shadow"><?php the_sub_field( 'titel' ) ?></h4>
+									<?php
+									if($link) {
+										/* Icon nur anzeigen, wenn ein Link vorhanden ist */
+										?>
+										<div class="text-center mt-3">
 											<span class="fa-stack fa-2x text-white">
 												<i class="fal fa-circle fa-stack-2x"></i>
 												<i class="fas fa-plus fa-stack-1x fa-inverse"></i>
 											</span>
-										</a>
-									</div>
+										</div>
+										<?php
+									}
+									?>
 								</div>
 							</div>
+							<?php if( $link ) {
+								/* Overlay Container nur anzeigen wenn ein Link vorhanden ist */
+								?>
+								<div class="overlay-container full">
+									<div class="inner">
+										<?php the_sub_field( 'txt' ); ?>
+										<div class="text-center mt-3">
+											<a href="<?php echo $link ?>" target="_self">
+												<span class="fa-stack fa-2x text-white">
+													<i class="fal fa-circle fa-stack-2x"></i>
+													<i class="fas fa-plus fa-stack-1x fa-inverse"></i>
+												</span>
+											</a>
+										</div>
+									</div>
+								</div>
+								<?php
+							}
+							?>
 						</div>
 					</div>
 					<?php

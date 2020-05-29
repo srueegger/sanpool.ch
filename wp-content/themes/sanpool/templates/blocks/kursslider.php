@@ -12,7 +12,7 @@ if( !empty($block['className']) ) {
 }
 ?>
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>">
-	<div class="container-fluid course-container mt-3">
+	<div class="container course-container mt-3">
 		<div class="row">
 			<div class="col-12 my-4">
 				<h2 class="h1 text-primary"><?php the_field('block_kursslider_title'); ?></h2>

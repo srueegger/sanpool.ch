@@ -11185,10 +11185,13 @@ button:focus {
   margin-bottom: 0;
   color: #fff;
 }
+.card .overlay-container.full {
+  background-color: #0090cc;
+}
 .card .col:not(:last-of-type) {
   border-right: 1px solid #e9ecef;
 }
-.card:hover .overlay-seen-container {
+.card:hover .overlay-seen-container:not(.no-animation) {
   overflow: hidden;
   height: 0;
 }
@@ -11611,6 +11614,19 @@ button:focus {
 }
 .sanpool-marker-link.active, .sanpool-marker-link:hover {
   text-decoration: underline;
+}
+
+.custom-text-shadow {
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.7);
+}
+
+.mb-kachel-card {
+  margin-bottom: 24px;
+}
+@media (min-width: 992px) {
+  .mb-kachel-card {
+    margin-bottom: 30px;
+  }
 }
 
 .gform_wrapper form {
