@@ -6,6 +6,7 @@ $sanpool_theme = wp_get_theme();
 $text_domain = esc_attr( $sanpool_theme->get( 'TextDomain' ) );
 /* archive-sp_interne_kurse.php */
 do_action( 'wpml_register_single_string', $text_domain, 'Unsere nächste Kurse', 'Unsere nächste Kurse' );
+do_action( 'wpml_register_single_string', $text_domain, 'Details / Termine', 'Details / Termine' );
 /* taxonomy-sp_kurskategorien.php */
 do_action( 'wpml_register_single_string', $text_domain, 'Status', 'Status' );
 do_action( 'wpml_register_single_string', $text_domain, 'Kurs-Nr.', 'Kurs-Nr.' );
@@ -15,3 +16,7 @@ do_action( 'wpml_register_single_string', $text_domain, 'Wochentage', 'Wochentag
 do_action( 'wpml_register_single_string', $text_domain, 'Ort', 'Ort' );
 do_action( 'wpml_register_single_string', $text_domain, 'Anmelden', 'Anmelden' );
 do_action( 'wpml_register_single_string', $text_domain, 'Anmeldung für Kurs:', 'Anmeldung für Kurs:' );
+do_action( 'wpml_register_single_string', $text_domain, 'Plätze verfügbar', 'Plätze verfügbar' );
+do_action( 'wpml_register_single_string', $text_domain, 'Wenig Plätze verfügbar', 'Wenig Plätze verfügbar' );
+do_action( 'wpml_register_single_string', $text_domain, 'Kurs ist ausgebucht', 'Kurs ist ausgebucht' );
+do_action( 'wpml_register_single_string', $text_domain, 'Anmelden', 'Anmelden' );
