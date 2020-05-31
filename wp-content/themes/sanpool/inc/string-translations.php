@@ -20,3 +20,5 @@ do_action( 'wpml_register_single_string', $text_domain, 'Plätze verfügbar', 'P
 do_action( 'wpml_register_single_string', $text_domain, 'Wenig Plätze verfügbar', 'Wenig Plätze verfügbar' );
 do_action( 'wpml_register_single_string', $text_domain, 'Kurs ist ausgebucht', 'Kurs ist ausgebucht' );
 do_action( 'wpml_register_single_string', $text_domain, 'Anmelden', 'Anmelden' );
+/* Kursslider */
+do_action( 'wpml_register_single_string', $text_domain, 'Jetzt buchen', 'Jetzt buchen' );
