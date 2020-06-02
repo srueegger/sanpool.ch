@@ -46,7 +46,7 @@ function cptui_register_my_cpts() {
 		"capability_type" => "post",
 		"map_meta_cap" => true,
 		"hierarchical" => false,
-		"rewrite" => false,
+		"rewrite" => array( 'slug' => 'kurse', 'with_front' => true ),
 		"query_var" => true,
 		"menu_icon" => "dashicons-star-filled",
 		"supports" => [ "title", "custom-fields", "page-attributes" ],

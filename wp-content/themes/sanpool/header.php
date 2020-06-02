@@ -22,19 +22,22 @@
 									<span class="hamburger-inner"></span>
 								</span>
 							</button>
-							<?php
-							$args = array(
-								'theme_location' => 'mainmenu',
-								'depth' => 2,
-								'container' => 'div',
-								'container_class' => 'collapse navbar-collapse',
-								'container_id' => 'mainmenu',
-								'menu_class' => 'navbar-nav ml-auto position-relative',
-								'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
-								'walker' => new WP_Bootstrap_Navwalker(),
-							);
-							wp_nav_menu($args);
-							?>
+							<div id="mainmenu" class="collapse navbar-collapse">
+								<ul class="navbar-nav ml-auto position-relative">
+									<?php
+									$args = array(
+										'theme_location' => 'mainmenu',
+										'depth' => 2,
+										'container' => false,
+										'items_wrap' => '%3$s',
+										'fallback_cb' => 'WP_Bootstrap_Navwalker::fallback',
+										'walker' => new WP_Bootstrap_Navwalker(),
+									);
+									wp_nav_menu($args);
+									sp_languages_list_switcher();
+									?>
+								</ul>
+							</div>
 						</nav>
 					</div>
 				</div>

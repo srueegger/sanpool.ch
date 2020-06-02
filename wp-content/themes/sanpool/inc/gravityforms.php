@@ -48,7 +48,7 @@ function sp_check_gf_submission_subscribers_number( $validation_result ) {
 		$validation_result['is_valid'] = false; /* Formvalidierung wird auf falsch gesetzt - damit kann das Formular nicht abgesendet werden, die Anmeldedaten werden nicht gespeichert */
 		/* Entsprechende Fehlermeldung anzeigen */
 		add_filter( 'gform_validation_message_1', function ( $message, $form ) {
-			$message = '<div class="validation_error"><p>' . get_field( 'course_setting_sublimit', 'option' ) . '</p></div>';
+			$message = '<div class="validation_error"><p class="mb-0">' . get_field( 'course_setting_sublimit', 'option' ) . '</p></div>';
 			return $message;
 		}, 10, 2 );
 	}

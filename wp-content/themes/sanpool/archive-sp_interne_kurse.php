@@ -24,6 +24,15 @@ get_header();
 						$image = get_field('kurskategorie_image', $term);
 						/* Kurskategorie nur anzeigen wenn der Status "aktiv (1)" ist */
 						if($status == 1) {
+							/* Richtige Felder je Sprache ausgeben */
+							if(ICL_LANGUAGE_CODE == 'de') {
+								$title = $term->name;
+								$shortdesc = get_field( 'kurskategorie_shortdesc', $term );
+							} else {
+								$lang = ICL_LANGUAGE_CODE;
+								$title = get_field( 'kurskategorie_title_'.$lang, $term );
+								$shortdesc = get_field( 'kurskategorie_shortdesc_'.$lang, $term );
+							}
 							?>
 							<div class="col-12 col-md-6 col-lg-4 mb-4">
 								<div class="card h-100">
@@ -34,11 +43,11 @@ get_header();
 										</picture>
 									</div>
 									<div class="card-body">
-										<h2 class="h5 card-title"><?php echo $term->name; ?></h2>
-										<p class="card-text"><?php the_field('kurskategorie_shortdesc', $term); ?></p>
+										<h2 class="h5 card-title"><?php echo $title; ?></h2>
+										<p class="card-text"><?php echo $shortdesc; ?></p>
 									</div>
 									<div class="card-footer">
-										<a href="<?php echo get_term_link($term, 'sp_kurskategorien'); ?>" class="btn btn-primary w-100">Details / Termine</a>
+										<a href="<?php echo get_term_link($term, 'sp_kurskategorien'); ?>" class="btn btn-primary w-100"><?php echo apply_filters( 'wpml_translate_single_string', 'Details / Termine', 'sp-theme', 'Details / Termine' ); ?></a>
 									</div>
 								</div>
 							</div>

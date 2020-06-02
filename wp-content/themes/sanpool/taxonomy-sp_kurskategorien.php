@@ -110,20 +110,21 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * $the_percen
 											Wenn weniger als 75% der Plätze verfügbar sind:
 											_Gelb/Oranges Icon und Text "Wenig Plätze verfügbar"
 											Wenn keine Plätze verfügbar sind:
-											_Rotes Icon (Dreieck) keine Plätze verfügbar
+											_Rotes Icon (Dreieck) Kurs ist ausgebucht
 										*/
-										$subscribe_button = '<button data-postid="'.get_the_ID().'" data-kursnummer="'.get_the_title().'" type="button" class="btn btn-primary js_subscribe_course">Anmelden</button>';
+										$subscribe_button = '<button data-postid="'.get_the_ID().'" data-kursnummer="'.get_the_title().'" type="button" class="btn btn-primary js_subscribe_course">
+										' . apply_filters( 'wpml_translate_single_string', 'Anmelden', 'sp-theme', 'Anmelden' ) . '</button>';
 										/* Genügend freie Plätze */
 										if($bisherige_teilnehmer < $total_anzahl_teilnehmer_schwelle && $bisherige_teilnehmer < $total_anzahl_teilnehmer) {
-											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Plätze verfügbar" class="kurs-status"><i class="fas fa-check-circle fa-fw text-success"></i></span>';
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="' . apply_filters( 'wpml_translate_single_string', 'Plätze verfügbar', 'sp-theme', 'Plätze verfügbar' ) . '" class="kurs-status"><i class="fas fa-check-circle fa-fw text-success"></i></span>';
 											/* Wenig Plätze verfügbar */
 										} elseif($bisherige_teilnehmer >= $total_anzahl_teilnehmer_schwelle && $bisherige_teilnehmer < $total_anzahl_teilnehmer) {
-											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Wenig Plätze verfügbar" class="kurs-status"><i class="fas fa-check-circle fa-fw text-warning"></i></span>';
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="' . apply_filters( 'wpml_translate_single_string', 'Wenig Plätze verfügbar', 'sp-theme', 'Wenig Plätze verfügbar' ) . '" class="kurs-status"><i class="fas fa-check-circle fa-fw text-warning"></i></span>';
 											/* Kurs ist ausgebucht */
 										} elseif($bisherige_teilnehmer > $total_anzahl_teilnehmer_schwelle && $bisherige_teilnehmer >= $total_anzahl_teilnehmer) {
-											$status_print = '<span data-toggle="tooltip" data-placement="top" title="Kurs ist ausgebucht" class="kurs-status"><i class="fas fa-exclamation-triangle fa-fw text-danger"></i></span>';
+											$status_print = '<span data-toggle="tooltip" data-placement="top" title="' . apply_filters( 'wpml_translate_single_string', 'Kurs ist ausgebucht', 'sp-theme', 'Kurs ist ausgebucht' ) . '" class="kurs-status"><i class="fas fa-exclamation-triangle fa-fw text-danger"></i></span>';
 											/* Button disabeln */
-											$subscribe_button = '<button type="button" class="btn btn-primary" disabled>Anmeldung</button>';
+											$subscribe_button = '<button type="button" class="btn btn-primary" disabled>' . apply_filters( 'wpml_translate_single_string', 'Anmelden', 'sp-theme', 'Anmelden' ) . '</button>';
 										}
 										?>
 										<div class="kurse-table__body--row">

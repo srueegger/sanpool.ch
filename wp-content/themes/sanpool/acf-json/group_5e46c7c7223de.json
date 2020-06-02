@@ -3,6 +3,23 @@
     "title": "Kurskategorien",
     "fields": [
         {
+            "key": "field_5ed3c0197243c",
+            "label": "Allgemeine Einstellungen",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "wpml_cf_preferences": 0
+        },
+        {
             "key": "field_5eb05091c3365",
             "label": "Status",
             "name": "kurskategorie_status",
@@ -21,25 +38,6 @@
             "ui_on_text": "Aktiv",
             "ui_off_text": "Inaktiv",
             "wpml_cf_preferences": 0
-        },
-        {
-            "key": "field_5e46cde42a91a",
-            "label": "Untertitel",
-            "name": "kurskategorie_subtitle",
-            "type": "text",
-            "instructions": "",
-            "required": 1,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "placeholder": "",
-            "prepend": "",
-            "append": "",
-            "maxlength": ""
         },
         {
             "key": "field_5e46c7ccaed18",
@@ -64,6 +62,64 @@
             "max_height": "",
             "max_size": "",
             "mime_types": ""
+        },
+        {
+            "key": "field_5eb01e53843ff",
+            "label": "Maximale Anzahl Teilnehmer",
+            "name": "kurskategorie_teilnehmer",
+            "type": "number",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "min": "",
+            "max": "",
+            "step": "",
+            "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_5ed3c02d7243d",
+            "label": "Deutsch",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "placement": "top",
+            "endpoint": 0,
+            "wpml_cf_preferences": 0
+        },
+        {
+            "key": "field_5e46cde42a91a",
+            "label": "Untertitel",
+            "name": "kurskategorie_subtitle",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
         },
         {
             "key": "field_5e46c7deaed19",
@@ -163,10 +219,27 @@
             ]
         },
         {
-            "key": "field_5eb01e53843ff",
-            "label": "Maximale Anzahl Teilnehmer",
-            "name": "kurskategorie_teilnehmer",
-            "type": "number",
+            "key": "field_5ed3c067b0228",
+            "label": "Französisch",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ed3c1c2b0f10",
+            "label": "Anzeige Titel",
+            "name": "kurskategorie_title_fr",
+            "type": "text",
             "instructions": "",
             "required": 1,
             "conditional_logic": 0,
@@ -175,14 +248,473 @@
                 "class": "",
                 "id": ""
             },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 0,
+            "admin_column_post_types": [
+                "post",
+                "page",
+                "sp_interne_kurse",
+                "sp_kursleiter",
+                "sp_team"
+            ],
+            "admin_column_taxonomies": [
+                "category",
+                "post_tag",
+                "link_category",
+                "translation_priority",
+                "sp_kurskategorien"
+            ],
             "default_value": "",
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "min": "",
-            "max": "",
-            "step": "",
-            "wpml_cf_preferences": 0
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ed3c07cb0229",
+            "label": "Untertitel",
+            "name": "kurskategorie_subtitle_fr",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 0,
+            "admin_column_post_types": [
+                "post",
+                "page",
+                "sp_interne_kurse",
+                "sp_kursleiter",
+                "sp_team"
+            ],
+            "admin_column_taxonomies": [
+                "category",
+                "post_tag",
+                "link_category",
+                "translation_priority",
+                "sp_kurskategorien"
+            ],
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ed3c093b022a",
+            "label": "Kurzbeschreibung",
+            "name": "kurskategorie_shortdesc_fr",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 0,
+            "admin_column_post_types": [
+                "post",
+                "page",
+                "sp_interne_kurse",
+                "sp_kursleiter",
+                "sp_team"
+            ],
+            "admin_column_taxonomies": [
+                "category",
+                "post_tag",
+                "link_category",
+                "translation_priority",
+                "sp_kurskategorien"
+            ],
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5ed3c0b0b022b",
+            "label": "Ausführliche Beschreibung",
+            "name": "kurskategorie_longdesc_fr",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 0,
+            "admin_column_post_types": [
+                "post",
+                "page",
+                "sp_interne_kurse",
+                "sp_kursleiter",
+                "sp_team"
+            ],
+            "admin_column_taxonomies": [
+                "category",
+                "post_tag",
+                "link_category",
+                "translation_priority",
+                "sp_kurskategorien"
+            ],
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5ed3c0cab022c",
+            "label": "Weitere Informationen",
+            "name": "kurskategorie_infos_fr",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Info hinzfügen",
+            "sub_fields": [
+                {
+                    "key": "field_5ed3c0cab022d",
+                    "label": "Titel",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": [
+                        "post",
+                        "page",
+                        "sp_interne_kurse",
+                        "sp_kursleiter",
+                        "sp_team"
+                    ],
+                    "admin_column_taxonomies": [
+                        "category",
+                        "post_tag",
+                        "link_category",
+                        "translation_priority",
+                        "sp_kurskategorien"
+                    ],
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ed3c0cab022e",
+                    "label": "Text",
+                    "name": "txt",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": [
+                        "post",
+                        "page",
+                        "sp_interne_kurse",
+                        "sp_kursleiter",
+                        "sp_team"
+                    ],
+                    "admin_column_taxonomies": [
+                        "category",
+                        "post_tag",
+                        "link_category",
+                        "translation_priority",
+                        "sp_kurskategorien"
+                    ],
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
+                }
+            ]
+        },
+        {
+            "key": "field_5ed3c1323f3bd",
+            "label": "Italienisch",
+            "name": "",
+            "type": "tab",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "placement": "top",
+            "endpoint": 0
+        },
+        {
+            "key": "field_5ed3c1e5b0f11",
+            "label": "Anzeige Titel",
+            "name": "kurskategorie_title_it",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 0,
+            "admin_column_post_types": [
+                "post",
+                "page",
+                "sp_interne_kurse",
+                "sp_kursleiter",
+                "sp_team"
+            ],
+            "admin_column_taxonomies": [
+                "category",
+                "post_tag",
+                "link_category",
+                "translation_priority",
+                "sp_kurskategorien"
+            ],
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ed3c14e3f3be",
+            "label": "Untertitel",
+            "name": "kurskategorie_subtitle_it",
+            "type": "text",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 0,
+            "admin_column_post_types": [
+                "post",
+                "page",
+                "sp_interne_kurse",
+                "sp_kursleiter",
+                "sp_team"
+            ],
+            "admin_column_taxonomies": [
+                "category",
+                "post_tag",
+                "link_category",
+                "translation_priority",
+                "sp_kurskategorien"
+            ],
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": ""
+        },
+        {
+            "key": "field_5ed3c15f3f3bf",
+            "label": "Kurzbeschreibung",
+            "name": "kurskategorie_shortdesc_it",
+            "type": "textarea",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 0,
+            "admin_column_post_types": [
+                "post",
+                "page",
+                "sp_interne_kurse",
+                "sp_kursleiter",
+                "sp_team"
+            ],
+            "admin_column_taxonomies": [
+                "category",
+                "post_tag",
+                "link_category",
+                "translation_priority",
+                "sp_kurskategorien"
+            ],
+            "default_value": "",
+            "placeholder": "",
+            "maxlength": "",
+            "rows": "",
+            "new_lines": "br"
+        },
+        {
+            "key": "field_5ed3c17e3f3c0",
+            "label": "Ausführliche Beschreibung (Kopie)",
+            "name": "kurskategorie_longdesc_it",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "admin_column_enabled": 0,
+            "admin_column_post_types": [
+                "post",
+                "page",
+                "sp_interne_kurse",
+                "sp_kursleiter",
+                "sp_team"
+            ],
+            "admin_column_taxonomies": [
+                "category",
+                "post_tag",
+                "link_category",
+                "translation_priority",
+                "sp_kurskategorien"
+            ],
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 0,
+            "delay": 0
+        },
+        {
+            "key": "field_5ed3c18e3f3c1",
+            "label": "Weitere Informationen",
+            "name": "kurskategorie_infos_it",
+            "type": "repeater",
+            "instructions": "",
+            "required": 1,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "wpml_cf_preferences": 0,
+            "collapsed": "",
+            "min": 1,
+            "max": 0,
+            "layout": "block",
+            "button_label": "Info hinzfügen",
+            "sub_fields": [
+                {
+                    "key": "field_5ed3c18e3f3c2",
+                    "label": "Titel",
+                    "name": "title",
+                    "type": "text",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": [
+                        "post",
+                        "page",
+                        "sp_interne_kurse",
+                        "sp_kursleiter",
+                        "sp_team"
+                    ],
+                    "admin_column_taxonomies": [
+                        "category",
+                        "post_tag",
+                        "link_category",
+                        "translation_priority",
+                        "sp_kurskategorien"
+                    ],
+                    "default_value": "",
+                    "placeholder": "",
+                    "prepend": "",
+                    "append": "",
+                    "maxlength": ""
+                },
+                {
+                    "key": "field_5ed3c18e3f3c3",
+                    "label": "Text",
+                    "name": "txt",
+                    "type": "wysiwyg",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "wpml_cf_preferences": 0,
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": [
+                        "post",
+                        "page",
+                        "sp_interne_kurse",
+                        "sp_kursleiter",
+                        "sp_team"
+                    ],
+                    "admin_column_taxonomies": [
+                        "category",
+                        "post_tag",
+                        "link_category",
+                        "translation_priority",
+                        "sp_kurskategorien"
+                    ],
+                    "default_value": "",
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 0,
+                    "delay": 0
+                }
+            ]
         }
     ],
     "location": [
@@ -202,5 +734,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1588613340
+    "modified": 1590936056
 }

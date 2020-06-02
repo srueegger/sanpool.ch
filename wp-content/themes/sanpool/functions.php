@@ -285,3 +285,65 @@ function sp_count_subs_by_course_id( $post_id, $echo = true ) {
 		return $bisherige_teilnehmer;
 	}
 }
+
+/***************************************
+ * 	 Create a Custom Language Switcher
+ ***************************************/
+function sp_languages_list_switcher() {
+	global $sitepress;
+	$languages = apply_filters( 'wpml_active_languages', NULL, array( 'skip_missing' => 0, 'link_empty_to' => HOME_URI ) );
+	echo '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item wpml-ls-item wpml-ls-current-language wpml-ls-menu-item wpml-ls-first-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item menu-item-has-children dropdown nav-item"><a title="'.strtoupper(ICL_LANGUAGE_CODE).'" href="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="dropdown-toggle nav-link"><span class="wpml-ls-display">'.strtoupper(ICL_LANGUAGE_CODE).'</span></a>';
+	echo '<ul class="dropdown-menu" role="menu">';
+	if(!empty($languages) && !is_tax( 'sp_kurskategorien' )){
+		/* Display Current Language */
+		foreach($languages as $language) {
+			/* Aktive Sprache nicht ausgeben */
+			if($language['code'] != ICL_LANGUAGE_CODE) {
+				echo '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item wpml-ls-item wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item nav-item"><a title="'.strtoupper($language['code']).'" href="'.$language['url'].'" class="dropdown-item"><span class="wpml-ls-display">'.strtoupper($language['code']).'</span></a></li>';
+			}
+		}
+	} else {
+		$lng_array = array(
+			'de',
+			'fr',
+			'it'
+		);
+		$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+		$domain = $_SERVER['HTTP_HOST'];
+		$lng_base_url = $protocol.$domain;
+		/* Bugfix für die Kurse Archiv-Seite */
+		if( is_post_type_archive( 'sp_interne_kurse' ) ) {
+			foreach($lng_array as $lng) {
+				/* Aktive Sprache ausblenden */
+				if($lng != ICL_LANGUAGE_CODE) {
+					/* URL manuell erstellen */
+					if($lng == 'de') {
+						$lng_url = $lng_base_url . '/kurse/';
+					} else {
+						$lng_url = $lng_base_url . '/' . $lng . '/kurse/';
+					}
+					/* Link ausgeben */
+					echo '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item wpml-ls-item wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item nav-item"><a title="'.strtoupper($lng).'" href="'.$lng_url.'" class="dropdown-item"><span class="wpml-ls-display">'.strtoupper($lng).'</span></a></li>';
+				}
+			}
+		}
+		/* Bugfix für Kurskategorie Übesichten */
+		if( is_tax( 'sp_kurskategorien' ) ) {
+			$term = get_term_by( 'slug', get_query_var( 'term' ), get_query_var( 'taxonomy' ) );
+			foreach($lng_array as $lng) {
+				/* Aktive Sprache ausblenden */
+				if($lng != ICL_LANGUAGE_CODE) {
+					/* URL manuell erstellen */
+					if($lng == 'de') {
+						$lng_url = $lng_base_url . '/kurskategorie/'.$term->slug.'/';
+					} else {
+						$lng_url = $lng_base_url . '/' . $lng . '/kurskategorie/'.$term->slug.'/';
+					}
+					/* Link ausgeben */
+					echo '<li itemscope="itemscope" itemtype="https://www.schema.org/SiteNavigationElement" class="menu-item wpml-ls-item wpml-ls-menu-item menu-item-type-wpml_ls_menu_item menu-item-object-wpml_ls_menu_item nav-item"><a title="'.strtoupper($lng).'" href="'.$lng_url.'" class="dropdown-item"><span class="wpml-ls-display">'.strtoupper($lng).'</span></a></li>';
+				}
+			}
+		}
+	}
+	echo '</ul></li>';
+}

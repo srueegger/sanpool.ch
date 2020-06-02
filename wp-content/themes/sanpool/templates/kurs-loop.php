@@ -5,6 +5,15 @@ $image = get_field( 'kurskategorie_image', $terms[0] );
 $course_date = get_field( 'kurse_beginn', get_the_ID() );
 $course_date_i18n = date_i18n( 'd.m.Y', strtotime($course_date) );
 $course_lang = get_field( 'kurse_lng', get_the_ID() );
+/* Sprachabhängige Felder ermitteln */
+if(ICL_LANGUAGE_CODE == 'de') {
+	$title = $terms[0]->name;
+	$shortdesc = get_field( 'kurskategorie_shortdesc', $terms[0] );
+} else {
+	$lng = ICL_LANGUAGE_CODE;
+	$title = get_field( 'kurskategorie_title_'.$lng, $terms[0] );
+	$shortdesc = get_field( 'kurskategorie_shortdesc_'.$lng, $terms[0] );
+}
 ?>
 <div class="item">
 	<div class="card h-100">
@@ -15,8 +24,8 @@ $course_lang = get_field( 'kurse_lng', get_the_ID() );
 			</picture>
 		</div>
 		<div class="card-body">
-			<h5 class="card-title"><?php echo $terms[0]->name; ?></h5>
-			<p class="card-text mb-0"><?php the_field( 'kurskategorie_shortdesc', $terms[0] ); ?></p>
+			<h5 class="card-title"><?php echo $title; ?></h5>
+			<p class="card-text mb-0"><?php echo $shortdesc; ?></p>
 			<hr>
 			<div class="row text-center">
 				<div class="col">
@@ -34,7 +43,7 @@ $course_lang = get_field( 'kurse_lng', get_the_ID() );
 				<a href="<?php echo get_term_link( $terms[0], 'sp_kurskategorien' ); ?>#<?php echo get_the_ID(); ?>;<?php echo urldecode(get_the_title()); ?>" target="_self">
 					<div class="overlay-container">
 						<div class="inner">
-							<h6 class="h3 text-white">Jetzt buchen</h6>
+							<h6 class="h3 text-white"><?php echo apply_filters( 'wpml_translate_single_string', 'Jetzt buchen', 'sp-theme', 'Jetzt buchen' ); ?></h6>
 						</div>
 					</div>
 				</a>
