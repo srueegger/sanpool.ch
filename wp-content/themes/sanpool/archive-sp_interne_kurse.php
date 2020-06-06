@@ -33,6 +33,13 @@ get_header();
 								$title = get_field( 'kurskategorie_title_'.$lang, $term );
 								$shortdesc = get_field( 'kurskategorie_shortdesc_'.$lang, $term );
 							}
+							$term_link = get_term_link($term, 'sp_kurskategorien');
+							if(ICL_LANGUAGE_CODE != 'de') {
+								$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+								$domain = $_SERVER['HTTP_HOST'];
+								$lng_base_url = $protocol.$domain;
+								$term_link = $lng_base_url . '/' . ICL_LANGUAGE_CODE . '/kurskategorie/' . $terms[0]->slug . '/';
+							}
 							?>
 							<div class="col-12 col-md-6 col-lg-4 mb-4">
 								<div class="card h-100">
@@ -47,7 +54,7 @@ get_header();
 										<p class="card-text"><?php echo $shortdesc; ?></p>
 									</div>
 									<div class="card-footer">
-										<a href="<?php echo get_term_link($term, 'sp_kurskategorien'); ?>" class="btn btn-primary w-100"><?php echo apply_filters( 'wpml_translate_single_string', 'Details / Termine', 'sp-theme', 'Details / Termine' ); ?></a>
+										<a href="<?php echo $term_link; ?>" class="btn btn-primary w-100"><?php echo apply_filters( 'wpml_translate_single_string', 'Details / Termine', 'sp-theme', 'Details / Termine' ); ?></a>
 									</div>
 								</div>
 							</div>

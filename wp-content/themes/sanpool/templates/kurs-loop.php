@@ -14,6 +14,13 @@ if(ICL_LANGUAGE_CODE == 'de') {
 	$title = get_field( 'kurskategorie_title_'.$lng, $terms[0] );
 	$shortdesc = get_field( 'kurskategorie_shortdesc_'.$lng, $terms[0] );
 }
+$course_link = get_term_link( $terms[0], 'sp_kurskategorien' ) . '#' . get_the_ID() . ';' . urldecode(get_the_title());
+if(ICL_LANGUAGE_CODE != 'de') {
+	$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
+	$domain = $_SERVER['HTTP_HOST'];
+	$lng_base_url = $protocol.$domain;
+	$course_link = $lng_base_url . '/' . ICL_LANGUAGE_CODE . '/kurskategorie/' . $terms[0]->slug . '/#' . get_the_ID() . ';' . urldecode(get_the_title());
+}
 ?>
 <div class="item">
 	<div class="card h-100">
@@ -40,7 +47,7 @@ if(ICL_LANGUAGE_CODE == 'de') {
 					<div class="mb-2"><i class="fal fa-comment-dots fa-2x"></i></div>
 					<div><?php echo $course_lang['label']; ?></div>
 				</div>
-				<a href="<?php echo get_term_link( $terms[0], 'sp_kurskategorien' ); ?>#<?php echo get_the_ID(); ?>;<?php echo urldecode(get_the_title()); ?>" target="_self">
+				<a href="<?php echo $course_link ?>" target="_self">
 					<div class="overlay-container">
 						<div class="inner">
 							<h6 class="h3 text-white"><?php echo apply_filters( 'wpml_translate_single_string', 'Jetzt buchen', 'sp-theme', 'Jetzt buchen' ); ?></h6>
