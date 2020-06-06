@@ -574,3 +574,16 @@ button {
 		margin-bottom: 30px;
 	}
 }
+
+.owl-stage-outer { 
+	overflow: visible;
+}
+
+.owl-item {
+	opacity: 0;
+	transition: opacity 500ms;
+}
+
+.owl-item.active {
+	opacity: 1;
+}

@@ -20,6 +20,7 @@
     "matchdep": "^2.0.0",
     "owl.carousel": "^2.3.4",
     "animate-sass": "^0.8.2",
-    "hamburgers": "^1.1.3"
+    "hamburgers": "^1.1.3",
+    "snazzy-info-window": "^1.1.1"
   }
 }
