@@ -141,14 +141,14 @@ if(ICL_LANGUAGE_CODE != 'de') {
 										<div class="kurse-table__body--row">
 											<div class="kurse-table__body--item kurse-table__body--item--1"><?php echo $status_print; ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--2"><?php the_title(); ?></div>
-											<div class="kurse-table__body--item kurse-table__body--item--3"><i class="fal fa-comment-dots fa-fw mr-2"></i><?php echo strtoupper( $lng['value'] ); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--3"><i class="fal fa-comment-dots fa-fw mr-2"></i><?php echo apply_filters( 'wpml_translate_single_string', strtoupper( $lng['value'] ), 'sp-theme', strtoupper( $lng['value'] ) ); ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--4"><i class="fal fa-calendar-check fa-fw mr-2"></i><span class="<?php echo get_the_ID(); ?>-date"><?php the_field('kurse_beginn'); ?> - <?php the_field('kurse_kursende'); ?></span></div>
 											<div class="kurse-table__body--item kurse-table__body--item--5">
 												<?php
 												$wochentage = get_field('kurse_wochentage');
 												if(!empty($wochentage)) {
 													foreach($wochentage as $wochentag) {
-														echo '<span data-toggle="tooltip" data-placement="bottom" title="'.$wochentag['label'].'">'.strtoupper( $wochentag['value'] ).'</span>';
+														echo '<span data-toggle="tooltip" data-placement="bottom" title="' . apply_filters( 'wpml_translate_single_string',  $wochentag['label'], 'sp-theme', $wochentag['label'] ) . '">'. apply_filters( 'wpml_translate_single_string', strtoupper( $wochentag['value'] ), 'sp-theme', strtoupper( $wochentag['value'] ) ) .'</span>';
 													}
 												}
 												?>

@@ -20,5 +20,21 @@ do_action( 'wpml_register_single_string', $text_domain, 'Plätze verfügbar', 'P
 do_action( 'wpml_register_single_string', $text_domain, 'Wenig Plätze verfügbar', 'Wenig Plätze verfügbar' );
 do_action( 'wpml_register_single_string', $text_domain, 'Kurs ist ausgebucht', 'Kurs ist ausgebucht' );
 do_action( 'wpml_register_single_string', $text_domain, 'Anmelden', 'Anmelden' );
+do_action( 'wpml_register_single_string', $text_domain, 'DE', 'DE' );
+do_action( 'wpml_register_single_string', $text_domain, 'FR', 'FR' );
+do_action( 'wpml_register_single_string', $text_domain, 'MO', 'MO' );
+do_action( 'wpml_register_single_string', $text_domain, 'DI', 'DI' );
+do_action( 'wpml_register_single_string', $text_domain, 'MI', 'MI' );
+do_action( 'wpml_register_single_string', $text_domain, 'DO', 'DO' );
+do_action( 'wpml_register_single_string', $text_domain, 'FR', 'FR' );
+do_action( 'wpml_register_single_string', $text_domain, 'SA', 'SA' );
+do_action( 'wpml_register_single_string', $text_domain, 'SO', 'SO' );
+do_action( 'wpml_register_single_string', $text_domain, 'Montag', 'Montag' );
+do_action( 'wpml_register_single_string', $text_domain, 'Dienstag', 'Dienstag' );
+do_action( 'wpml_register_single_string', $text_domain, 'Mittwoch', 'Mittwoch' );
+do_action( 'wpml_register_single_string', $text_domain, 'Donnerstag', 'Donnerstag' );
+do_action( 'wpml_register_single_string', $text_domain, 'Freitag', 'Freitag' );
+do_action( 'wpml_register_single_string', $text_domain, 'Samstag', 'Samstag' );
+do_action( 'wpml_register_single_string', $text_domain, 'Sonntag', 'Sonntag' );
 /* Kursslider */
 do_action( 'wpml_register_single_string', $text_domain, 'Jetzt buchen', 'Jetzt buchen' );
