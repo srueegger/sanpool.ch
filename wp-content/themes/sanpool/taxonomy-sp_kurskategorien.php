@@ -7,6 +7,17 @@ $total_anzahl_teilnehmer = get_field('kurskategorie_teilnehmer', $term);
 /* Die Schwelle liegt bei xx Prozent */
 $the_percent = get_field( 'course_setting_percent_range', 'option' );
 $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * $the_percent;
+/* Übersetzungen */
+$title = $term->name;
+$subtitle = get_field( 'kurskategorie_subtitle', $term );
+$description = get_field( 'kurskategorie_longdesc', $term );
+$cat_infos = 'kurskategorie_infos';
+if(ICL_LANGUAGE_CODE != 'de') {
+	$title = get_field( 'kurskategorie_title_' . ICL_LANGUAGE_CODE, $term );
+	$subtitle = get_field( 'kurskategorie_subtitle_' . ICL_LANGUAGE_CODE, $term );
+	$description = get_field( 'kurskategorie_longdesc_fr', $term );
+	$cat_infos = 'kurskategorie_infos_' . ICL_LANGUAGE_CODE;
+}
 ?>
 <main>
 	<div>
@@ -20,19 +31,19 @@ $total_anzahl_teilnehmer_schwelle = $total_anzahl_teilnehmer / 100 * $the_percen
 		<div class="container">
 			<div class="row mt-4">
 				<div class="col-12">
-					<h1 class="category-title"><?php echo $term->name; ?></h1>
-					<h2 class="mt-2 mb-4 h3"><?php the_field('kurskategorie_subtitle', $term); ?></h2>
-					<?php the_field('kurskategorie_longdesc', $term); ?>
+					<h1 class="category-title"><?php echo $title; ?></h1>
+					<h2 class="mt-2 mb-4 h3"><?php echo $subtitle; ?></h2>
+					<?php echo $description; ?>
 				</div>
 				<?php
 				/* Akkordeon anzeigen - sofern es Inhalte gibt */
-				if(have_rows('kurskategorie_infos', $term)) {
+				if( have_rows( $cat_infos, $term ) ) {
 					$identifier = 'accordion-term-'.$term->term_id;
 					?>
 					<div class="col-12 mt-3">
 						<div class="accordion sanpool-accordion" id="<?php echo $identifier; ?>">
 							<?php
-							while(have_rows('kurskategorie_infos', $term)) {
+							while( have_rows( $cat_infos, $term) ) {
 								the_row();
 								$rowIndex = get_row_index();
 								$title = get_sub_field('title');
