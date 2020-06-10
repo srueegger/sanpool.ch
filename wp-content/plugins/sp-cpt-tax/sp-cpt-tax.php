@@ -198,7 +198,7 @@ add_filter( 'manage_sp_interne_kurse_posts_columns', 'sp_add_admin_columns_inter
 function sp_add_content_to_admin_columns_interne_kurse( $column, $post_id ) {
 	if($column == 'sp_interne_kurse_subs') {
 		/* Anzahl Teilnehmer ermitteln */
-		sp_count_subs_by_course_id( $post_id );
+		echo '<a href="'.HOME_URI.'/wp-admin/admin.php?page=gf_entries&view=entries&id=1&orderby=0&order=ASC&s='.$post_id.'&field_id=1&operator=is" target="_self">'.sp_count_subs_by_course_id( $post_id, false ).'</a>';
 	}
 }
 add_action( 'manage_sp_interne_kurse_posts_custom_column' , 'sp_add_content_to_admin_columns_interne_kurse', 10, 2 );

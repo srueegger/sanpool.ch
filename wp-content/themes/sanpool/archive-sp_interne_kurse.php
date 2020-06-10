@@ -38,7 +38,7 @@ get_header();
 								$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 								$domain = $_SERVER['HTTP_HOST'];
 								$lng_base_url = $protocol.$domain;
-								$term_link = $lng_base_url . '/' . ICL_LANGUAGE_CODE . '/kurskategorie/' . $terms[0]->slug . '/';
+								$term_link = $lng_base_url . '/' . ICL_LANGUAGE_CODE . '/kurskategorie/' . $term->slug . '/';
 							}
 							?>
 							<div class="col-12 col-md-6 col-lg-4 mb-4">
