@@ -6,7 +6,7 @@ get_header();
 	<div class="container">
 		<div class="row">
 			<div class="col-12 mt-4">
-				<h1>Kurse</h1>
+				<h1><?php echo apply_filters( 'wpml_translate_single_string', 'Kurse', 'sp-theme', 'Kurse' ); ?></h1>
 			</div>
 			<div class="col-12 mt-5">
 				<?php

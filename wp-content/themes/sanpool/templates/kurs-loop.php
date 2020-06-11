@@ -45,7 +45,7 @@ if(ICL_LANGUAGE_CODE != 'de') {
 				</div>
 				<div class="col">
 					<div class="mb-2"><i class="fal fa-comment-dots fa-2x"></i></div>
-					<div><?php echo $course_lang['label']; ?></div>
+					<div><?php echo apply_filters( 'wpml_translate_single_string', $course_lang['label'], 'sp-theme', $course_lang['label'] ); ?></div>
 				</div>
 				<a href="<?php echo $course_link ?>" target="_self">
 					<div class="overlay-container">
