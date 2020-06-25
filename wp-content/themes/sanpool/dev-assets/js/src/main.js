@@ -52,6 +52,9 @@
 	/* InfoButtons ein und ausfahren - Mobile Bugfix da es kein CSS Hover gibt */
  	$('#infoButtons li').on('click touchstart', function() {
 		$(this).toggleClass('active');
+		var goto_url = $(this).data('goto');
+		console.log('URL: ' + goto_url);
+		window.location.href = goto_url;
 	});
 
 	/* Hamburger Button animinieren */
@@ -299,5 +302,14 @@
 		$('.sanpool-marker-link').removeClass('active');
 		$(this).addClass('active');
 		google.maps.event.trigger(map.markers[marker_id], 'click');
+	});
+
+	/* Aktionen durchführen, wenn Formulare erfolgreich abgesendet wurden */
+	$(document).on('gform_confirmation_loaded', function(event, formId) {
+		/* Status vom Kurs neu berechnen */
+		if(formId == 1) {
+			/* Formular 1 entsprich Kursanmeldenformular */
+			console.log(event);
+		}
 	});
 })(jQuery);

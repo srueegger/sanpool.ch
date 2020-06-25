@@ -19,6 +19,7 @@ require_once 'inc/bootstrap-navwalker.php';
 require_once 'inc/custom-gutenberg-blocks.php';
 require_once 'inc/gravityforms.php';
 require_once 'inc/string-translations.php';
+require_once 'inc/ajax-calls.php';
 
 /***************************************
  * 		Theme Support and Options
@@ -99,11 +100,9 @@ function sp_startup_scripts() {
 		wp_register_script( 'sp-script', DIST_JS . '/theme.min.js', array('jquery', 'sp-google-maps'), $modificated_js, true );
 	}
 	$global_vars = array(
-		'home_url' => HOME_URI,
-		'ajax_url' => admin_url('admin-ajax.php'),
-		'ajax_secure' => wp_create_nonce('sp-check-ajax-secure'),
+		'ajax_url' => admin_url('admin-ajax.php')
 	);
-	//wp_localize_script( 'sp-script', 'global_vars', $global_vars );
+	wp_localize_script( 'sp-script', 'global_vars', $global_vars );
 	wp_enqueue_style( 'sp-style' );
 	wp_enqueue_script( 'sp-script' );
 }
