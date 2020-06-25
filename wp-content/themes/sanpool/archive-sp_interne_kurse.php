@@ -72,7 +72,7 @@ get_header();
 	<div class="container course-container mt-3">
 		<div class="row justify-content-center">
 			<div class="col-10 my-4">
-				<h2 class="h1 text-primary"><?php echo apply_filters( 'wpml_translate_single_string', 'Unsere nächste Kurse', 'sp-theme', 'Unsere nächste Kurse' ); ?></h2>
+				<h2 class="h1 text-primary px-15"><?php echo apply_filters( 'wpml_translate_single_string', 'Unsere nächste Kurse', 'sp-theme', 'Unsere nächste Kurse' ); ?></h2>
 			</div>
 			<div class="col-10">
 				<?php
@@ -103,7 +103,7 @@ get_header();
 				);
 				$kurse = get_posts($args);
 				if(!empty($kurse)) {
-					echo '<div class="courseSlider owl-carousel owl-theme">';
+					echo '<div class="courseSlider owl-carousel owl-theme px-15">';
 					global $post;
 					foreach($kurse as $post) {
 						setup_postdata( $post );

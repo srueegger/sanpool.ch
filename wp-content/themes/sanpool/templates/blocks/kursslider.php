@@ -15,7 +15,7 @@ if( !empty($block['className']) ) {
 	<div class="container course-container mt-3">
 		<div class="row justify-content-center">
 			<div class="col-10 my-4">
-				<h2 class="h1 text-primary"><?php the_field('block_kursslider_title'); ?></h2>
+				<h2 class="h1 text-primary px-15"><?php the_field('block_kursslider_title'); ?></h2>
 			</div>
 			<div class="col-10">
 				<?php
@@ -46,7 +46,7 @@ if( !empty($block['className']) ) {
 				);
 				$kurse = get_posts($args);
 				if(!empty($kurse)) {
-					echo '<div class="courseSlider owl-carousel owl-theme">';
+					echo '<div class="courseSlider owl-carousel owl-theme px-15">';
 					global $post;
 					foreach($kurse as $post) {
 						setup_postdata( $post );

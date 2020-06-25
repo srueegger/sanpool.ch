@@ -37,7 +37,8 @@
 			992 : {
 				items: 3,
 				margin: 25,
-				nav: true
+				nav: true,
+				dots: false
 			}
 		}
 	});

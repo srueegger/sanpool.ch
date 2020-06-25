@@ -52,7 +52,8 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 			992 : {
 				items: 3,
 				margin: 25,
-				nav: true
+				nav: true,
+				dots: false
 			}
 		}
 	});
