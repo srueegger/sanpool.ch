@@ -9400,6 +9400,15 @@ button:focus {
   padding-left: 15px;
   padding-right: 15px; }
 
+.gm-style-iw,
+.gm-style-iw-t {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+  color: #fff;
+  font-size: 24px !important; }
+  .gm-style-iw:after,
+  .gm-style-iw-t:after {
+    display: none; }
+
 .gform_wrapper form {
   margin-bottom: 0; }
 
