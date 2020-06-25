@@ -347,3 +347,19 @@ function sp_languages_list_switcher() {
 	}
 	echo '</ul></li>';
 }
+
+/***************************************
+ * 	 Kursstatus berechnen
+ ***************************************/
+function sp_calculate_kurs_status( $bisherige, $total, $schwelle ) {
+	if($bisherige < $schwelle && $bisherige < $total) {
+		$status_print = '<span data-toggle="tooltip" data-placement="top" title="' . apply_filters( 'wpml_translate_single_string', 'Plätze verfügbar', 'sp-theme', 'Plätze verfügbar' ) . '" class="kurs-status"><i class="fas fa-check-circle fa-fw text-success"></i></span>';
+		/* Wenig Plätze verfügbar */
+	} elseif($bisherige >= $schwelle && $bisherige < $total) {
+		$status_print = '<span data-toggle="tooltip" data-placement="top" title="' . apply_filters( 'wpml_translate_single_string', 'Wenig Plätze verfügbar', 'sp-theme', 'Wenig Plätze verfügbar' ) . '" class="kurs-status"><i class="fas fa-check-circle fa-fw text-warning"></i></span>';
+		/* Kurs ist ausgebucht */
+	} elseif($bisherige > $schwelle && $bisherige >= $total) {
+		$status_print = '<span data-toggle="tooltip" data-placement="top" title="' . apply_filters( 'wpml_translate_single_string', 'Kurs ist ausgebucht', 'sp-theme', 'Kurs ist ausgebucht' ) . '" class="kurs-status"><i class="fas fa-exclamation-triangle fa-fw text-danger"></i></span>';
+	}
+	return $status_print;
+}
