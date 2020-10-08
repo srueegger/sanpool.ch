@@ -32,7 +32,7 @@ if(ICL_LANGUAGE_CODE != 'de') {
 		</div>
 		<div class="card-body">
 			<h5 class="card-title"><?php echo $title; ?></h5>
-			<p class="card-text mb-0"><?php echo $shortdesc; ?></p>
+			<p class="card-text mb-0 d-none"><?php echo $shortdesc; ?></p>
 			<hr>
 			<div class="row text-center">
 				<div class="col">
