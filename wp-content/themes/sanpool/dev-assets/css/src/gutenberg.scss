@@ -15,16 +15,6 @@ $colors: (
 	}
 }
 
-/* Gutenberg volle Breite */
-.alignfull {
-	margin-left: calc( -100vw / 2 + 100% / 2 );
-	margin-right: calc( -100vw / 2 + 100% / 2 );
-	max-width: 100vw;
-	img {
-		width: 100vw !important;
-	}
-}
-
 .wp-block-image {
 	&.aboutus {
 		img {
