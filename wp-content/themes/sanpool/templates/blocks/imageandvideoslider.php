@@ -49,7 +49,15 @@ if( !empty($block['align']) ) {
 					/* hochgeladenes Video */
 					$video = get_sub_field('video_file');
 					$video_poster = get_sub_field('video_file_poster');
-					echo '<video class="upload_video w-100" poster="'.$video_poster['url'].'" controls preload="auto" playsinline muted>';
+					$video_poster_print = '';
+					if(!empty($video_poster)) {
+						$video_poster_print = 'poster="'.$video_poster['url'].'"';
+					}
+					$loop = '';
+					if(get_sub_field('video_loop')) {
+						$loop = 'loop';
+					}
+					echo '<video class="upload_video w-100" '.$video_poster_print.' controls preload="auto" '.$loop.'  playsinline muted>';
 					echo '<source src="'.$video['url'].'" type="'.$video['mime_type'].'">';
 					echo '</video>';
 				}
