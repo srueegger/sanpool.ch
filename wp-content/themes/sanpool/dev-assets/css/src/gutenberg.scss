@@ -63,3 +63,10 @@ $colors: (
 		font-size: 2rem;
 	}
 }
+
+.wp-block-media-text__media {
+	img {
+		object-fit: contain;
+		height: auto;
+	}
+}
