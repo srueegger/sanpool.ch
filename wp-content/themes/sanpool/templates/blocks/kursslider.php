@@ -21,6 +21,7 @@ if( !empty($block['className']) ) {
 				<?php
 				/* Kurse laden und in einem Loop ausgeben */
 				$date_now = date('Ymd');
+				$categories = get_field( 'block_kursslider_cats' );
 				$args = array(
 					'numberposts' => -1,
 					'post_status' => 'publish',
@@ -32,7 +33,7 @@ if( !empty($block['className']) ) {
 						'relation' => 'AND',
 						array(
 							'key' => 'kurse_beginn',
-							'compare' => '>=',
+							'compare' => '>',
 							'value' => $date_now,
 							'type' => 'DATE',
 						),
@@ -41,6 +42,13 @@ if( !empty($block['className']) ) {
 							'value' => 0,
 							'compare' => '=',
 							'type' => 'NUMERIC'
+						)
+					),
+					'tax_query' => array(
+						array(
+							'taxonomy' => 'sp_kurskategorien',
+							'field' => 'term_id',
+							'terms' => $categories
 						)
 					)
 				);

@@ -376,4 +376,4 @@ function sp_hexToRgb($hex, $alpha = false) {
 	   $rgb['a'] = $alpha;
 	}
 	return $rgb;
- }
+}
