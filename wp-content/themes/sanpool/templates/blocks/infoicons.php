@@ -12,7 +12,7 @@ if( !empty($block['className']) ) {
 }
 ?>
 <div id="<?php echo esc_attr( $id ); ?>" class="<?php echo esc_attr( $className ); ?>">
-	<div class="container py-4">
+	<div class="container-fluid py-4">
 		<div class="row">
 			<div class="col-12 text-center">
 				<h2 class="h1 text-white"><?php the_field('block_infoicon_title'); ?></h2>
