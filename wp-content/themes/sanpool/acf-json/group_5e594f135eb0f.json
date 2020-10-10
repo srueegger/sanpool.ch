@@ -133,6 +133,106 @@
                     "mime_types": ""
                 },
                 {
+                    "key": "field_5f81d06a1e2e8",
+                    "label": "Bild Overlay hinzufügen",
+                    "name": "image_overlay",
+                    "type": "true_false",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ed09e9c5caad",
+                                "operator": "!=",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": "",
+                    "admin_column_taxonomies": "",
+                    "message": "",
+                    "default_value": 0,
+                    "ui": 1,
+                    "ui_on_text": "",
+                    "ui_off_text": "",
+                    "wpml_cf_preferences": 0
+                },
+                {
+                    "key": "field_5f81d0bd1e2e9",
+                    "label": "Overlay Farbe",
+                    "name": "overlay_color",
+                    "type": "color_picker",
+                    "instructions": "",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ed09e9c5caad",
+                                "operator": "!=",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_5f81d06a1e2e8",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": "",
+                    "admin_column_taxonomies": "",
+                    "default_value": "",
+                    "wpml_cf_preferences": 0
+                },
+                {
+                    "key": "field_5f81d0f31e2eb",
+                    "label": "Overlay Transparenz",
+                    "name": "overlay_transparency",
+                    "type": "range",
+                    "instructions": "1 = Keine Transparenz\r\n0 = 100% Transparenz",
+                    "required": 1,
+                    "conditional_logic": [
+                        [
+                            {
+                                "field": "field_5ed09e9c5caad",
+                                "operator": "!=",
+                                "value": "1"
+                            },
+                            {
+                                "field": "field_5f81d06a1e2e8",
+                                "operator": "==",
+                                "value": "1"
+                            }
+                        ]
+                    ],
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "admin_column_enabled": 0,
+                    "admin_column_post_types": "",
+                    "admin_column_taxonomies": "",
+                    "default_value": "0.8",
+                    "min": 0,
+                    "max": 1,
+                    "step": "0.1",
+                    "prepend": "",
+                    "append": "",
+                    "wpml_cf_preferences": 0
+                },
+                {
                     "key": "field_5ed09642a4eed",
                     "label": "Titel",
                     "name": "titel",
@@ -244,7 +344,7 @@
     "label_placement": "top",
     "instruction_placement": "label",
     "hide_on_screen": "",
-    "active": 1,
+    "active": true,
     "description": "",
-    "modified": 1590730766
+    "modified": 1602343271
 }

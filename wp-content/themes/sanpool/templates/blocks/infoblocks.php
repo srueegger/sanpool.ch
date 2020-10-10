@@ -54,8 +54,16 @@ if( !empty($block['className']) ) {
 								</div>
 								<?php
 							}
+							/* Overlay für den Seen Container */
+							$seen_overlay = '';
+							if( get_sub_field( 'image_overlay' ) ) {
+								$hex_color = get_sub_field( 'overlay_color' );
+								/* Convert Hex Color to RGBA */
+								$rgba = sp_hexToRgb( $hex_color, get_sub_field( 'overlay_transparency' ) );
+								$seen_overlay = ' style="background-color: rgba('.$rgba['r'].', '.$rgba['g'].', '.$rgba['b'].', '.$rgba['a'].');"';
+							}
 							?>
-							<div class="overlay-seen-container<?php echo $overlay_seen_container_no_animation; ?>">
+							<div <?php echo $seen_overlay; ?> class="overlay-seen-container<?php echo $overlay_seen_container_no_animation; ?>">
 								<div class="inner">
 									<h4 class="text-white custom-text-shadow"><?php the_sub_field( 'titel' ) ?></h4>
 									<?php
