@@ -14,12 +14,12 @@ if(ICL_LANGUAGE_CODE == 'de') {
 	$title = get_field( 'kurskategorie_title_'.$lng, $terms[0] );
 	$shortdesc = get_field( 'kurskategorie_shortdesc_'.$lng, $terms[0] );
 }
-$course_link = get_term_link( $terms[0], 'sp_kurskategorien' ) . '#' . get_the_ID() . ';' . urldecode(get_the_title());
+$course_link = get_term_link( $terms[0], 'sp_kurskategorien' ) . '#' . get_the_ID() . ';' . urldecode(get_the_title()) . ';' . strtoupper($course_lang['value']);
 if(ICL_LANGUAGE_CODE != 'de') {
 	$protocol = ((!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off') || $_SERVER['SERVER_PORT'] == 443) ? "https://" : "http://";
 	$domain = $_SERVER['HTTP_HOST'];
 	$lng_base_url = $protocol.$domain;
-	$course_link = $lng_base_url . '/' . ICL_LANGUAGE_CODE . '/kurskategorie/' . $terms[0]->slug . '/#' . get_the_ID() . ';' . urldecode(get_the_title());
+	$course_link = $lng_base_url . '/' . ICL_LANGUAGE_CODE . '/kurskategorie/' . $terms[0]->slug . '/#' . get_the_ID() . ';' . urldecode(get_the_title()) . ';' . strtoupper($course_lang['value']);
 }
 ?>
 <div class="item">

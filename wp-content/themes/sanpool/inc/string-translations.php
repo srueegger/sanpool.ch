@@ -21,8 +21,9 @@ do_action( 'wpml_register_single_string', $text_domain, 'Plätze verfügbar', 'P
 do_action( 'wpml_register_single_string', $text_domain, 'Wenig Plätze verfügbar', 'Wenig Plätze verfügbar' );
 do_action( 'wpml_register_single_string', $text_domain, 'Kurs ist ausgebucht', 'Kurs ist ausgebucht' );
 do_action( 'wpml_register_single_string', $text_domain, 'Anmelden', 'Anmelden' );
-do_action( 'wpml_register_single_string', $text_domain, 'DE', 'DE' );
-do_action( 'wpml_register_single_string', $text_domain, 'FR', 'FR' );
+do_action( 'wpml_register_single_string', $text_domain, 'DE-lng', 'DE-lng' );
+do_action( 'wpml_register_single_string', $text_domain, 'FR-lng', 'FR-lng' );
+do_action( 'wpml_register_single_string', $text_domain, 'IT-lng', 'IT-lng' );
 do_action( 'wpml_register_single_string', $text_domain, 'MO', 'MO' );
 do_action( 'wpml_register_single_string', $text_domain, 'DI', 'DI' );
 do_action( 'wpml_register_single_string', $text_domain, 'MI', 'MI' );
@@ -41,3 +42,4 @@ do_action( 'wpml_register_single_string', $text_domain, 'Sonntag', 'Sonntag' );
 do_action( 'wpml_register_single_string', $text_domain, 'Jetzt buchen', 'Jetzt buchen' );
 do_action( 'wpml_register_single_string', $text_domain, 'Deutsch', 'Deutsch' );
 do_action( 'wpml_register_single_string', $text_domain, 'Französisch', 'Französisch' );
+do_action( 'wpml_register_single_string', $text_domain, 'Italienisch', 'Italienisch' );

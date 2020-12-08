@@ -123,7 +123,7 @@ if(ICL_LANGUAGE_CODE != 'de') {
 											Wenn keine Plätze verfügbar sind:
 											_Rotes Icon (Dreieck) Kurs ist ausgebucht
 										*/
-										$subscribe_button = '<button data-postid="'.get_the_ID().'" data-kursnummer="'.get_the_title().'" type="button" class="btn btn-primary js_subscribe_course">
+										$subscribe_button = '<button data-lng="'.strtoupper($lng['value']).'" data-postid="'.get_the_ID().'" data-kursnummer="'.get_the_title().'" type="button" class="btn btn-primary js_subscribe_course">
 										' . apply_filters( 'wpml_translate_single_string', 'Anmelden', 'sp-theme', 'Anmelden' ) . '</button>';
 										$status_print = sp_calculate_kurs_status($bisherige_teilnehmer, $total_anzahl_teilnehmer, $total_anzahl_teilnehmer_schwelle);
 										if($bisherige_teilnehmer > $total_anzahl_teilnehmer_schwelle && $bisherige_teilnehmer >= $total_anzahl_teilnehmer) {
@@ -134,7 +134,7 @@ if(ICL_LANGUAGE_CODE != 'de') {
 										<div class="kurse-table__body--row">
 											<div class="kurse-table__body--item kurse-table__body--item--1"><?php echo $status_print; ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--2"><?php the_title(); ?></div>
-											<div class="kurse-table__body--item kurse-table__body--item--3"><i class="fal fa-comment-dots fa-fw mr-2"></i><?php echo apply_filters( 'wpml_translate_single_string', strtoupper( $lng['value'] ), 'sp-theme', strtoupper( $lng['value'] ) ); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--3"><i class="fal fa-comment-dots fa-fw mr-2"></i><?php echo apply_filters( 'wpml_translate_single_string', strtoupper( $lng['value'] ), 'sp-theme', strtoupper( $lng['value'] . '-lng' ) ); ?></div>
 											<div class="kurse-table__body--item kurse-table__body--item--4"><i class="fal fa-calendar-check fa-fw mr-2"></i><span class="<?php echo get_the_ID(); ?>-date"><?php the_field('kurse_beginn'); ?> - <?php the_field('kurse_kursende'); ?></span></div>
 											<div class="kurse-table__body--item kurse-table__body--item--5">
 												<?php
@@ -167,7 +167,7 @@ if(ICL_LANGUAGE_CODE != 'de') {
 			<div class="inner">
 				<div class="row">
 					<div class="col-12">
-						<h2><?php echo apply_filters( 'wpml_translate_single_string', 'Anmeldung für Kurs:', 'sp-theme', 'Anmeldung für Kurs:' ); ?> <span id="subscribe-kursnr"></span> - <span id="subscribe-category"></span> - <span id="subscribe-date"></span></h2>
+						<h2><?php echo apply_filters( 'wpml_translate_single_string', 'Anmeldung für Kurs:', 'sp-theme', 'Anmeldung für Kurs:' ); ?> <span id="subscribe-kursnr"></span> - <span id="subscribe-category"></span> - <span id="subscribe-date"></span> - <span id="subscribe-lng"></span></h2>
 					</div>
 				</div>
 				<div class="row">

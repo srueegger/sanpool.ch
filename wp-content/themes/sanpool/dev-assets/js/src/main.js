@@ -91,7 +91,7 @@
 	});
 
 	/* Funktion um das Kurs-Anmeldeformular vorzubereiten und anzuzeigen */
-	function sp_prepare_and_show_subscribe_form(post_id, kurs_nr) {
+	function sp_prepare_and_show_subscribe_form(post_id, kurs_nr, lng) {
 		/* Falls Formular eingeblendet ist Formular ausblenden */
 		var form = $('#courseSubscribe .inner');
 		var course_table_container = $('.kurse-table-container');
@@ -104,6 +104,7 @@
 		$('#subscribe-kursnr').text(kurs_nr);
 		$('#subscribe-category').text(category_name);
 		$('#subscribe-date').text(course_date);
+		$('#subscribe-lng').text(lng);
 		$('#input_1_1').val(post_id);
 		$('#input_1_2').val(kurs_nr);
 		course_table_container.addClass('mb-5');
@@ -121,7 +122,8 @@
 		/* Wichtige Variabeln ermitteln */
 		var post_id = $(this).data('postid');
 		var kurs_nr = $(this).data('kursnummer');
-		sp_prepare_and_show_subscribe_form(post_id, kurs_nr);
+		var lng = $(this).data('lng');
+		sp_prepare_and_show_subscribe_form(post_id, kurs_nr, lng);
 	});
 
 	/* Prüfen ob man auf einer Kurskategorie Seite ist, falls ja muss geprüft werden ob über dne Hastag Parameter mitgegeben wurden, falls ja muss die Funktion für die Kursanmeldung aufgerufen werden */
@@ -133,8 +135,9 @@
 		hash = hash.split(';');
 		var post_id = hash[0];
 		var kurs_nr = decodeURI(hash[1]);
+		var lng = hash[2];
 		/* Funktion starten */
-		sp_prepare_and_show_subscribe_form(post_id, kurs_nr);
+		sp_prepare_and_show_subscribe_form(post_id, kurs_nr, lng);
 	}
 
 	/* Für den Parallax Footer muss die Höhe des Footers beim #page_wrapper als margin-bottom hinzugefügt werden */
