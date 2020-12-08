@@ -28,17 +28,25 @@ if( !empty($block['className']) ) {
 				?>
 				<div class="col-6 col-md-4 col-xl mb-3 mb-xl-0">
 					<div class="shortlink-item text-center">
-						<a href="<?php echo $link['url']; ?>" target="<?php echo $link_target; ?>">
-							<div class="iconbox">
-								<span class="fa-stack fa-4x">
-									<i class="fal fa-square fa-stack-2x"></i>
-									<i class="<?php the_sub_field('icon'); ?> fa-stack-1x"></i>
-								</span>
-							</div>
-							<div class="textbox mt-3">
-								<h5><?php echo $link['title']; ?></h5>
-							</div>
-						</a>
+						<?php
+						if($link['url'] != '#') {
+							echo '<a href="'.$link['url'].'" target="'.$link_target.'">';
+						}
+						?>
+						<div class="iconbox">
+							<span class="fa-stack fa-4x">
+								<i class="fal fa-square fa-stack-2x"></i>
+								<i class="<?php the_sub_field('icon'); ?> fa-stack-1x"></i>
+							</span>
+						</div>
+						<div class="textbox mt-3">
+							<h5><?php echo $link['title']; ?></h5>
+						</div>
+						<?php
+						if($link['url'] != '#') {
+							echo '</a>';
+						}
+						?>
 					</div>
 				</div>
 				<?php
