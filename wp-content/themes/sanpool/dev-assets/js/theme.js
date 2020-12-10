@@ -115,6 +115,7 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 		/* Weitere Daten ermitteln */
 		var category_name = $('.category-title').text();
 		var course_date = $('.' + post_id + '-date').text();
+		var course_location = $('.' + post_id + '-location').text();
 		/* Titel und unsichtbare Werte eintragen */
 		$('#subscribe-kursnr').text(kurs_nr);
 		$('#subscribe-category').text(category_name);
@@ -122,6 +123,10 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 		$('#subscribe-lng').text(lng);
 		$('#input_1_1').val(post_id);
 		$('#input_1_2').val(kurs_nr);
+		$('#input_1_17').val(course_date);
+		$('#input_1_18').val(course_location);
+		$('#input_1_19').val(lng);
+		$('#input_1_20').val(category_name);
 		course_table_container.addClass('mb-5');
 		/* Formular anzeigen */
 		form.addClass('show');

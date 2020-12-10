@@ -146,7 +146,7 @@ if(ICL_LANGUAGE_CODE != 'de') {
 												}
 												?>
 											</div>
-											<div class="kurse-table__body--item kurse-table__body--item--6"><i class="fal fa-map-marker-alt fa-fw mr-2"></i><?php the_field('kurse_ort'); ?></div>
+											<div class="kurse-table__body--item kurse-table__body--item--6"><i class="fal fa-map-marker-alt fa-fw mr-2"></i><span class="<?php echo get_the_ID(); ?>-location"><?php the_field('kurse_ort'); ?></span></div>
 											<div class="kurse-table__body--item kurse-table__body--item--7"><?php echo $subscribe_button; ?></div>
 										</div>
 										<?php
