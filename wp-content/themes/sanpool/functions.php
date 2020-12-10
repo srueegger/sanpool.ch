@@ -136,7 +136,6 @@ function sp_acf_init() {
 		'menu_slug' => 'sp-course-settings',
 		'parent_slug' => 'edit.php?post_type=sp_interne_kurse',
 	);
-	acf_add_options_sub_page($args);
 	/* Google Maps API KEY */
 	acf_update_setting( 'google_api_key', 'AIzaSyClyTgPGOjbFlQsNCJ6xo_WSv5975VHXSo' );
 	/* Menü verbergen */
@@ -154,23 +153,6 @@ function sp_remove_menus() {
 	remove_menu_page( 'edit-comments.php' );
 }
 add_action( 'admin_menu', 'sp_remove_menus' );
-
-/***************************************
- * 	 E-Mails per SMTP senden
- ***************************************/
-function sp_send_smtp( $phpmailer ) {
-	$phpmailer->isSMTP();
-	$phpmailer->Host = get_field( 'sys_smtp_host', 'option' );
-	$phpmailer->SMTPAuth = true;
-	$phpmailer->Port = get_field( 'sys_smtp_port', 'option' );
-	$phpmailer->Username = get_field( 'sys_smtp_username', 'option' );
-	$phpmailer->Password = get_field( 'sys_smtp_password', 'option' );
-	$phpmailer->SMTPSecure = get_field( 'sys_smtp_secure', 'option' );
-	$phpmailer->From = get_field( 'sys_smtp_frommail', 'option' );
-	$phpmailer->FromName = get_field( 'sys_smtp_fromname', 'option' );
-	$phpmailer->CharSet = 'utf-8';
-}
-//add_action( 'phpmailer_init', 'sp_send_smtp' );
 
 /***************************************
  * 	 Container entfernen bei Gutenberg Blocks die Align full oder width sind.
