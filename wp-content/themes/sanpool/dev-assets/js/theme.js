@@ -126,7 +126,7 @@ animateIn:!1},e.prototype.swap=function(){if(1===this.core.settings.items&&a.sup
 		$('#input_1_17').val(course_date);
 		$('#input_1_18').val(course_location);
 		$('#input_1_19').val(lng);
-		$('#input_1_20').val(category_name);
+		$('#input_1_20').val(category_name).trigger('change');
 		course_table_container.addClass('mb-5');
 		/* Formular anzeigen */
 		form.addClass('show');
