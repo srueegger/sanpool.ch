@@ -88,3 +88,4 @@ wp-content/plugins/*
 !wp-content/plugins/sp-cpt-tax/
 !wp-content/plugins/admin-columns-for-acf-fields
 *.swp
+.htaccess.bk
