@@ -62,6 +62,11 @@
 		$(this).toggleClass('is-active');
 	});
 
+	$('.collapse.faq').collapse({
+		toggle: false
+	});
+
+
 	/* Beim SanPool Accordion die Icons bei Klick auf Header auswechseln */
 	$('.sanpool-accordion').on('hide.bs.collapse', function () {
 		/* Alle Icons als Pfeil darstellen */

@@ -194,7 +194,7 @@ function sp_render_accordeon_content($identifier, $rowIndex, $title, $txt) {
 				</span>
 			</h2>
 		</div>
-		<div id="collapse-<?php echo $rowIndex; ?>" class="collapse" aria-labelledby="heading-<?php echo $rowIndex; ?>" data-parent="#<?php echo $identifier; ?>">
+		<div id="collapse-<?php echo $rowIndex; ?>" class="collapse faq" aria-labelledby="heading-<?php echo $rowIndex; ?>" data-parent="#<?php echo $identifier; ?>">
 			<div class="card-body">
 				<?php echo $txt; ?>
 			</div>
